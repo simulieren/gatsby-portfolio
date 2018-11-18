@@ -12,7 +12,7 @@ import config from '../../data/SiteConfig'
 import PostListing from '../components/PostListing/PostListing'
 import Intro from '../components/Intro'
 import TextListItem from '../components/TextListItem'
-import { Caps, P, SectionOverline } from '../components/Typography'
+import { Caps, P, SectionOverline, StyledButton } from '../components/Typography'
 import { Section } from '../components/Grid'
 import Card from '../components/Card'
 import DotCanvas from '../components/DotCanvas/index'
@@ -115,6 +115,8 @@ class Index extends React.Component {
             </Heading>
             <P>Seit dem Dezember 2018 habe ich über 100 Teilnehmer zum Thema Webdevelopment unterrichtet. Ich habe zusammen mit anderen Dozenten am Curriculum gearbeitet und den Schülern das Programmieren beigebracht.</P>
             <P>Von HTML, CSS und JavaScript bis zu React.js, Node.js und MongoDB habe ich die Schüler zum Fullstack JavaScript Developer ausgebildet.</P>
+
+            <StyledButton inverted size="10rem">Mehr erfahren</StyledButton>
           </Box>
 
           <Img
@@ -123,7 +125,7 @@ class Index extends React.Component {
           />
         </Section>
 
-        <Section py={[3, 4, 5]} bg={'rgba(255,255,255,0.9)'}>
+        <Section py={[3, 4, 5]} bg={'rgba(255,255,255,0.9)'} css={{position: 'relative'}}>
           <Box width={[1, 1 / 5]}>
             <SectionOverline>Hire me</SectionOverline>
           </Box>
@@ -144,9 +146,7 @@ class Index extends React.Component {
               <Text as="span" mr={3} fontSize={[6, 7]} fontFamily="Spectral" fontWeight="900" lineHeight={1} color={'#00f'} css={{fontStyle: 'italic', float: 'left'}}>4.</Text> Ich spreche bei ihrem Event über aktuelle Themem im Bereich Design und Development.
             </Heading>
 
-            <AniLink>
-              <Button>Mehr erfahren</Button>
-            </AniLink>
+            
           </Box>
         </Section>
 
