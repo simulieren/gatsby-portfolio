@@ -103,12 +103,12 @@ class Index extends React.Component {
         <Section
           justifyContent={'center'}
           flexDirection={'column'}
-          py={[3, 4, 5]}
+          py={[4, 5]}
           pt={6}
           css={{ overflow: 'hidden', minHeight: '80vh', position: 'relative' }}
           bg={'hsla(240, 100%, 70%, 1)'}
         >
-          <Box color="#fff" width={[1 / 2]} css={{ zIndex: 1 }}>
+          <Box color="#fff" width={[1, 1 / 2]} css={{ zIndex: 1 }}>
             <SectionOverline color="#fff" textAlign={'left'}>Teaching</SectionOverline>
             <Heading as="h3" fontSize={[5, 6]} fontFamily="Spectral" mt={0}>
               Ich unterrichte beim Digital Career Institute
@@ -125,7 +125,7 @@ class Index extends React.Component {
           />
         </Section>
 
-        <Section py={[3, 4, 5]} bg={'rgba(255,255,255,0.9)'} css={{position: 'relative'}}>
+        <Section py={[4, 5]} bg={'rgba(255,255,255,0.9)'} css={{position: 'relative'}}>
           <Box width={[1, 1 / 5]}>
             <SectionOverline>Hire me</SectionOverline>
           </Box>
@@ -133,16 +133,16 @@ class Index extends React.Component {
             <Heading as="h4" fontSize={[5, 6]} fontFamily="Spectral" mt={0} mb={4}>
               So kann ich helfen
             </Heading>
-            <Heading as="h4" fontSize={[3]} fontFamily="Apercu" fontWeight="400" mt={0} mb={5}>
+            <Heading as="h4" fontSize={[3]} fontFamily="Apercu" fontWeight="400" mt={0} mb={[4, 5]}>
               <Text as="span" mr={3} fontSize={[6, 7]} fontFamily="Spectral" fontWeight="900" lineHeight={1} color={'#00f'} css={{fontStyle: 'italic', float: 'left'}}>1.</Text> Ich plane, konzipiere, gestalte und realisiere ihr digitales Vorhaben.
             </Heading>
-            <Heading as="h4" fontSize={[3]} fontFamily="Apercu" fontWeight="400" mt={0} mb={5}>
+            <Heading as="h4" fontSize={[3]} fontFamily="Apercu" fontWeight="400" mt={0} mb={[4, 5]}>
               <Text as="span" mr={3} fontSize={[6, 7]} fontFamily="Spectral" fontWeight="900" lineHeight={1} color={'#00f'} css={{fontStyle: 'italic', float: 'left'}}>2.</Text> Ich unterstütze ihr Team mit meinen Kompetenzen bei ihrem Projekt.
             </Heading>
-            <Heading as="h4" fontSize={[3]} fontFamily="Apercu" fontWeight="400" mt={0} mb={5}>
+            <Heading as="h4" fontSize={[3]} fontFamily="Apercu" fontWeight="400" mt={0} mb={[4, 5]}>
               <Text as="span" mr={3} fontSize={[6, 7]} fontFamily="Spectral" fontWeight="900" lineHeight={1} color={'#00f'} css={{fontStyle: 'italic', float: 'left'}}>3.</Text> Ich gebe ihrem Team einen Workshop um euch auf das nächste Level zu bringen.
             </Heading>
-            <Heading as="h4" fontSize={[3]} fontFamily="Apercu" fontWeight="400" mt={0} mb={5}>
+            <Heading as="h4" fontSize={[3]} fontFamily="Apercu" fontWeight="400" mt={0} mb={[4, 5]}>
               <Text as="span" mr={3} fontSize={[6, 7]} fontFamily="Spectral" fontWeight="900" lineHeight={1} color={'#00f'} css={{fontStyle: 'italic', float: 'left'}}>4.</Text> Ich spreche bei ihrem Event über aktuelle Themem im Bereich Design und Development.
             </Heading>
 
@@ -169,9 +169,9 @@ class Index extends React.Component {
         </Section>
 
         
-        <Card>
+        {/* <Card>
           <Heading>HELLO</Heading>
-        </Card>
+        </Card> */}
       </Layout>
     )
   }

@@ -34,7 +34,20 @@ export default class PostTemplate extends React.Component {
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
 
-        <Box css={{ background: `url(${post.cover})` }}>
+        <Box>
+          <Box p={4} mt={5} pt={4} css={{ position: 'absolute', zIndex: -1, width: '100vw' }}>
+            <Box
+              css={{
+                width: '100%',
+                height: '100%',
+                overflowX: 'hidden',
+                background: post.covercolor ? post.covercolor : '#0000ff22',
+                minHeight: post.cover ? 'auto' : '80vh'
+              }}
+            >
+              <img style={{ width: '100vw', minWidth: '100vw' }} src={post.cover} alt="" />
+            </Box>
+          </Box>
           <Intro
             bg={post.color}
             overline={
@@ -52,7 +65,7 @@ export default class PostTemplate extends React.Component {
                 <SectionOverline>{post.date}</SectionOverline>
               </Box>
               <Box
-                width={[1, 4 / 5, 3 / 5]}
+                width={[1, 1, 4 / 5]}
                 className="post-content"
                 dangerouslySetInnerHTML={{ __html: postNode.html }}
               />
@@ -79,6 +92,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         cover
+        covercolor
         color
         date
         category

@@ -1,10 +1,10 @@
 // User for displaying links in the navigation
 const navLinks = [ 
-  { text: 'Work', to: '/work' },
+  { text: 'Arbeit', to: '/arbeit' },
   { text: 'About', to: '/about' },
-  { text: 'Contact', to: '/contact' },
+  { text: 'Kontakt', to: '/kontakt' },
   { text: 'Blog', to: '/blog' },
-  { text: 'Notes', to: '/notes' }
+  { text: 'Notizen', to: '/notizen' }
 ]
 
 export default navLinks

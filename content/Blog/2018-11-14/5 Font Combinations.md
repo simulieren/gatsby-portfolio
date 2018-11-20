@@ -1,6 +1,6 @@
 ---
 title: "5 Free Font Combinations"
-cover: "https://unsplash.it/1152/300/?random?BirchintheRoses"
+cover: "https://unsplash.it/1152/1000/?random"
 date: "01/03/2017"
 category: "Design"
 tags:

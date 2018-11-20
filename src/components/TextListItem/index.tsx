@@ -21,7 +21,7 @@ const TextListItem = (props: any) => {
   }
 
   return (
-    <Box ref={props.onRef} css={{ transition: 'all .5s ease', opacity: props.isFullVisible ? 1 : 0 }}>
+    <Box ref={props.onRef} css={{ transition: 'all .5s ease', opacity: props.isFullVisible ? 1 : 0, willChange: 'opacity' }}>
       <Text as="div" fontSize={1} fontFamily="Apercu">
         <Caps fontWeight={'bold'}>{props.category}</Caps> {props.tags ? <PostTags tags={props.tags} /> : ''}{' '}
         {hasLink ? ' · ' + url() : ''}

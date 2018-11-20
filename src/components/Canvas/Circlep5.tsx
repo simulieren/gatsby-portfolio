@@ -4,8 +4,8 @@ import P5Wrapper from 'react-p5-wrapper'
 function sketch(p) {
   let X = 1
   const circles = []
-  const width = 400
-  const height = 400
+  const width = 280
+  const height = 320
 
   p.setup = () => {
     p.createCanvas(width, height)
@@ -78,6 +78,6 @@ function rand(from?: number, to?: number) {
   }
 }
 
-const Circlep5 = props => <P5Wrapper sketch={sketch} />
+const Circlep5 = props => <P5Wrapper style={{width: '100%'}} sketch={sketch} />
 
 export default Circlep5

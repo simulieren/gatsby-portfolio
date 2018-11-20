@@ -78,8 +78,8 @@ function NavList(props) {
   )
 }
 
-const NavLink = ({ to, children, p }) => (
-  <StyledLinkText fontFamily="Apercu" p={p} mr={[0, 3, 4, 5]} textAlign={['center', 'left']} >
+const NavLink = ({ to, children, p, fontSize }) => (
+  <StyledLinkText fontFamily="Apercu" p={p} mr={[0, 3, 4, 5]} textAlign={['center', 'left']} fontSize={fontSize}>
     <AniLink {...transitionSettings} to={to}>
       {children}
     </AniLink>
@@ -154,7 +154,7 @@ const MobileNavList = props => {
                 transform: `translateY(${props.x * 4}%) rotate3d(1, 1, 1,${props.x * 2}deg)`
               }}
             >
-              <NavLink to={link.to} p={3}>
+              <NavLink to={link.to} p={3} fontSize={[4, 5]}>
                 {link.text}
               </NavLink>
             </animated.div>
