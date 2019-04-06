@@ -1,20 +1,27 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import { Box, Text, Heading } from 'rebass'
-import { AniLink } from 'gatsby-plugin-transition-link'
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import { Box, Text, Heading } from 'rebass';
+import { AniLink } from 'gatsby-plugin-transition-link';
 
-import HeaderFader from '../Animations/HeaderSlider'
-import { SectionOverline, P, StyledLinkText } from '../Typography'
-import { Section } from '../Grid'
+import HeaderFader from '../Animations/HeaderSlider';
+import { SectionOverline, P, StyledLinkText } from '../Typography';
+import { Section } from '../Grid';
 
 class Footer extends Component {
   render() {
-    const { config } = this.props
-    const url = config.siteRss
+    const { config } = this.props;
+    const url = config.siteRss;
 
     return (
       <footer className="footer">
-        <Section flexDirection="column" alignItems="center" justifyContent="center" py={6} pb={6} bg="#00f">
+        <Section
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          py={6}
+          pb={6}
+          bg="#00f"
+        >
           <SectionOverline textAlign="center" mr={0} mb={4} color="#fff">
             Let's chat
           </SectionOverline>
@@ -33,7 +40,7 @@ class Footer extends Component {
                 'Morgen ist es zu spät.',
                 'Die Zukunft war früher auch besser.',
                 'Jeder Gedanke in uns ist bestrebt, Wirklichkeit zu werden.',
-                'Vergiss niemals das "Warum".'
+                'Vergiss niemals das "Warum".',
               ]}
             />
           </Heading>
@@ -48,7 +55,9 @@ class Footer extends Component {
               Marktstraße 8 <br />
               50968 Köln <br /> <br />
               <a href="mailto:hello@simonhalimonov.de">
-                <StyledLinkText inverted>hello@simonhalimonov.de</StyledLinkText>
+                <StyledLinkText inverted>
+                  hello@simonhalimonov.de
+                </StyledLinkText>
               </a>
             </Text>
           </Box>
@@ -78,8 +87,8 @@ class Footer extends Component {
           </Box>
         </Section>
       </footer>
-    )
+    );
   }
 }
 
-export default Footer
+export default Footer;

@@ -1,24 +1,24 @@
-import React, { useState, useContext } from 'react'
-import { AniLink } from 'gatsby-plugin-transition-link'
-import { Spring, Trail, animated } from 'react-spring'
-import styled from 'styled-components'
-import { Flex, Box, Text } from 'rebass'
+import React, { useState, useContext } from 'react';
+import { AniLink } from 'gatsby-plugin-transition-link';
+import { Spring, Trail, animated } from 'react-spring';
+import styled from 'styled-components';
+import { Flex, Box, Text } from 'rebass';
 
-import navLinks from '../../../data/NavigationLinks'
-import useWindowScrollPosition from '../../util/useWindowScrollPosition'
-import useWindowSize from '../../util/useWindowSize'
-import { StyledLinkText } from '../Typography'
+import navLinks from '../../../data/NavigationLinks';
+import useWindowScrollPosition from '../../util/useWindowScrollPosition';
+import useWindowSize from '../../util/useWindowSize';
+import { StyledLinkText } from '../Typography';
 
 const navContext = React.createContext({
   open: false,
-  scrolled: false
-})
+  scrolled: false,
+});
 
 const transitionSettings = {
   cover: true,
   bg: 'rebeccapurple',
-  direction: 'up'
-}
+  direction: 'up',
+};
 
 const HeaderContainer = styled.header`
   position: fixed;
@@ -28,34 +28,47 @@ const HeaderContainer = styled.header`
   &.scrolled {
     background: white;
   }
-`
+`;
 
 const Header = props => {
-  const { x, y } = useWindowScrollPosition()
-  const size = useWindowSize()
-  const scrolled = y > 20 ? true : false
+  const { x, y } = useWindowScrollPosition();
+  const size = useWindowSize();
+  const scrolled = y > 20;
 
   return (
     <HeaderContainer className={scrolled ? 'scrolled' : ''}>
-      <Spring from={{ opacity: 0 }} to={{ opacity: 1 }} config={{ duration: 500 }}>
+      <Spring
+        from={{ opacity: 0 }}
+        to={{ opacity: 1 }}
+        config={{ duration: 500 }}
+      >
         {props => (
-          <Flex style={props} fontSize={[2, 2, 2, 2]} px={[3, 5, 6, 6]} py={[3, 4, 4]}>
+          <Flex
+            style={props}
+            fontSize={[2, 2, 2, 2]}
+            px={[3, 5, 6, 6]}
+            py={[3, 4, 4]}
+          >
             <Logo />
-            {size.width > 640 ? <NavList scrolled={scrolled} /> : <MobileNavList scrolled={scrolled} />}
+            {size.width > 640 ? (
+              <NavList scrolled={scrolled} />
+            ) : (
+              <MobileNavList scrolled={scrolled} />
+            )}
           </Flex>
         )}
       </Spring>
     </HeaderContainer>
-  )
-}
+  );
+};
 
 const Logo = props => {
-  const context = useContext(navContext)
-  const [x, y] = useState(context.open)
+  const context = useContext(navContext);
+  const [x, y] = useState(context.open);
   const handleClick = () => {
-    context.open = false
-    y()
-  }
+    context.open = false;
+    y();
+  };
 
   return (
     <Box onClick={handleClick} width={[1, 1, 1, 1 / 4]} css={{ zIndex: 1000 }}>
@@ -63,8 +76,8 @@ const Logo = props => {
         <StyledLinkText fontFamily="Apercu">Simon Halimonov</StyledLinkText>
       </AniLink>
     </Box>
-  )
-}
+  );
+};
 
 function NavList(props) {
   return (
@@ -75,44 +88,58 @@ function NavList(props) {
         </NavLink>
       ))}
     </Flex>
-  )
+  );
 }
 
 const NavLink = ({ to, children, p, fontSize }) => (
-  <StyledLinkText fontFamily="Apercu" p={p} mr={[0, 3, 4, 5]} textAlign={['center', 'left']} fontSize={fontSize}>
+  <StyledLinkText
+    fontFamily="Apercu"
+    p={p}
+    mr={[0, 3, 4, 5]}
+    textAlign={['center', 'left']}
+    fontSize={fontSize}
+  >
     <AniLink {...transitionSettings} to={to}>
       {children}
     </AniLink>
   </StyledLinkText>
-)
+);
 
 const MobileNavList = props => {
-  const time = 200
-  const context = useContext(navContext)
-  const [x, y] = useState(context.open)
+  const time = 200;
+  const context = useContext(navContext);
+  const [x, y] = useState(context.open);
   const handleClick = () => {
-    context.open = !context.open
-    y()
-  }
+    context.open = !context.open;
+    y();
+  };
 
-  const pointerEvents = { pointerEvents: context.open ? 'all' : 'none' }
+  const pointerEvents = { pointerEvents: context.open ? 'all' : 'none' };
 
   return (
     <Flex width={[1 / 2]}>
       <Text
         p={3}
-        width={'100%'}
+        width="100%"
         fontFamily="Apercu"
         onClick={handleClick}
         textAlign="right"
-        css={{ position: 'fixed', top: 0, right: 0, width: '50%', zIndex: 1000 }}
+        css={{
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          width: '50%',
+          zIndex: 1000,
+        }}
       >
         MENU
       </Text>
 
       <Spring
         delay={context.open ? 0 : time * (navLinks.length / 1.5)}
-        config={{ duration: context.open ? time : (time * navLinks.length) / 4 }}
+        config={{
+          duration: context.open ? time : (time * navLinks.length) / 4,
+        }}
         from={{ transform: 'translateY(100%)' }}
         to={{ transform: context.open ? 'translateY(0%)' : 'translateY(100%)' }}
       >
@@ -126,18 +153,26 @@ const MobileNavList = props => {
               left: 0,
               bottom: 0,
               ...props,
-              ...pointerEvents
+              ...pointerEvents,
             }}
           />
         )}
       </Spring>
 
       <Flex
-        flexDirection={'column'}
-        justifyContent={'center'}
-        alignItems={'center'}
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
         py={6}
-        css={{ position: 'fixed', top: 0, right: 0, bottom: 0, left: 0, perspective: '200px', ...pointerEvents }}
+        css={{
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+          perspective: '200px',
+          ...pointerEvents,
+        }}
       >
         <Trail
           items={navLinks}
@@ -151,7 +186,8 @@ const MobileNavList = props => {
               onClick={handleClick}
               style={{
                 opacity: props.opacity,
-                transform: `translateY(${props.x * 4}%) rotate3d(1, 1, 1,${props.x * 2}deg)`
+                transform: `translateY(${props.x *
+                  4}%) rotate3d(1, 1, 1,${props.x * 2}deg)`,
               }}
             >
               <NavLink to={link.to} p={3} fontSize={[4, 5]}>
@@ -162,7 +198,7 @@ const MobileNavList = props => {
         </Trail>
       </Flex>
     </Flex>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

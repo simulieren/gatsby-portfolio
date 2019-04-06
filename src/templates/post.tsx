@@ -1,31 +1,31 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import Layout from '../layout'
-import UserInfo from '../components/UserInfo/UserInfo'
+import React from 'react';
+import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+import Layout from '../layout';
+import UserInfo from '../components/UserInfo/UserInfo';
 // import Disqus from "../components/Disqus/Disqus";
-import PostTags from '../components/PostTags/PostTags'
-import SocialLinks from '../components/SocialLinks/SocialLinks'
-import SEO from '../components/SEO/SEO'
-import config from '../../data/SiteConfig'
-import './b16-tomorrow-dark.css'
-import './post.css'
+import PostTags from '../components/PostTags/PostTags';
+import SocialLinks from '../components/SocialLinks/SocialLinks';
+import SEO from '../components/SEO/SEO';
+import config from '../../data/SiteConfig';
+import './b16-tomorrow-dark.css';
+import './post.css';
 
-import { Box, Text, Flex } from 'rebass'
-import { Caps, SectionOverline } from '../components/Typography'
-import { Section } from '../components/Grid'
-import Intro from '../components/Intro'
+import { Box, Text, Flex } from 'rebass';
+import { Caps, SectionOverline } from '../components/Typography';
+import { Section } from '../components/Grid';
+import Intro from '../components/Intro';
 
 export default class PostTemplate extends React.Component {
   render() {
-    const { slug } = this.props.pageContext
-    const postNode = this.props.data.markdownRemark
-    const post = postNode.frontmatter
+    const { slug } = this.props.pageContext;
+    const postNode = this.props.data.markdownRemark;
+    const post = postNode.frontmatter;
     if (!post.id) {
-      post.id = slug
+      post.id = slug;
     }
     if (!post.category_id) {
-      post.category_id = config.postDefaultCategoryID
+      post.category_id = config.postDefaultCategoryID;
     }
     return (
       <Layout>
@@ -35,24 +35,33 @@ export default class PostTemplate extends React.Component {
         <SEO postPath={slug} postNode={postNode} postSEO />
 
         <Box>
-          <Box p={4} mt={5} pt={4} css={{ position: 'absolute', zIndex: -1, width: '100vw' }}>
+          <Box
+            p={4}
+            mt={5}
+            pt={4}
+            css={{ position: 'absolute', zIndex: -1, width: '100vw' }}
+          >
             <Box
               css={{
                 width: '100%',
                 height: '100%',
                 overflowX: 'hidden',
                 background: post.covercolor ? post.covercolor : '#0000ff22',
-                minHeight: post.cover ? 'auto' : '80vh'
+                minHeight: post.cover ? 'auto' : '80vh',
               }}
             >
-              <img style={{ width: '100vw', minWidth: '100vw' }} src={post.cover} alt="" />
+              <img
+                style={{ width: '100vw', minWidth: '100vw' }}
+                src={post.cover}
+                alt=""
+              />
             </Box>
           </Box>
           <Intro
             bg={post.color}
             overline={
               <Flex>
-                <Caps as="span" fontWeight={'bold'} color="#00f">
+                <Caps as="span" fontWeight="bold" color="#00f">
                   {post.category}
                 </Caps>
                 <PostTags tags={post.tags} />
@@ -78,7 +87,7 @@ export default class PostTemplate extends React.Component {
         </Box>
         <div>{/* <Disqus postNode={postNode} /> */}</div>
       </Layout>
-    )
+    );
   }
 }
 
@@ -108,4 +117,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

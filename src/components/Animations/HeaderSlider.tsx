@@ -9,7 +9,6 @@ class HeaderFader extends React.Component {
 
   setFaderInterval = () => {
     this.faderInterval = setInterval(() => {
-      console.log(this.state.index);
       if (!this.state.timer) return;
       let i = this.state.index;
       i++;
@@ -42,7 +41,10 @@ class HeaderFader extends React.Component {
                 opacity: 0,
                 transform: "translateY(-100%) rotateX(60deg)"
               }}
-              enter={{ opacity: 1, transform: "translateY(0%) rotateX(0deg)" }}
+              enter={{
+                opacity: 1,
+                transform: "translateY(0%) rotateX(0deg)"
+              }}
               leave={{
                 opacity: 0,
                 transform: "translateY(100%) rotateX(-60deg)"
@@ -51,7 +53,11 @@ class HeaderFader extends React.Component {
               {index => props =>
                 index === i && (
                   <animated.div
-                    style={{ ...props, position: "absolute", width: "100%" }}
+                    style={{
+                      ...props,
+                      position: "absolute",
+                      width: "100%"
+                    }}
                     key={index}
                   >
                     {text}

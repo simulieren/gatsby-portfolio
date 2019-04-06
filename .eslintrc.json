@@ -1,6 +1,6 @@
 {
-  "extends": ["airbnb", "prettier"],
-  "plugins": ["react", "jsx-a11y", "import"],
+  "extends": ["import"],
+  "plugins": ["react", "jsx-a11y", "prettier"],
   "rules": {
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
@@ -19,10 +19,16 @@
       {
         "trailingComma": "es5",
         "singleQuote": true,
-        "printWidth": 120,
-        "tabWidth": 8
+        "tabWidth": 2
       }
-    ]
+    ],
+    "import/no-unresolved": ["enabled", "false"],
+    "import/namespace": ["enabled", "false"],
+    "import/named": ["enabled", "false"]
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
   },
   "settings": {
     "import/core-modules": []

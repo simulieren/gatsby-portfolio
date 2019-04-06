@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 class Page extends React.Component {
   render() {
@@ -9,8 +9,7 @@ class Page extends React.Component {
             404
           </h1>
           <h2 className="tc f1-l fw1">
-            Sorry, we can't find the page you are looking
-            for.
+            Sorry, we can't find the page you are looking for.
           </h2>
         </div>
         <p className="fw1 i tc mt4 mt5-l f4 f3-l">
@@ -67,7 +66,7 @@ class Page extends React.Component {
           </li>
         </ul>
       </section>
-    )
+    );
   }
 }
 
