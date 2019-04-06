@@ -40,3 +40,21 @@ export interface Frontmatter {
   date: string;
   link: null;
 }
+
+//
+
+interface MdxNode {
+  frontmatter: Frontmatter;
+  fields: Fields;
+  parent: Parent;
+}
+interface Frontmatter {
+  title: string;
+}
+interface Fields {
+  locale: string;
+}
+interface Parent {
+  __typename: string;
+  relativeDirectory: string;
+}

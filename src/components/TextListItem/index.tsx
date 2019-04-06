@@ -14,8 +14,6 @@ import { Post } from "../Post/Post";
 // }
 
 const TextListItem = (props: any) => {
-  console.log(props);
-
   const post = props.post ? props.post : undefined;
   const hasLink = props.link ? true : false;
   const url = () => {

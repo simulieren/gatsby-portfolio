@@ -15,12 +15,7 @@ const PostTags = props => {
       {tags &&
         tags.map(tag => (
           <Fragment key={tag}>
-            {" " + "·" + " "}
-            <StyledLinkText as="span">
-              <Link style={{ textDecoration: 'none' }} to={`/tags/${_.kebabCase(tag)}`}>
-                {tag}
-              </Link>
-            </StyledLinkText>
+            {" " + "·" + " " + tag}
           </Fragment>
         ))}
     </span>
