@@ -9,7 +9,11 @@ import { DotPattern } from "./DotPattern.js";
 
 export { DotPattern };
 
-export const Caps = (props: TextProps) => (
+interface ITextProps extends TextProps {
+  children: any;
+}
+
+export const Caps = (props: ITextProps) => (
   <Text
     as="span"
     {...props}
@@ -22,7 +26,7 @@ export const Caps = (props: TextProps) => (
   />
 );
 
-export const P = (props: TextProps) => (
+export const P = (props: ITextProps) => (
   <Text as="p" fontSize={[3]} fontFamily="Apercu" {...props} />
 );
 

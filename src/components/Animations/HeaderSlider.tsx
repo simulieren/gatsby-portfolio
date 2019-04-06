@@ -1,5 +1,5 @@
-import React from "react";
-import { Transition, animated } from "react-spring";
+import React from 'react';
+import { Transition, animated } from 'react-spring';
 
 interface HeaderFaderProps {
   items: string[];
@@ -44,15 +44,15 @@ class HeaderFader extends React.Component<HeaderFaderProps> {
               // config={{duration: this.props.duration}}
               from={{
                 opacity: 0,
-                transform: `translateY(-100%) rotateX(60deg)`
+                transform: `translateY(-100%) rotateX(60deg)`,
               }}
               enter={{
                 opacity: 1,
-                transform: `translateY(0%) rotateX(0deg)`
+                transform: `translateY(0%) rotateX(0deg)`,
               }}
               leave={{
                 opacity: 0,
-                transform: `translateY(100%) rotateX(-60deg)`
+                transform: `translateY(100%) rotateX(-60deg)`,
               }}
             >
               {index => props =>
@@ -61,7 +61,7 @@ class HeaderFader extends React.Component<HeaderFaderProps> {
                     style={{
                       ...props,
                       position: `absolute`,
-                      width: `100%`
+                      width: `100%`,
                     }}
                     key={index}
                   >

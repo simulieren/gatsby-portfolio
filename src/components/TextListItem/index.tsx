@@ -1,14 +1,14 @@
-import React from "react";
-import { Box, Text, Heading } from "rebass";
-import { Caps, StyledLinkHeading } from "../Typography";
+import React from 'react';
+import { Box, Text, Heading } from 'rebass';
+import { Caps, StyledLinkHeading } from '../Typography';
 // @ts-ignore
-import { AniLink } from "gatsby-plugin-transition-link";
-import "intersection-observer";
+import { AniLink } from 'gatsby-plugin-transition-link';
+import 'intersection-observer';
 // @ts-ignore
-import withIntersectionObserverProps from "@hocs/with-intersection-observer-props";
+import withIntersectionObserverProps from '@hocs/with-intersection-observer-props';
 
 // @ts-ignore
-import PostTags from "../PostTags/PostTags";
+import PostTags from '../PostTags/PostTags';
 
 const TextListItem = (props: any) => {
   const post = props.post ? props.post : undefined;
@@ -24,7 +24,7 @@ const TextListItem = (props: any) => {
       css={{
         transition: `all .5s ease`,
         opacity: props.isFullVisible ? 1 : 0,
-        willChange: `opacity`
+        willChange: `opacity`,
       }}
     >
       <Text as="div" fontSize={1} fontFamily="Apercu">
