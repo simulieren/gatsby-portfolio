@@ -1,10 +1,10 @@
-import React from "react";
-import { Box, Heading } from "rebass";
-import { Section } from "../Grid";
-import { SectionOverline } from "../Typography";
-import Intro from "../Intro";
-import TextListItem from "../TextListItem";
-import PostListing from "../PostListing/PostListing";
+import React from 'react';
+import { Box, Heading } from 'rebass';
+import { Section } from '../Grid';
+import { SectionOverline } from '../Typography';
+import Intro from '../Intro';
+import TextListItem from '../TextListItem';
+import PostListing from '../PostListing/PostListing';
 
 export const IntroSection = (props: any) => {
   return (

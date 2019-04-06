@@ -1,7 +1,7 @@
-import React from "react";
-import { Box, Heading } from "rebass";
-import { Section } from "../Grid";
-import { SectionOverline, P } from "../Typography";
+import React from 'react';
+import { Box, Heading } from 'rebass';
+import { Section } from '../Grid';
+import { SectionOverline, P } from '../Typography';
 
 export const MissionSection = (props: any) => {
   return (

@@ -1,29 +1,29 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { graphql } from "gatsby";
-import get from "lodash/get";
+import React from 'react';
+import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+import get from 'lodash/get';
 
-import Layout from "../layout";
-import SEO from "../components/SEO/SEO";
+import Layout from '../layout';
+import SEO from '../components/SEO/SEO';
 
-import SiteConfig from "../../data/SiteConfig";
+import SiteConfig from '../../data/SiteConfig';
 
-import { MissionSection } from "../components/sections/MissionSection";
-import { TeachingSection } from "../components/sections/TeachingSection";
-import { HireSection } from "../components/sections/HireSection";
-import { PostSection } from "../components/sections/PostSection";
-import { IntroSection } from "../components/sections/IntroSection";
-import { PostEdge } from "../components/Post/Post";
+import { MissionSection } from '../components/sections/MissionSection';
+import { TeachingSection } from '../components/sections/TeachingSection';
+import { HireSection } from '../components/sections/HireSection';
+import { PostSection } from '../components/sections/PostSection';
+import { IntroSection } from '../components/sections/IntroSection';
+import { PostEdge } from '../components/Post/Post';
 
 class Index extends React.Component {
   render() {
     const postEdges: PostEdge[] = get(
       this,
-      "props.data.allMarkdownRemark.edges"
+      `props.data.allMarkdownRemark.edges`
     );
-    const imageEdges = get(this, "props.data.allFile.edges");
+    const imageEdges = get(this, `props.data.allFile.edges`);
     const images = imageEdges.map((img: any) =>
-      get(img, "node.childImageSharp.fluid")
+      get(img, `node.childImageSharp.fluid`)
     );
 
     return (
@@ -39,9 +39,9 @@ class Index extends React.Component {
 
         <HireSection />
 
-        <PostSection type="blog" postEdges={postEdges} overline={"Blog"} />
+        <PostSection type="blog" postEdges={postEdges} overline={`Blog`} />
 
-        <PostSection type="note" postEdges={postEdges} overline={"Notes"} />
+        <PostSection type="note" postEdges={postEdges} overline={`Notes`} />
       </Layout>
     );
   }

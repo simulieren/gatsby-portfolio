@@ -1,6 +1,6 @@
-import React from "react";
-import TextListItem from "../TextListItem";
-import { PostEdge, Post } from "../Post/Post";
+import React from 'react';
+import TextListItem from '../TextListItem';
+import { PostEdge, Post } from '../Post/Post';
 
 interface PostListingProps {
   type: string;
@@ -23,7 +23,7 @@ class PostListing extends React.Component<PostListingProps> {
         link: postEdge.node.frontmatter.link,
         date: postEdge.node.fields.date.split(`T`)[0].split(`-`),
         excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
+        timeToRead: postEdge.node.timeToRead,
       });
     });
     return postList;

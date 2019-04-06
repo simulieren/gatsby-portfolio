@@ -1,9 +1,9 @@
-import React from "react";
-import { Box, Heading } from "rebass";
-import Img from "gatsby-image";
+import React from 'react';
+import { Box, Heading } from 'rebass';
+import Img from 'gatsby-image';
 
-import { Section } from "../Grid";
-import { SectionOverline, P, StyledButton } from "../Typography";
+import { Section } from '../Grid';
+import { SectionOverline, P, StyledButton } from '../Typography';
 
 export const TeachingSection = (props: any) => {
   return (
@@ -44,7 +44,7 @@ export const TeachingSection = (props: any) => {
           position: `absolute`,
           right: 0,
           opacity: `0.75`,
-          mixBlendMode: `multiply`
+          mixBlendMode: `multiply`,
         }}
         fluid={props.img}
       />

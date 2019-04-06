@@ -1,9 +1,9 @@
-import React from "react";
-import { Box } from "rebass";
+import React from 'react';
+import { Box } from 'rebass';
 
-import { Section } from "../Grid";
-import { SectionOverline } from "../Typography";
-import PostListing from "../PostListing/PostListing";
+import { Section } from '../Grid';
+import { SectionOverline } from '../Typography';
+import PostListing from '../PostListing/PostListing';
 
 export const PostSection = (props: any) => {
   return (

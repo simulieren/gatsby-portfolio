@@ -1,8 +1,8 @@
-import React from "react";
-import { Box, Heading, Text } from "rebass";
+import React from 'react';
+import { Box, Heading, Text } from 'rebass';
 
-import { Section } from "../Grid";
-import { SectionOverline } from "../Typography";
+import { Section } from '../Grid';
+import { SectionOverline } from '../Typography';
 
 export const HireSection = (props: any) => {
   return (
