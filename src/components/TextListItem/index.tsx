@@ -1,16 +1,21 @@
-import React from 'react';
-import { Box, Text, Heading } from 'rebass';
-import { Caps, StyledLinkHeading } from '../Typography';
+import React from "react";
+import { Box, Text, Heading } from "rebass";
+import { Caps, StyledLinkHeading } from "../Typography";
 // @ts-ignore
-import { AniLink } from 'gatsby-plugin-transition-link';
-import 'intersection-observer';
-// @ts-ignore
-import withIntersectionObserverProps from '@hocs/with-intersection-observer-props';
+import { AniLink } from "gatsby-plugin-transition-link";
 
 // @ts-ignore
-import PostTags from '../PostTags/PostTags';
+import PostTags from "../PostTags/PostTags";
+import { Post } from "../Post/Post";
+
+// interface TextListItem extends Post {
+
+//   link: string
+// }
 
 const TextListItem = (props: any) => {
+  console.log(props);
+
   const post = props.post ? props.post : undefined;
   const hasLink = props.link ? true : false;
   const url = () => {
@@ -19,14 +24,7 @@ const TextListItem = (props: any) => {
   };
 
   return (
-    <Box
-      ref={props.onRef}
-      css={{
-        transition: `all .5s ease`,
-        opacity: props.isFullVisible ? 1 : 0,
-        willChange: `opacity`,
-      }}
-    >
+    <Box>
       <Text as="div" fontSize={1} fontFamily="Apercu">
         <Caps fontWeight={`bold`}>{props.category}</Caps>
         {` `}
@@ -60,6 +58,4 @@ const TextListItem = (props: any) => {
   );
 };
 
-export default withIntersectionObserverProps({ isFullVisible: 1.0 })(
-  TextListItem
-);
+export default TextListItem;
