@@ -20,7 +20,7 @@ const useWindowSize = (options = {}) => {
 
   React.useEffect(() => {
     if (events.size === 0) {
-      window.addEventListener('resize', onResize, true);
+      window.addEventListener(`resize`, onResize, true);
     }
 
     events.add(handle);
@@ -29,7 +29,7 @@ const useWindowSize = (options = {}) => {
       events.delete(handle);
 
       if (events.size === 0) {
-        window.removeEventListener('resize', onResize, true);
+        window.removeEventListener(`resize`, onResize, true);
       }
     };
   }, []);

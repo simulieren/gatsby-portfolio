@@ -39,19 +39,19 @@ export default class PostTemplate extends React.Component {
             p={4}
             mt={5}
             pt={4}
-            css={{ position: 'absolute', zIndex: -1, width: '100vw' }}
+            css={{ position: `absolute`, zIndex: -1, width: `100vw` }}
           >
             <Box
               css={{
-                width: '100%',
-                height: '100%',
-                overflowX: 'hidden',
-                background: post.covercolor ? post.covercolor : '#0000ff22',
-                minHeight: post.cover ? 'auto' : '80vh',
+                width: `100%`,
+                height: `100%`,
+                overflowX: `hidden`,
+                background: post.covercolor ? post.covercolor : `#0000ff22`,
+                minHeight: post.cover ? `auto` : `80vh`,
               }}
             >
               <img
-                style={{ width: '100vw', minWidth: '100vw' }}
+                style={{ width: `100vw`, minWidth: `100vw` }}
                 src={post.cover}
                 alt=""
               />

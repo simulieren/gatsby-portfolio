@@ -10,7 +10,7 @@ class About extends Component {
       <div>
         <h1>Edit About component or pages/about.jsx to include your information.</h1>
 
-        <AniLink>
+        <AniLink to="/">
           <StyledButton>Mehr erfahren</StyledButton>
         </AniLink>
 

@@ -1,64 +1,61 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Text, Heading } from 'rebass';
-import './fonts/index.css';
-import 'typeface-spectral';
+import React from "react";
+import styled from "styled-components";
+import { Text, Heading, TextProps } from "rebass";
+import "./fonts/index.css";
+import "typeface-spectral";
 
-import { DotPattern } from './DotPattern.js';
+//@ts-ignore
+import { DotPattern } from "./DotPattern.js";
 
 export { DotPattern };
 
-export const Caps = props => (
+export const Caps = (props: TextProps) => (
   <Text
     as="span"
     {...props}
     fontFamily="Apercu"
     css={{
-      fontSize: '12px',
-      textTransform: 'uppercase',
-      letterSpacing: '0.2em',
+      fontSize: `12px`,
+      textTransform: `uppercase`,
+      letterSpacing: `0.2em`
     }}
   />
 );
 
-export const P = props => (
-  <Text as="p" fontSize={[3]} fontFamily="Apercu" {...props}>
-    {props.children}
-  </Text>
+export const P = (props: TextProps) => (
+  <Text as="p" fontSize={[3]} fontFamily="Apercu" {...props} />
 );
 
-export const SectionOverline = props => (
+export const SectionOverline = (props: any) => (
   <Caps
     as="h2"
     fontSize={2}
-    textAlign={['left', 'left', 'left', 'right']}
+    textAlign={[`left`, `left`, `left`, `right`]}
     mr={4}
-    color={props.color || 'rgba(0,0,255,0.5)'}
+    color={props.color || `rgba(0,0,255,0.5)`}
     {...props}
-  >
-    {props.children}
-  </Caps>
+  />
 );
 
-export const StyledLinkText = styled(Text)`
+export const StyledLinkText = styled(Text)<{ inverted?: boolean }>`
   position: relative;
   transition: all 0.2s ease;
   display: inline-block;
 
   &:hover {
-    color: ${props => (props.inverted ? '#fff' : '#00f')};
+    color: ${props => (props.inverted ? `#fff` : `#00f`)};
     transform: translateY(-4px);
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
     right: 0;
-    background: ${props => (props.inverted ? '#fff' : '#00f')};
+    background: ${props => (props.inverted ? `#fff` : `#00f`)};
     transform: scaleX(0) translateY(0px);
     transition: transform 0.2s ease;
     will-change: transform;
@@ -88,7 +85,7 @@ const RightArrowSVG = () => (
     x="0px"
     y="0px"
     viewBox="0 0 14 10"
-    enable-background="new 0 0 14 10"
+    enableBackground="new 0 0 14 10"
     xmlSpace="preserve"
   >
     <g>
@@ -102,7 +99,7 @@ const RightArrowSVG = () => (
 
 const Button: React.ComponentType<{ children?: React.ReactNode }> = props => {
   return (
-    <a className="button no-arrow-effect do-hover" {...props}>
+    <div className="button no-arrow-effect do-hover" {...props}>
       {props.children}
       <span className="arrow">
         <RightArrowSVG />
@@ -115,19 +112,22 @@ const Button: React.ComponentType<{ children?: React.ReactNode }> = props => {
           </span>
         </span>
       </span>
-    </a>
+    </div>
   );
 };
-export const StyledButton = styled(Button)`
-  font-family: 'Apercu', sans-serif;
-  color: ${props => (props.inverted ? '#fff' : '#00f')};
-  border: 0.125rem solid ${props => (props.inverted ? '#fff' : '#00f')};
+export const StyledButton = styled(Button)<{
+  inverted?: boolean;
+  size?: string;
+}>`
+  font-family: "Apercu", sans-serif;
+  color: ${props => (props.inverted ? `#fff` : `#00f`)};
+  border: 0.125rem solid ${props => (props.inverted ? `#fff` : `#00f`)};
   height: 3.125rem;
   text-align: center;
   font-size: 0.875rem;
   line-height: 2.875rem;
   display: block;
-  width: ${props => (props.size ? props.size : '16.25rem')};
+  width: ${props => (props.size ? props.size : `16.25rem`)};
   white-space: no-wrap;
   position: relative;
   overflow: hidden;
@@ -142,11 +142,11 @@ export const StyledButton = styled(Button)`
     left: 0;
     position: absolute;
     height: 110%;
-    border-top: solid 0.25rem ${props => (props.inverted ? '#fff' : '#00f')};
-    border-bottom: solid 0.25rem ${props => (props.inverted ? '#fff' : '#00f')};
+    border-top: solid 0.25rem ${props => (props.inverted ? `#fff` : `#00f`)};
+    border-bottom: solid 0.25rem ${props => (props.inverted ? `#fff` : `#00f`)};
     top: -0.25rem;
     bottom: -0.25rem;
-    background-color: ${props => (props.inverted ? '#fff' : '#00f')};
+    background-color: ${props => (props.inverted ? `#fff` : `#00f`)};
     overflow: hidden;
     width: 0;
     transition: width 0.4s;
@@ -156,16 +156,16 @@ export const StyledButton = styled(Button)`
       left: 0;
       height: 100%;
       position: absolute;
-      color: ${props => (props.inverted ? '#00f' : '#fff')};
+      color: ${props => (props.inverted ? `#00f` : `#fff`)};
       text-align: center;
       font-size: 0.875rem;
       line-height: 2.875rem;
       display: block;
-      width: ${props => (props.size ? props.size : '16.25rem')};
+      width: ${props => (props.size ? props.size : `16.25rem`)};
       white-space: no-wrap;
 
       .arrow * {
-        fill: ${props => (props.inverted ? '#00f' : '#fff')};
+        fill: ${props => (props.inverted ? `#00f` : `#fff`)};
       }
     }
   }
@@ -182,7 +182,7 @@ export const StyledButton = styled(Button)`
     transition: transform 0.4s;
 
     * {
-      fill: ${props => (props.inverted ? '#fff' : '#00f')};
+      fill: ${props => (props.inverted ? `#fff` : `#00f`)};
     }
   }
 `;

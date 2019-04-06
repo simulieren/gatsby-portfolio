@@ -23,7 +23,7 @@ export default class MainLayout extends React.Component {
         </Helmet>
 
         {children}
-        <TransitionPortal style={{ width: '100%' }}>
+        <TransitionPortal style={{ width: `100%` }}>
           <Header />
         </TransitionPortal>
 

@@ -11,11 +11,11 @@ const Intro = props => (
     px={[3, 4, 5]}
     pt={[6, 6, 7]}
     css={{
-      minHeight: '100vh',
+      minHeight: `100vh`,
       background: props.bg,
-      backgroundSize: 'cover',
-      backgroundPosition: 'top center',
-      position: 'relative',
+      backgroundSize: `cover`,
+      backgroundPosition: `top center`,
+      position: `relative`,
       zIndex: 1,
     }}
   >

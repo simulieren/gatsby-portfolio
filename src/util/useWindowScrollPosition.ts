@@ -17,10 +17,10 @@ const useWindowScrollPosition = (options = {}) => {
   }, throttleMs);
 
   React.useEffect(() => {
-    window.addEventListener('scroll', handle);
+    window.addEventListener(`scroll`, handle);
 
     return () => {
-      window.removeEventListener('scroll', handle);
+      window.removeEventListener(`scroll`, handle);
     };
   }, []);
 

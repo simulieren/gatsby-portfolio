@@ -49,7 +49,7 @@ class Star extends React.Component {
     const size = 3 - -this.z / 2;
     this.props.ctx.globalAlpha =
       (this.props.Z_RANGE + this.z) / (this.props.Z_RANGE * 2);
-    this.props.ctx.fillStyle = '#00f';
+    this.props.ctx.fillStyle = `#00f`;
     this.props.ctx.fillRect(this.xPos, this.yPos, size, size);
     this.props.ctx.globalAlpha = 1;
   }
@@ -94,7 +94,7 @@ class BlackHole extends React.Component {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
     this.ctx.beginPath();
-    this.ctx.fillStyle = '#00f';
+    this.ctx.fillStyle = `#00f`;
     this.stars.forEach(star => {
       star.getPosition();
       star.draw();
@@ -114,7 +114,7 @@ class BlackHole extends React.Component {
   componentDidMount() {
     this.canvas = this.refs.canvas;
 
-    this.ctx = this.canvas.getContext('2d');
+    this.ctx = this.canvas.getContext(`2d`);
     this.setSizes();
 
     for (let i = 0; i < this.STARS_COUNT; i++)
@@ -130,21 +130,21 @@ class BlackHole extends React.Component {
         },
       });
 
-    window.addEventListener('resize', this.resize);
+    window.addEventListener(`resize`, this.resize);
     this.animate();
   }
 
   componentWillUnmount() {
     cancelAnimationFrame(this.canvasAnimationFrame);
-    window.removeEventListener('resize', this.resize);
+    window.removeEventListener(`resize`, this.resize);
   }
 
   render() {
     return (
       <div
-        style={{ minHeight: '20rem', minWidth: '100%', ...this.props.style }}
+        style={{ minHeight: `20rem`, minWidth: `100%`, ...this.props.style }}
       >
-        <canvas style={{ width: '100%', height: '100%' }} ref="canvas" />
+        <canvas style={{ width: `100%`, height: `100%` }} ref="canvas" />
       </div>
     );
   }

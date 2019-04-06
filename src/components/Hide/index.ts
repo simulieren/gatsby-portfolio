@@ -10,7 +10,7 @@
 import styled from 'styled-components';
 // import { theme } from 'rebass' Not available in 3.0
 
-const breakpoints = ['40em', '52em', '64em'];
+const breakpoints = [`40em`, `52em`, `64em`];
 const lastIndex = breakpoints.length - 1;
 
 const getMediaBreakpoint = (
@@ -39,7 +39,7 @@ const hidden = key => props => {
   return breakpoints.includes(key)
     ? {
         [mediaBreakpoints[key]]: {
-          display: 'none',
+          display: `none`,
         },
       }
     : null;

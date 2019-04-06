@@ -23,13 +23,13 @@ class DotCanvas extends React.Component {
   CIRCLE_RADIUS: number = 23;
   WAVES: number = 35;
   SPEED: number = 1.5;
-  DOT_COLOR = '#0000ff';
+  DOT_COLOR = `#0000ff`;
 
   HomepageCanvasInit = () => {
     this.createOffScreenCanvas();
 
     this.cv = this.refs.cv;
-    this.ctx = this.cv.getContext('2d');
+    this.ctx = this.cv.getContext(`2d`);
 
     this.angleDeg = 0;
     this.angleRad = 0;
@@ -41,11 +41,11 @@ class DotCanvas extends React.Component {
   };
 
   createOffScreenCanvas = () => {
-    this.osCv = document.createElement('canvas');
-    this.osCtx = this.osCv.getContext('2d');
+    this.osCv = document.createElement(`canvas`);
+    this.osCtx = this.osCv.getContext(`2d`);
 
-    this.osDotCv = document.createElement('canvas');
-    this.osDotCtx = this.osDotCv.getContext('2d');
+    this.osDotCv = document.createElement(`canvas`);
+    this.osDotCtx = this.osDotCv.getContext(`2d`);
 
     this.drawDot();
   };
@@ -169,7 +169,7 @@ class DotCanvas extends React.Component {
   render() {
     return (
       <div
-        style={{ ...this.props.style, pointerEvents: 'none' }}
+        style={{ ...this.props.style, pointerEvents: `none` }}
         ref="mainContainer"
       >
         <canvas ref="cv" id="canvas" />

@@ -41,7 +41,7 @@ export const SpringFadeIn = props => (
 export const SpringFadeInUp = props => (
   <Spring delay={props.delay} {...fadeInUp(50)}>
     {styles => (
-      <animated.div style={{ ...styles, transformOrigin: 'center' }}>
+      <animated.div style={{ ...styles, transformOrigin: `center` }}>
         {props.children}
       </animated.div>
     )}
@@ -51,7 +51,7 @@ export const SpringFadeInUp = props => (
 export const SpringFadeInUpSpin = props => (
   <Spring delay={props.delay} config={props.config} {...fadeInUpSpin(200)}>
     {styles => (
-      <animated.div style={{ ...styles, transformOrigin: 'center' }}>
+      <animated.div style={{ ...styles, transformOrigin: `center` }}>
         {props.children}
       </animated.div>
     )}

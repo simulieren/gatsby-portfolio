@@ -22,6 +22,7 @@
         "tabWidth": 2
       }
     ],
+    "quotes": ["error", "backtick"],
     "import/no-unresolved": ["enabled", "false"],
     "import/namespace": ["enabled", "false"],
     "import/named": ["enabled", "false"]

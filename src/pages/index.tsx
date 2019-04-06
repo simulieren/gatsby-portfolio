@@ -20,10 +20,6 @@ import {
 } from '../components/Typography';
 import { Section } from '../components/Grid';
 import Card from '../components/Card';
-import DotCanvas from '../components/DotCanvas/index';
-import BlackHolep5 from '../components/Canvas/BlackHolep5';
-import BlackHole from '../components/Canvas/BlackHole';
-import Circlep5 from '../components/Canvas/Circlep5';
 
 class Index extends React.Component {
   render() {
@@ -117,10 +113,6 @@ class Index extends React.Component {
           </Section>
         </Intro>
 
-        <DotCanvas
-          style={{ position: 'fixed', top: 0, zIndex: -1, height: '100vh' }}
-        />
-
         <Section py={[3, 4, 5]} pt={6}>
           <Box width={[1, 1 / 5]}>
             <SectionOverline>Mission</SectionOverline>
@@ -142,9 +134,7 @@ class Index extends React.Component {
               suscipit odit nihil distinctio.
             </P>
           </Box>
-          <Box width={2 / 5}>
-            <Circlep5 />
-          </Box>
+          <Box width={2 / 5} />
         </Section>
 
         <Section
@@ -152,7 +142,7 @@ class Index extends React.Component {
           flexDirection="column"
           py={[4, 5]}
           pt={6}
-          css={{ overflow: 'hidden', minHeight: '80vh', position: 'relative' }}
+          css={{ overflow: `hidden`, minHeight: `80vh`, position: `relative` }}
           bg="hsla(240, 100%, 70%, 1)"
         >
           <Box color="#fff" width={[1, 1 / 2]} css={{ zIndex: 1 }}>
@@ -181,12 +171,12 @@ class Index extends React.Component {
 
           <Img
             style={{
-              minHeight: '100%',
-              width: '100%',
-              position: 'absolute',
+              minHeight: `100%`,
+              width: `100%`,
+              position: `absolute`,
               right: 0,
-              opacity: '0.75',
-              mixBlendMode: 'multiply',
+              opacity: `0.75`,
+              mixBlendMode: `multiply`,
             }}
             fluid={images[2]}
           />
@@ -195,7 +185,7 @@ class Index extends React.Component {
         <Section
           py={[4, 5]}
           bg="rgba(255,255,255,0.9)"
-          css={{ position: 'relative' }}
+          css={{ position: `relative` }}
         >
           <Box width={[1, 1 / 5]}>
             <SectionOverline>Hire me</SectionOverline>
@@ -226,10 +216,11 @@ class Index extends React.Component {
                 fontWeight="900"
                 lineHeight={1}
                 color="#00f"
-                css={{ fontStyle: 'italic', float: 'left' }}
+                css={{ fontStyle: `italic`, float: `left` }}
               >
                 1.
-              </Text>{' '}
+              </Text>
+              {` `}
               Ich plane, konzipiere, gestalte und realisiere ihr digitales
               Vorhaben.
             </Heading>
@@ -249,10 +240,11 @@ class Index extends React.Component {
                 fontWeight="900"
                 lineHeight={1}
                 color="#00f"
-                css={{ fontStyle: 'italic', float: 'left' }}
+                css={{ fontStyle: `italic`, float: `left` }}
               >
                 2.
-              </Text>{' '}
+              </Text>
+              {` `}
               Ich unterstütze ihr Team mit meinen Kompetenzen bei ihrem Projekt.
             </Heading>
             <Heading
@@ -271,10 +263,11 @@ class Index extends React.Component {
                 fontWeight="900"
                 lineHeight={1}
                 color="#00f"
-                css={{ fontStyle: 'italic', float: 'left' }}
+                css={{ fontStyle: `italic`, float: `left` }}
               >
                 3.
-              </Text>{' '}
+              </Text>
+              {` `}
               Ich gebe ihrem Team einen Workshop um euch auf das nächste Level
               zu bringen.
             </Heading>
@@ -294,10 +287,11 @@ class Index extends React.Component {
                 fontWeight="900"
                 lineHeight={1}
                 color="#00f"
-                css={{ fontStyle: 'italic', float: 'left' }}
+                css={{ fontStyle: `italic`, float: `left` }}
               >
                 4.
-              </Text>{' '}
+              </Text>
+              {` `}
               Ich spreche bei ihrem Event über aktuelle Themem im Bereich Design
               und Development.
             </Heading>

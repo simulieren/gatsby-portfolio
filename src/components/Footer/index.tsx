@@ -31,16 +31,16 @@ class Footer extends Component {
             fontFamily="Spectral"
             fontSize={[4, 5]}
             color="#fff"
-            css={{ position: 'relative' }}
+            css={{ position: `relative` }}
           >
             <HeaderFader
               time={4000}
               items={[
-                'Warte nicht länger, lass uns einfach reden.',
-                'Morgen ist es zu spät.',
-                'Die Zukunft war früher auch besser.',
-                'Jeder Gedanke in uns ist bestrebt, Wirklichkeit zu werden.',
-                'Vergiss niemals das "Warum".',
+                `Warte nicht länger, lass uns einfach reden.`,
+                `Morgen ist es zu spät.`,
+                `Die Zukunft war früher auch besser.`,
+                `Jeder Gedanke in uns ist bestrebt, Wirklichkeit zu werden.`,
+                `Vergiss niemals das "Warum".`,
               ]}
             />
           </Heading>
@@ -78,7 +78,8 @@ class Footer extends Component {
             <Text fontFamily="Apercu" fontSize={2} color="#fff">
               <a href="mailto:hello@simonhalimonov.de">
                 <StyledLinkText inverted>Impressum und AGB</StyledLinkText>
-              </a>{' '}
+              </a>
+              {` `}
               <br />
               <a href="mailto:hello@simonhalimonov.de">
                 <StyledLinkText inverted>Datenschutz</StyledLinkText>

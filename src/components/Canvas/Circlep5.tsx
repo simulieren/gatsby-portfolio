@@ -79,7 +79,7 @@ function rand(from?: number, to?: number) {
 }
 
 const Circlep5 = props => (
-  <P5Wrapper style={{ width: '100%' }} sketch={sketch} />
+  <P5Wrapper style={{ width: `100%` }} sketch={sketch} />
 );
 
 export default Circlep5;

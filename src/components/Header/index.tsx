@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+//@ts-ignore
 import { AniLink } from 'gatsby-plugin-transition-link';
 import { Spring, Trail, animated } from 'react-spring';
 import styled from 'styled-components';
@@ -16,8 +17,8 @@ const navContext = React.createContext({
 
 const transitionSettings = {
   cover: true,
-  bg: 'rebeccapurple',
-  direction: 'up',
+  bg: `rebeccapurple`,
+  direction: `up`,
 };
 
 const HeaderContainer = styled.header`
@@ -30,13 +31,13 @@ const HeaderContainer = styled.header`
   }
 `;
 
-const Header = props => {
+const Header = (props: any) => {
   const { x, y } = useWindowScrollPosition();
   const size = useWindowSize();
   const scrolled = y > 20;
 
   return (
-    <HeaderContainer className={scrolled ? 'scrolled' : ''}>
+    <HeaderContainer className={scrolled ? `scrolled` : ``}>
       <Spring
         from={{ opacity: 0 }}
         to={{ opacity: 1 }}
@@ -46,8 +47,8 @@ const Header = props => {
           <Flex
             style={props}
             fontSize={[2, 2, 2, 2]}
-            px={[3, 5, 6, 6]}
-            py={[3, 4, 4]}
+            px={[3, 5, 6, 6] as any}
+            py={[3, 4, 4] as any}
           >
             <Logo />
             {size.width > 640 ? (
@@ -62,7 +63,7 @@ const Header = props => {
   );
 };
 
-const Logo = props => {
+const Logo = (props: any) => {
   const context = useContext(navContext);
   const [x, y] = useState(context.open);
   const handleClick = () => {
@@ -79,9 +80,9 @@ const Logo = props => {
   );
 };
 
-function NavList(props) {
+function NavList(props: any) {
   return (
-    <Flex width={['100%']}>
+    <Flex width={[`100%`] as any}>
       {navLinks.map((link, i) => (
         <NavLink key={i} to={link.to}>
           {link.text}
@@ -91,12 +92,12 @@ function NavList(props) {
   );
 }
 
-const NavLink = ({ to, children, p, fontSize }) => (
+const NavLink = ({ to, children, p, fontSize }: any) => (
   <StyledLinkText
     fontFamily="Apercu"
     p={p}
-    mr={[0, 3, 4, 5]}
-    textAlign={['center', 'left']}
+    mr={[0, 3, 4, 5] as any}
+    textAlign={[`center`, `left`] as any}
     fontSize={fontSize}
   >
     <AniLink {...transitionSettings} to={to}>
@@ -105,7 +106,7 @@ const NavLink = ({ to, children, p, fontSize }) => (
   </StyledLinkText>
 );
 
-const MobileNavList = props => {
+const MobileNavList = (props: any) => {
   const time = 200;
   const context = useContext(navContext);
   const [x, y] = useState(context.open);
@@ -114,7 +115,7 @@ const MobileNavList = props => {
     y();
   };
 
-  const pointerEvents = { pointerEvents: context.open ? 'all' : 'none' };
+  const pointerEvents = { pointerEvents: context.open ? `all` : `none` };
 
   return (
     <Flex width={[1 / 2]}>
@@ -125,10 +126,10 @@ const MobileNavList = props => {
         onClick={handleClick}
         textAlign="right"
         css={{
-          position: 'fixed',
+          position: `fixed`,
           top: 0,
           right: 0,
-          width: '50%',
+          width: `50%`,
           zIndex: 1000,
         }}
       >
@@ -140,14 +141,14 @@ const MobileNavList = props => {
         config={{
           duration: context.open ? time : (time * navLinks.length) / 4,
         }}
-        from={{ transform: 'translateY(100%)' }}
-        to={{ transform: context.open ? 'translateY(0%)' : 'translateY(100%)' }}
+        from={{ transform: `translateY(100%)` }}
+        to={{ transform: context.open ? `translateY(0%)` : `translateY(100%)` }}
       >
         {props => (
           <animated.div
             style={{
-              background: 'white',
-              position: 'fixed',
+              background: `white`,
+              position: `fixed`,
               top: 0,
               right: 0,
               left: 0,
@@ -165,12 +166,12 @@ const MobileNavList = props => {
         alignItems="center"
         py={6}
         css={{
-          position: 'fixed',
+          position: `fixed`,
           top: 0,
           right: 0,
           bottom: 0,
           left: 0,
-          perspective: '200px',
+          perspective: `200px`,
           ...pointerEvents,
         }}
       >
