@@ -1,3 +1,3 @@
 import ProviderWrapper from './wrapPageElement';
 
-export const wrapRootElement = ProviderWrapper;
+// export const wrapRootElement = ProviderWrapper;

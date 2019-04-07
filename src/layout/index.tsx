@@ -11,6 +11,9 @@ import config from "../../data/SiteConfig";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+import SEO from "../components/SEO/SEO";
+
+import SiteConfig from "../../data/SiteConfig";
 import "../i18next/i18n";
 
 setConfig({ pureSFC: true });
@@ -19,9 +22,13 @@ const MainLayout = (props: any) => {
   const { children } = props;
   return (
     <div>
-      {/* <Helmet>
-          <meta name="description" content={config.siteDescription} />
-        </Helmet> */}
+      <Helmet>
+        <meta name="description" content={config.siteDescription} />
+      </Helmet>
+
+      <Helmet title={SiteConfig.siteTitle} />
+
+      <SEO />
 
       {children}
       <TransitionPortal style={{ width: `100%` }}>

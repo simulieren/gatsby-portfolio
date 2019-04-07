@@ -110,7 +110,7 @@ function NavList(props: any) {
     <Flex width={[`100%`] as any}>
       {navLinks.map((link, i) => (
         <NavLink key={i} to={link.to}>
-          {/* {t("nav." + link.text)} */} TEST
+          {t("nav." + link.text)}
         </NavLink>
       ))}
       <SwitchLanguage />

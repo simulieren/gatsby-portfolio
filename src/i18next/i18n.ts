@@ -28,7 +28,7 @@ i18n
     // keySeparator: false,
 
     // do not load a fallback
-    fallbackLng: "de",
+    fallbackLng: false,
 
     interpolation: {
       escapeValue: false

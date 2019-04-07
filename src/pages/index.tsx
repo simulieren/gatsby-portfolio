@@ -2,12 +2,10 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import get from "lodash/get";
+import debounce from "lodash/debounce";
 import { useTranslation } from "react-i18next";
 
 import Layout from "../layout";
-import SEO from "../components/SEO/SEO";
-
-import SiteConfig from "../../data/SiteConfig";
 
 import { MissionSection } from "../components/sections/MissionSection";
 import { TeachingSection } from "../components/sections/TeachingSection";
@@ -15,10 +13,17 @@ import { HireSection } from "../components/sections/HireSection";
 import { PostSection } from "../components/sections/PostSection";
 import { IntroSection } from "../components/sections/IntroSection";
 
+const changeLanguage = debounce(
+  (locale, i18n) => i18n.changeLanguage(locale),
+  1000,
+  { leading: true, trailing: false }
+);
+
 const Index = (props: any) => {
   const { t, i18n } = useTranslation();
   const locale: string | undefined = get(props, "pageContext.locale");
-  if (locale && locale !== i18n.language) i18n.changeLanguage(locale);
+
+  if (locale && locale !== i18n.language) changeLanguage(locale, i18n);
 
   const allMdxEdges = get(props, "data.allMdx.edges");
 
@@ -29,10 +34,6 @@ const Index = (props: any) => {
 
   return (
     <Layout>
-      {/* <Helmet title={SiteConfig.siteTitle} /> */}
-
-      <SEO />
-
       <IntroSection mdxEdges={allMdxEdges} />
 
       <MissionSection />
