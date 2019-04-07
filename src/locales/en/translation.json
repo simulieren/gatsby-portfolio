@@ -7,30 +7,39 @@
     "notes": "Notes"
   },
   "homepage": {
-    "overline": "Digitales Produktdesign & Frontend-Entwicklung",
-    "headline": "Ich gestalte und entwickle digitale Produkte."
+    "overline": "Digital product design & frontend development",
+    "headline": "I design and develop digital products."
   },
   "mission": {
     "overline": "Mission",
-    "headline": "Digitaler Fokus",
+    "headline": "Digital focus",
     "paragraph": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque ratione veniam nobis, expedita impedit earum, minima, ex quo amet quis assumenda nam. Nesciunt officiis sit aperiam suscipit odit nihil distinctio."
   },
-  "references": "Referenzen",
-  "projects": "Projekte",
-  "article": "Artikel",
+  "teaching": {
+    "overline": "Teaching",
+    "headline": "I teach at the Digital Career Institute.",
+    "paragraph": "Since December 2018 I have taught over 100 participants about webdevelopment. I worked together with other teachers on the curriculum and taught the students how to program. \n From HTML, CSS and JavaScript to React.js, Node.js and MongoDB I trained the students to become Fullstack JavaScript Developers."
+  },
+  "hire": {
+    "overline": "Hire me",
+    "headline": "How I can help you",
+    "step1": "I plan, conceive, design and realize your digital project.",
+    "step2": "I support your team with my competences in your project.",
+    "step3": "I'm giving her team a workshop to take you to the next level.",
+    "step4": "Ich spreche bei ihrem Event über aktuelle Themem im Bereich Design und Development."
+  },
+  "footer": {
+    "letsChat": "Let's chat",
+    "legal": "Legal",
+    "imprint": "Imprint and AGB",
+    "privacy": "Privacy"
+  },
+  "references": "References",
+  "projects": "Projects",
+  "article": "Article",
   "design": "Design",
-  "development": "Entwicklung",
-  "teachingOverline": "",
-  "teachingHeadline": "Ich unterrichte beim Digital Career Institute",
-  "teachingParagraph": "Seit dem Dezember 2018 habe ich über 100 Teilnehmer zum Thema Webdevelopment unterrichtet. Ich habe zusammen mit anderen Dozenten am Curriculum gearbeitet und den Schülern das Programmieren beigebracht. \n Von HTML, CSS und JavaScript bis zu React.js, Node.js und MongoDB habe ich die Schüler zum Fullstack JavaScript Developer ausgebildet.",
-  "hireOverline": "Arbeite mit mir",
-  "hireHeadline": "So kann ich helfen",
-  "hireStep1": "Ich plane, konzipiere, gestalte und realisiere ihr digitales Vorhaben.",
-  "hireStep2": "Ich unterstütze ihr Team mit meinen Kompetenzen bei ihrem Projekt.",
-  "hireStep3": "Ich gebe ihrem Team einen Workshop um euch auf das nächste Level zu bringen.",
-  "hireStep4": "Ich spreche bei ihrem Event über aktuelle Themem im Bereich Design und Development.",
-  "letsChat": "Lass uns reden",
-  "legal": "Rechtliches",
-  "imprint": "Impressum und AGB",
-  "privacy": "Datenschutz"
+  "development": "Development",
+  "button": {
+    "read": "Read more"
+  }
 }

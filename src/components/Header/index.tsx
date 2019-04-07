@@ -133,6 +133,8 @@ const NavLink = ({ to, children, p, fontSize }: any) => (
 );
 
 const MobileNavList = (props: any) => {
+  const { t, i18n } = useTranslation();
+
   const time = 200;
   const context = useContext(navContext);
   const [x, y] = useState(context.open);
@@ -218,7 +220,7 @@ const MobileNavList = (props: any) => {
               }}
             >
               <NavLink to={link.to} p={3} fontSize={[4, 5]}>
-                {link.text}
+                {t("nav." + link.text)}
               </NavLink>
             </animated.div>
           )}

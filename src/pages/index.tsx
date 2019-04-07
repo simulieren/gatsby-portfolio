@@ -27,10 +27,10 @@ const Index = (props: any) => {
 
   const allMdxEdges = get(props, "data.allMdx.edges");
 
-  // const imageEdges = get(props, `data.allFile.edges`);
-  // const images = imageEdges.map((img: any) =>
-  //   get(img, `node.childImageSharp.fluid`)
-  // );
+  const imageEdges = get(props, `data.allFile.edges`);
+  const images = imageEdges.map((img: any) =>
+    get(img, `node.childImageSharp.fluid`)
+  );
 
   return (
     <Layout>
@@ -38,13 +38,21 @@ const Index = (props: any) => {
 
       <MissionSection />
 
-      {/* <TeachingSection img={images[2]} /> */}
+      <TeachingSection img={images[2]} />
 
       <HireSection />
 
-      <PostSection type="blog" mdxEdges={allMdxEdges} overline={`Blog`} />
+      <PostSection
+        type="blog"
+        mdxEdges={allMdxEdges}
+        overline={t("nav.blog")}
+      />
 
-      <PostSection type="note" mdxEdges={allMdxEdges} overline={`Notes`} />
+      <PostSection
+        type="note"
+        mdxEdges={allMdxEdges}
+        overline={t("nav.notes")}
+      />
     </Layout>
   );
 };
@@ -73,6 +81,17 @@ export const pageQuery = graphql`
           parent {
             ... on File {
               relativeDirectory
+            }
+          }
+        }
+      }
+    }
+    allFile(filter: { extension: { regex: "/(jpg)/" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fluid(maxWidth: 2560) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

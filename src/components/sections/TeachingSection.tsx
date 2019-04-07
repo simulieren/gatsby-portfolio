@@ -1,11 +1,14 @@
-import React from 'react';
-import { Box, Heading } from 'rebass';
-import Img from 'gatsby-image';
+import React from "react";
+import { Box, Heading } from "rebass";
+import Img from "gatsby-image";
+import { useTranslation } from "react-i18next";
 
-import { Section } from '../Grid';
-import { SectionOverline, P, StyledButton } from '../Typography';
+import { Section } from "../Grid";
+import { SectionOverline, P, StyledButton } from "../Typography";
 
 export const TeachingSection = (props: any) => {
+  const { t, i18n } = useTranslation();
+
   return (
     <Section
       justifyContent="center"
@@ -17,23 +20,15 @@ export const TeachingSection = (props: any) => {
     >
       <Box color="#fff" width={[1, 1 / 2]} css={{ zIndex: 1 }}>
         <SectionOverline color="#fff" textAlign="left">
-          Teaching
+          {t("teaching.overline")}
         </SectionOverline>
         <Heading as="h3" fontSize={[5, 6]} fontFamily="Spectral" mt={0}>
-          Ich unterrichte beim Digital Career Institute
+          {t("teaching.headline")}
         </Heading>
-        <P>
-          Seit dem Dezember 2018 habe ich über 100 Teilnehmer zum Thema
-          Webdevelopment unterrichtet. Ich habe zusammen mit anderen Dozenten am
-          Curriculum gearbeitet und den Schülern das Programmieren beigebracht.
-        </P>
-        <P>
-          Von HTML, CSS und JavaScript bis zu React.js, Node.js und MongoDB habe
-          ich die Schüler zum Fullstack JavaScript Developer ausgebildet.
-        </P>
+        <P>{t("teaching.paragraph")}</P>
 
         <StyledButton inverted size="10rem">
-          Mehr erfahren
+          {t("button.read")}
         </StyledButton>
       </Box>
 
@@ -44,7 +39,7 @@ export const TeachingSection = (props: any) => {
           position: `absolute`,
           right: 0,
           opacity: `0.75`,
-          mixBlendMode: `multiply`,
+          mixBlendMode: `multiply`
         }}
         fluid={props.img}
       />
