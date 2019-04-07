@@ -1,176 +1,136 @@
-const path = require("path");
-const _ = require("lodash");
-const moment = require("moment");
-const siteConfig = require("./data/SiteConfig");
+const fs = require(`fs-extra`);
+const path = require(`path`);
+const _ = require(`lodash`);
+const moment = require(`moment`);
+const siteConfig = require(`./data/SiteConfig`);
+
+const locales = require(`./src/locales/config`);
+
+const {
+  localizedSlug,
+  findKey,
+  removeTrailingSlash,
+} = require(`./src/util/gatsby-node-helpers`);
 
 const postNodes = [];
 
-function addSiblingNodes(createNodeField) {
-  postNodes.sort(
-    ({ frontmatter: { date: date1 } }, { frontmatter: { date: date2 } }) => {
-      const dateA = moment(date1, siteConfig.dateFromFormat);
-      const dateB = moment(date2, siteConfig.dateFromFormat);
-
-      if (dateA.isBefore(dateB)) return 1;
-
-      if (dateB.isBefore(dateA)) return -1;
-
-      return 0;
-    }
+// Copy locales from 'src' to 'public'
+exports.onPreBootstrap = () => {
+  console.log(`Copying locales`);
+  fs.copySync(
+    path.join(__dirname, `/src/locales`),
+    path.join(__dirname, `/public/locales`)
   );
-  for (let i = 0; i < postNodes.length; i += 1) {
-    const nextID = i + 1 < postNodes.length ? i + 1 : 0;
-    const prevID = i - 1 > 0 ? i - 1 : postNodes.length - 1;
-    const currNode = postNodes[i];
-    const nextNode = postNodes[nextID];
-    const prevNode = postNodes[prevID];
-    createNodeField({
-      node: currNode,
-      name: "nextTitle",
-      value: nextNode.frontmatter.title
-    });
-    createNodeField({
-      node: currNode,
-      name: "nextSlug",
-      value: nextNode.fields.slug
-    });
-    createNodeField({
-      node: currNode,
-      name: "prevTitle",
-      value: prevNode.frontmatter.title
-    });
-    createNodeField({
-      node: currNode,
-      name: "prevSlug",
-      value: prevNode.fields.slug
-    });
-  }
-}
+};
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+  const { path } = page;
+  const localeKeys = Object.keys(locales);
+  deletePage(page);
+  // You can access the variable "house" in your page queries now
+
+  localeKeys.forEach(lang => {
+    const local = locales[lang].default ? `` : lang;
+    const newPath = local === `` ? `${path}` : `/${local}${path}`;
+
+    createPage({
+      ...page,
+      path: newPath,
+      context: {
+        locale: lang,
+        dateFormat: locales[lang].dateFormat,
+      },
+    });
+  });
+};
+
+// As you don't want to manually add the correct languge to the frontmatter of each file
+// a new node is created automatically with the filename
+// It's necessary to do that -- otherwise you couldn't filter by language
+exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
-  let slug;
-  if (node.internal.type === "MarkdownRemark") {
-    const fileNode = getNode(node.parent);
-    const parsedFilePath = path.parse(fileNode.relativePath);
-    if (
-      Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`;
-    } else if (parsedFilePath.name !== "index" && parsedFilePath.dir !== "") {
-      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
-    } else if (parsedFilePath.dir === "") {
-      slug = `/${parsedFilePath.name}/`;
-    } else {
-      slug = `/${parsedFilePath.dir}/`;
-    }
 
-    if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, "slug"))
-        slug = `/${_.kebabCase(node.frontmatter.slug)}`;
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
-        const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
-        if (!date.isValid)
-          console.warn(`WARNING: Invalid date.`, node.frontmatter);
+  // Check for "Mdx" type so that other files (e.g. images) are exluded
+  if (node.internal.type === `Mdx`) {
+    // Use path.basename
+    // https://nodejs.org/api/path.html#path_path_basename_path_ext
+    const name = path.basename(node.fileAbsolutePath, `.mdx`);
 
-        createNodeField({
-          node,
-          name: "date",
-          value: date.toLocaleString()
-        });
-      }
-    }
-    createNodeField({ node, name: "slug", value: slug });
-    postNodes.push(node);
+    // Check if post.name is "index" -- because that's the file for default language
+    // (In this case "en")
+    const isDefault = name === `index`;
+
+    // Find the key that has "default: true" set (in this case it returns "en")
+    const defaultKey = findKey(locales, o => o.default === true);
+
+    // Files are defined with "name-with-dashes.lang.mdx"
+    // name returns "name-with-dashes.lang"
+    // So grab the lang from that string
+    // If it's the default language, pass the locale for that
+    const lang = isDefault ? defaultKey : name.split(`.`)[1];
+
+    createNodeField({ node, name: `locale`, value: lang });
+    createNodeField({ node, name: `isDefault`, value: isDefault });
   }
 };
 
-exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
-  const { name } = type;
-  const { createNodeField } = actions;
-  //if (name === "MarkdownRemark") {
-  //  addSiblingNodes(createNodeField);
-  //}
-};
-
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  return new Promise((resolve, reject) => {
-    const postPage = path.resolve("src/templates/post.tsx");
-    const tagPage = path.resolve("src/templates/tag.tsx");
-    const categoryPage = path.resolve("src/templates/category.tsx");
-    resolve(
-      graphql(
-        `
-          {
-            allMarkdownRemark {
-              edges {
-                node {
-                  frontmatter {
-                    tags
-                    category
-                  }
-                  fields {
-                    slug
-                  }
-                }
+  const postTemplate = require.resolve(`./src/templates/post.tsx`);
+
+  const result = await graphql(`
+    {
+      blog: allFile(filter: { sourceInstanceName: { eq: "posts" } }) {
+        edges {
+          node {
+            relativeDirectory
+            childMdx {
+              fields {
+                locale
+                isDefault
+              }
+              frontmatter {
+                title
               }
             }
           }
-        `
-      ).then(result => {
-        if (result.errors) {
-          /* eslint no-console: "off" */
-          console.log(result.errors);
-          reject(result.errors);
         }
+      }
+    }
+  `);
 
-        const tagSet = new Set();
-        const categorySet = new Set();
-        result.data.allMarkdownRemark.edges.forEach(edge => {
-          if (edge.node.frontmatter.tags) {
-            edge.node.frontmatter.tags.forEach(tag => {
-              tagSet.add(tag);
-            });
-          }
+  if (result.errors) {
+    console.error(result.errors);
+    return;
+  }
 
-          if (edge.node.frontmatter.category) {
-            categorySet.add(edge.node.frontmatter.category);
-          }
+  const postList = result.data.blog.edges;
 
-          createPage({
-            path: edge.node.fields.slug,
-            component: postPage,
-            context: {
-              slug: edge.node.fields.slug
-            }
-          });
-        });
+  postList.forEach(({ node: post }) => {
+    // All files for a blogpost are stored in a folder
+    // relativeDirectory is the name of the folder
+    const slug = post.relativeDirectory;
 
-        const tagList = Array.from(tagSet);
-        tagList.forEach(tag => {
-          createPage({
-            path: `/tags/${_.kebabCase(tag)}/`,
-            component: tagPage,
-            context: {
-              tag
-            }
-          });
-        });
+    const title = _.get(post, `childMdx.frontmatter.title`);
+    // Use the fields created in exports.onCreateNode
+    const locale = _.get(post, `childMdx.fields.locale`);
+    const isDefault = _.get(post, `childMdx.fields.isDefault`);
+    const path = localizedSlug({ isDefault, locale, slug });
 
-        const categoryList = Array.from(categorySet);
-        categoryList.forEach(category => {
-          createPage({
-            path: `/categories/${_.kebabCase(category)}/`,
-            component: categoryPage,
-            context: {
-              category
-            }
-          });
-        });
-      })
-    );
+    if (title && locale && slug) {
+      createPage({
+        path: path,
+        component: postTemplate,
+        context: {
+          // Pass both the "title" and "locale" to find a unique file
+          // Only the title would not have been sufficient as articles could have the same title
+          // in different languages, e.g. because an english phrase is also common in german
+          locale,
+          title,
+        },
+      });
+    }
   });
 };

@@ -1,57 +1,39 @@
 import React from "react";
 import TextListItem from "../TextListItem";
-import { PostEdge, Post } from "../Post/Post";
+import { MdxEdges, Post } from "../Post/Post";
+import get from "lodash/get";
 
 interface PostListingProps {
   type: string;
   headlineFontSize?: number;
-  postEdges: PostEdge[];
+  mdxEdges: MdxEdges[];
 }
 
-class PostListing extends React.Component<PostListingProps> {
-  getPostList() {
-    const postList: Post[] = [];
-    this.props.postEdges.forEach((postEdge: PostEdge) => {
-      debugger;
-      postList.push({
-        category: postEdge.node.frontmatter.category,
-        type: postEdge.node.frontmatter.type,
-        path: postEdge.node.fields.slug,
-        tags: postEdge.node.frontmatter.tags,
-        cover: postEdge.node.frontmatter.cover,
-        title: postEdge.node.frontmatter.title,
-        link: postEdge.node.frontmatter.link,
-        date: postEdge.node.fields.date.split(`T`)[0].split(`-`),
-        excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
-      });
-    });
-    return postList;
-  }
+const PostListing = (props: PostListingProps) => {
+  const { mdxEdges, type, headlineFontSize } = props;
+  const posts: Post[] = mdxEdges.map(edge => ({
+    title: get(edge, "node.frontmatter.title"),
+    category: get(edge, "node.frontmatter.category"),
+    path: get(edge, "node.parent.relativeDirectory"),
+    tags: get(edge, "node.frontmatter.tags"),
+    link: get(edge, "node.frontmatter.link"),
+    locale: get(edge, "node.fields.link"),
+    type: get(edge, "node.frontmatter.type")
+  }));
 
-  render() {
-    const postList = this.getPostList();
-
-    return (
-      <div>
-        {postList
-          .filter(
-            post => (this.props.type ? post.type === this.props.type : false)
-          )
-          .map(post => (
-            <TextListItem
-              key={post.title + post.date}
-              post={post}
-              category={post.category}
-              tags={post.tags}
-              headline={post.title}
-              headlineFontSize={this.props.headlineFontSize || [4, 5, 6]}
-              link={post.link}
-            />
-          ))}
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      {posts.filter(p => p.type === type).map(post => (
+        <TextListItem
+          post={post}
+          {...post}
+          key={`${post.title}-${post.locale}`}
+          path={`/${post.path}`}
+          headlineFontgatSize={headlineFontSize || [4, 5, 6]}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default PostListing;

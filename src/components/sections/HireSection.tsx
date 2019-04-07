@@ -3,8 +3,11 @@ import { Box, Heading, Text } from "rebass";
 
 import { Section } from "../Grid";
 import { SectionOverline } from "../Typography";
+import { useTranslation } from "react-i18next";
 
 export const HireSection = (props: any) => {
+  const { t, i18n } = useTranslation();
+
   return (
     <Section
       py={[4, 5]}
@@ -12,11 +15,11 @@ export const HireSection = (props: any) => {
       css={{ position: `relative` }}
     >
       <Box width={[1, 1 / 5]}>
-        <SectionOverline>Hire me</SectionOverline>
+        <SectionOverline>{t("hire.overline")}</SectionOverline>
       </Box>
       <Box width={[1, 4 / 5, 2 / 5]}>
         <Heading as="h4" fontSize={[5, 6]} fontFamily="Spectral" mt={0} mb={4}>
-          So kann ich helfen
+          {t("hire.headline")}
         </Heading>
         <Heading
           as="h4"
@@ -38,8 +41,7 @@ export const HireSection = (props: any) => {
           >
             1.
           </Text>
-          {` `}
-          Ich plane, konzipiere, gestalte und realisiere ihr digitales Vorhaben.
+          {t("hire.step1")}
         </Heading>
         <Heading
           as="h4"
@@ -61,8 +63,7 @@ export const HireSection = (props: any) => {
           >
             2.
           </Text>
-          {` `}
-          Ich unterstütze ihr Team mit meinen Kompetenzen bei ihrem Projekt.
+          {t("hire.step2")}
         </Heading>
         <Heading
           as="h4"
@@ -84,9 +85,7 @@ export const HireSection = (props: any) => {
           >
             3.
           </Text>
-          {` `}
-          Ich gebe ihrem Team einen Workshop um euch auf das nächste Level zu
-          bringen.
+          {t("hire.step3")}
         </Heading>
         <Heading
           as="h4"
@@ -108,9 +107,7 @@ export const HireSection = (props: any) => {
           >
             4.
           </Text>
-          {` `}
-          Ich spreche bei ihrem Event über aktuelle Themem im Bereich Design und
-          Development.
+          {t("hire.step4")}
         </Heading>
       </Box>
     </Section>

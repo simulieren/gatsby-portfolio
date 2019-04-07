@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "work": "Arbeiten",
+    "about": "Über mich",
+    "contact": "Kontakt",
+    "blog": "Blog",
+    "notes": "Notizen"
+  },
+  "homepage": {
+    "overline": "Digitales Produktdesign & Frontend-Entwicklung",
+    "headline": "Ich gestalte und entwickle digitale Produkte."
+  },
+  "mission": {
+    "overline": "Mission",
+    "headline": "Digitaler Fokus",
+    "paragraph": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque ratione veniam nobis, expedita impedit earum, minima, ex quo amet quis assumenda nam. Nesciunt officiis sit aperiam suscipit odit nihil distinctio."
+  },
+  "teaching": {
+    "overline": "Unterricht",
+    "headline": "Ich unterrichte beim Digital Career Institute",
+    "paragraph": "Seit dem Dezember 2018 habe ich über 100 Teilnehmer zum Thema Webdevelopment unterrichtet. Ich habe zusammen mit anderen Dozenten am Curriculum gearbeitet und den Schülern das Programmieren beigebracht. \n Von HTML, CSS und JavaScript bis zu React.js, Node.js und MongoDB habe ich die Schüler zum Fullstack JavaScript Developer ausgebildet."
+  },
+  "hire": {
+    "overline": "Arbeite mit mir",
+    "headline": "So kann ich helfen",
+    "step1": "Ich plane, konzipiere, gestalte und realisiere ihr digitales Vorhaben.",
+    "step2": "Ich unterstütze ihr Team mit meinen Kompetenzen bei ihrem Projekt.",
+    "step3": "Ich gebe ihrem Team einen Workshop um euch auf das nächste Level zu bringen.",
+    "step4": "Ich spreche bei ihrem Event über aktuelle Themem im Bereich Design und Development."
+  },
+  "footer": {
+    "letsChat": "Lass uns reden",
+    "legal": "Rechtliches",
+    "imprint": "Impressum und AGB",
+    "privacy": "Datenschutz"
+  },
+  "references": "Referenzen",
+  "projects": "Projekte",
+  "article": "Artikel",
+  "design": "Design",
+  "development": "Entwicklung",
+  "button": {
+    "read": "Mehr erfahren"
+  }
+}

@@ -1,32 +1,32 @@
-import React from 'react';
-import { Box, Text, Heading } from 'rebass';
-import { Caps, StyledLinkHeading } from '../Typography';
+import React from "react";
+import { Box, Text, Heading } from "rebass";
+import { useTranslation } from "react-i18next";
+
+import { Caps, StyledLinkHeading } from "../Typography";
 // @ts-ignore
-import { AniLink } from 'gatsby-plugin-transition-link';
-import 'intersection-observer';
-// @ts-ignore
-import withIntersectionObserverProps from '@hocs/with-intersection-observer-props';
+import { AniLink } from "gatsby-plugin-transition-link";
 
 // @ts-ignore
-import PostTags from '../PostTags/PostTags';
+import PostTags from "../PostTags/PostTags";
+import { Post } from "../Post/Post";
+import LocalizedLink from "../LocalizedLink";
 
-const TextListItem = (props: any) => {
+interface TextListItemProps extends Post {
+  post: Post;
+  headlineFontSize: number | number[];
+}
+
+const TextListItem = (props: TextListItemProps) => {
+  const { t, i18n } = useTranslation();
   const post = props.post ? props.post : undefined;
   const hasLink = props.link ? true : false;
   const url = () => {
-    if (!hasLink) return;
+    if (!hasLink || props.link === null) return;
     return new URL(props.link).hostname;
   };
 
   return (
-    <Box
-      ref={props.onRef}
-      css={{
-        transition: `all .5s ease`,
-        opacity: props.isFullVisible ? 1 : 0,
-        willChange: `opacity`,
-      }}
-    >
+    <Box>
       <Text as="div" fontSize={1} fontFamily="Apercu">
         <Caps fontWeight={`bold`}>{props.category}</Caps>
         {` `}
@@ -42,24 +42,15 @@ const TextListItem = (props: any) => {
         mb={3}
       >
         {hasLink ? (
-          <a target="_blank" href={post.link}>
-            {props.headline}
+          <a target="_blank" href={props.link ? props.link : undefined}>
+            {props.title}
           </a>
         ) : (
-          <AniLink
-            cover
-            bg="rebeccapurple"
-            direction="up"
-            to={post ? post.path : `/`}
-          >
-            {props.headline}
-          </AniLink>
+          <LocalizedLink to={props.path}>{props.title}</LocalizedLink>
         )}
       </StyledLinkHeading>
     </Box>
   );
 };
 
-export default withIntersectionObserverProps({ isFullVisible: 1.0 })(
-  TextListItem
-);
+export default TextListItem;

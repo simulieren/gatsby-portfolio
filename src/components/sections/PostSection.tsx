@@ -12,7 +12,7 @@ export const PostSection = (props: any) => {
         <SectionOverline>{props.overline}</SectionOverline>
       </Box>
       <Box width={[1, 4 / 5, 3 / 5]}>
-        <PostListing postEdges={props.postEdges} type={props.type} />
+        <PostListing mdxEdges={props.mdxEdges} type={props.type} />
       </Box>
     </Section>
   );

@@ -1,3 +1,7 @@
+export interface MdxEdges {
+  node: MdxNode;
+}
+
 // Post
 
 interface Post {
@@ -5,38 +9,29 @@ interface Post {
   type: string;
   path: string;
   tags: string[];
-  cover: string;
   title: string;
   link: string | null;
-  date: string[];
-  excerpt: string;
-  timeToRead: number;
+  locale: string;
 }
 
 // GraphQL
 
-export interface PostEdge {
-  node: PostEdgeNode;
-}
-
-export interface PostEdgeNode {
-  fields: Fields;
-  excerpt: string;
-  timeToRead: number;
+interface MdxNode {
   frontmatter: Frontmatter;
+  fields: Fields;
+  parent: Parent;
 }
-
-export interface Fields {
-  slug: string;
-  date: string;
-}
-
-export interface Frontmatter {
+interface Frontmatter {
   category: string;
   type: string;
   title: string;
   tags: string[];
-  cover: string;
-  date: string;
   link: null;
+}
+interface Fields {
+  locale: string;
+}
+interface Parent {
+  __typename: string;
+  relativeDirectory: string;
 }

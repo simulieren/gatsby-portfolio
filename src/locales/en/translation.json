@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "notes": "Notes"
+  },
+  "homepage": {
+    "overline": "Digital product design & frontend development",
+    "headline": "I design and develop digital products."
+  },
+  "mission": {
+    "overline": "Mission",
+    "headline": "Digital focus",
+    "paragraph": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque ratione veniam nobis, expedita impedit earum, minima, ex quo amet quis assumenda nam. Nesciunt officiis sit aperiam suscipit odit nihil distinctio."
+  },
+  "teaching": {
+    "overline": "Teaching",
+    "headline": "I teach at the Digital Career Institute.",
+    "paragraph": "Since December 2018 I have taught over 100 participants about webdevelopment. I worked together with other teachers on the curriculum and taught the students how to program. \n From HTML, CSS and JavaScript to React.js, Node.js and MongoDB I trained the students to become Fullstack JavaScript Developers."
+  },
+  "hire": {
+    "overline": "Hire me",
+    "headline": "How I can help you",
+    "step1": "I plan, conceive, design and realize your digital project.",
+    "step2": "I support your team with my competences in your project.",
+    "step3": "I'm giving her team a workshop to take you to the next level.",
+    "step4": "Ich spreche bei ihrem Event über aktuelle Themem im Bereich Design und Development."
+  },
+  "footer": {
+    "letsChat": "Let's chat",
+    "legal": "Legal",
+    "imprint": "Imprint and AGB",
+    "privacy": "Privacy"
+  },
+  "references": "References",
+  "projects": "Projects",
+  "article": "Article",
+  "design": "Design",
+  "development": "Development",
+  "button": {
+    "read": "Read more"
+  }
+}
