@@ -15,22 +15,22 @@ import "../i18next/i18n";
 
 setConfig({ pureSFC: true });
 
-export default class MainLayout extends React.Component {
-  render() {
-    const { children } = this.props;
-    return (
-      <div>
-        {/* <Helmet>
+const MainLayout = (props: any) => {
+  const { children } = props;
+  return (
+    <div>
+      {/* <Helmet>
           <meta name="description" content={config.siteDescription} />
         </Helmet> */}
 
-        {children}
-        <TransitionPortal style={{ width: `100%` }}>
-          <Header />
-        </TransitionPortal>
+      {children}
+      <TransitionPortal style={{ width: `100%` }}>
+        <Header />
+      </TransitionPortal>
 
-        <Footer config={config} />
-      </div>
-    );
-  }
-}
+      <Footer config={config} />
+    </div>
+  );
+};
+
+export default MainLayout;

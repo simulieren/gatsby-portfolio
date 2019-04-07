@@ -84,12 +84,12 @@ const Logo = (props: any) => {
     </Box>
   );
 };
+
 // FIX THIS
 const SwitchLanguage = (props: any) => {
   const { t, i18n } = useTranslation();
-  const locale = i18n.language;
-
-  const isIndex = locales[locale].default ? true : false;
+  // const locale = i18n.language;
+  // const isIndex = locales[locale].default ? true : false;
 
   return (
     <>
@@ -110,7 +110,7 @@ function NavList(props: any) {
     <Flex width={[`100%`] as any}>
       {navLinks.map((link, i) => (
         <NavLink key={i} to={link.to}>
-          {t(["Header", link.text])}
+          {/* {t("nav." + link.text)} */} TEST
         </NavLink>
       ))}
       <SwitchLanguage />

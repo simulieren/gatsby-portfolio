@@ -29,7 +29,7 @@ const PostListing = (props: PostListingProps) => {
           {...post}
           key={`${post.title}-${post.locale}`}
           path={`/${post.path}`}
-          headlineFontSize={headlineFontSize}
+          headlineFontgatSize={headlineFontSize || [4, 5, 6]}
         />
       ))}
     </div>

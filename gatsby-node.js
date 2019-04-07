@@ -32,7 +32,7 @@ exports.onCreatePage = ({ page, actions }) => {
 
   localeKeys.forEach(lang => {
     const local = locales[lang].default ? `` : lang;
-    const newPath = `/${local}${path}`;
+    const newPath = local === `` ? `${path}` : `/${local}${path}`;
 
     createPage({
       ...page,
@@ -69,7 +69,6 @@ exports.onCreateNode = ({ node, actions }) => {
     // So grab the lang from that string
     // If it's the default language, pass the locale for that
     const lang = isDefault ? defaultKey : name.split(`.`)[1];
-    console.log(lang);
 
     createNodeField({ node, name: `locale`, value: lang });
     createNodeField({ node, name: `isDefault`, value: isDefault });
@@ -118,10 +117,11 @@ exports.createPages = async ({ graphql, actions }) => {
     // Use the fields created in exports.onCreateNode
     const locale = _.get(post, `childMdx.fields.locale`);
     const isDefault = _.get(post, `childMdx.fields.isDefault`);
+    const path = localizedSlug({ isDefault, locale, slug });
 
     if (title && locale && slug) {
       createPage({
-        path: localizedSlug({ isDefault, locale, slug }),
+        path: path,
         component: postTemplate,
         context: {
           // Pass both the "title" and "locale" to find a unique file
