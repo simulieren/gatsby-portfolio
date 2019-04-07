@@ -1,26 +1,36 @@
 import React from "react";
 import TextListItem from "../TextListItem";
-import { PostEdge, Post } from "../Post/Post";
-import LocalizedLink from "../LocalizedLink";
+import { MdxEdges, Post } from "../Post/Post";
+import get from "lodash/get";
 
 interface PostListingProps {
   type: string;
   headlineFontSize?: number;
-  postEdges: PostEdge[];
+  mdxEdges: MdxEdges[];
 }
 
-const PostListing = (props: any) => {
-  const { mdxEdges, type } = props;
+const PostListing = (props: PostListingProps) => {
+  const { mdxEdges, type, headlineFontSize } = props;
+  const posts: Post[] = mdxEdges.map(edge => ({
+    title: get(edge, "node.frontmatter.title"),
+    category: get(edge, "node.frontmatter.category"),
+    path: get(edge, "node.parent.relativeDirectory"),
+    tags: get(edge, "node.frontmatter.tags"),
+    link: get(edge, "node.frontmatter.link"),
+    locale: get(edge, "node.fields.link"),
+    type: get(edge, "node.frontmatter.type")
+  }));
 
   return (
     <div>
-      {mdxEdges.map(({ node: post }) => (
-        <li key={`${post.frontmatter.title}-${post.fields.locale}`}>
-          <LocalizedLink to={`/${post.parent.relativeDirectory}`}>
-            {post.frontmatter.title}
-          </LocalizedLink>
-          <div>{post.frontmatter.date}</div>
-        </li>
+      {posts.filter(p => p.type === type).map(post => (
+        <TextListItem
+          post={post}
+          {...post}
+          key={`${post.title}-${post.locale}`}
+          path={`/${post.path}`}
+          headlineFontSize={headlineFontSize}
+        />
       ))}
     </div>
   );

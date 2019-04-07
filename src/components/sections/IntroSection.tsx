@@ -1,10 +1,10 @@
-import React from 'react';
-import { Box, Heading } from 'rebass';
-import { Section } from '../Grid';
-import { SectionOverline } from '../Typography';
-import Intro from '../Intro';
-import TextListItem from '../TextListItem';
-import PostListing from '../PostListing/PostListing';
+import React from "react";
+import { Box, Heading } from "rebass";
+import { Section } from "../Grid";
+import { SectionOverline } from "../Typography";
+import Intro from "../Intro";
+import TextListItem from "../TextListItem";
+import PostListing from "../PostListing/PostListing";
 
 export const IntroSection = (props: any) => {
   return (
@@ -33,10 +33,10 @@ export const IntroSection = (props: any) => {
           >
             Referenzen
           </Heading>
-          <TextListItem category="DESIGN" headline="beka.de" />
-          <TextListItem category="DESIGN" headline="lekkerland.de" />
-          <TextListItem category="DESIGN" headline="eizo.de" />
-          <TextListItem category="DESIGN" headline="covestro.de" />
+          <TextListItem category="DESIGN" title="beka.de" />
+          <TextListItem category="DESIGN" title="lekkerland.de" />
+          <TextListItem category="DESIGN" title="eizo.de" />
+          <TextListItem category="DESIGN" title="covestro.de" />
         </Box>
         <Box width={[1, 1 / 2, 1 / 2, 1 / 4]}>
           <Heading
@@ -50,19 +50,16 @@ export const IntroSection = (props: any) => {
           >
             Projekte
           </Heading>
+          <TextListItem category="DESIGN + DEVELOPMENT" title="Origami Films" />
           <TextListItem
             category="DESIGN + DEVELOPMENT"
-            headline="Origami Films"
+            title="StreetstyleCon"
           />
           <TextListItem
             category="DESIGN + DEVELOPMENT"
-            headline="StreetstyleCon"
+            title="MultiKulti Markt"
           />
-          <TextListItem
-            category="DESIGN + DEVELOPMENT"
-            headline="MultiKulti Markt"
-          />
-          <TextListItem category="DESIGN + DEVELOPMENT" headline="Futur.ist" />
+          <TextListItem category="DESIGN + DEVELOPMENT" title="Futur.ist" />
         </Box>
         <Box width={[1, 1 / 2, 1 / 2, 1 / 4]}>
           <Heading
@@ -77,7 +74,7 @@ export const IntroSection = (props: any) => {
             Artikel
           </Heading>
           <PostListing
-            postEdges={props.postEdges}
+            mdxEdges={props.mdxEdges}
             type="blog"
             headlineFontSize={4}
           />

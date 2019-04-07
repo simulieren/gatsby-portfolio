@@ -13,8 +13,6 @@ class HeaderFader extends React.Component<HeaderFaderProps> {
 
   setFaderInterval = () => {
     this.faderInterval = setInterval(() => {
-      console.log("FADER CALL");
-
       if (!this.state.timer) return;
       let i = this.state.index;
       i++;

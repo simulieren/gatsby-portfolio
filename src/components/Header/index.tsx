@@ -1,5 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, Fragment } from "react";
 //@ts-ignore
+// import { Link } from "gatsby"
 import { AniLink } from "gatsby-plugin-transition-link";
 import { Spring, Trail, animated } from "react-spring";
 import styled from "styled-components";
@@ -10,6 +11,9 @@ import navLinks from "../../../data/NavigationLinks";
 import useWindowScrollPosition from "../../util/useWindowScrollPosition";
 import useWindowSize from "../../util/useWindowSize";
 import { StyledLinkText } from "../Typography";
+import LocalizedLink from "../LocalizedLink";
+
+import locales from "../../locales/config";
 
 const navContext = React.createContext({
   open: false,
@@ -74,10 +78,28 @@ const Logo = (props: any) => {
 
   return (
     <Box onClick={handleClick} width={[1, 1, 1, 1 / 4]} css={{ zIndex: 1000 }}>
-      <AniLink {...transitionSettings} to="/">
+      <LocalizedLink animate {...transitionSettings} to="/">
         <StyledLinkText fontFamily="Apercu">Simon Halimonov</StyledLinkText>
-      </AniLink>
+      </LocalizedLink>
     </Box>
+  );
+};
+// FIX THIS
+const SwitchLanguage = (props: any) => {
+  const { t, i18n } = useTranslation();
+  const locale = i18n.language;
+
+  const isIndex = locales[locale].default ? true : false;
+
+  return (
+    <>
+      <AniLink {...transitionSettings} to="/">
+        DE
+      </AniLink>
+      <AniLink {...transitionSettings} to="/en">
+        EN
+      </AniLink>
+    </>
   );
 };
 
@@ -91,6 +113,7 @@ function NavList(props: any) {
           {t(["Header", link.text])}
         </NavLink>
       ))}
+      <SwitchLanguage />
     </Flex>
   );
 }
@@ -103,9 +126,9 @@ const NavLink = ({ to, children, p, fontSize }: any) => (
     textAlign={[`center`, `left`] as any}
     fontSize={fontSize}
   >
-    <AniLink {...transitionSettings} to={to}>
+    <LocalizedLink animate {...transitionSettings} to={to}>
       {children}
-    </AniLink>
+    </LocalizedLink>
   </StyledLinkText>
 );
 

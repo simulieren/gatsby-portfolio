@@ -20,9 +20,9 @@ export default class MainLayout extends React.Component {
     const { children } = this.props;
     return (
       <div>
-        <Helmet>
+        {/* <Helmet>
           <meta name="description" content={config.siteDescription} />
-        </Helmet>
+        </Helmet> */}
 
         {children}
         <TransitionPortal style={{ width: `100%` }}>

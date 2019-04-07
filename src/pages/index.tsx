@@ -14,7 +14,6 @@ import { TeachingSection } from "../components/sections/TeachingSection";
 import { HireSection } from "../components/sections/HireSection";
 import { PostSection } from "../components/sections/PostSection";
 import { IntroSection } from "../components/sections/IntroSection";
-import { PostEdge } from "../components/Post/Post";
 
 const Index = (props: any) => {
   const { t, i18n } = useTranslation();
@@ -30,11 +29,11 @@ const Index = (props: any) => {
 
   return (
     <Layout>
-      <Helmet title={SiteConfig.siteTitle} />
+      {/* <Helmet title={SiteConfig.siteTitle} /> */}
 
       <SEO />
 
-      {/* <IntroSection mdxEdges={allMdxEdges} /> */}
+      <IntroSection mdxEdges={allMdxEdges} />
 
       <MissionSection />
 
@@ -62,6 +61,10 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            category
+            tags
+            type
+            link
           }
           fields {
             locale

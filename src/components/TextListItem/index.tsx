@@ -1,5 +1,7 @@
 import React from "react";
 import { Box, Text, Heading } from "rebass";
+import { useTranslation } from "react-i18next";
+
 import { Caps, StyledLinkHeading } from "../Typography";
 // @ts-ignore
 import { AniLink } from "gatsby-plugin-transition-link";
@@ -7,17 +9,19 @@ import { AniLink } from "gatsby-plugin-transition-link";
 // @ts-ignore
 import PostTags from "../PostTags/PostTags";
 import { Post } from "../Post/Post";
+import LocalizedLink from "../LocalizedLink";
 
-// interface TextListItem extends Post {
+interface TextListItemProps extends Post {
+  post: Post;
+  headlineFontSize: number | number[];
+}
 
-//   link: string
-// }
-
-const TextListItem = (props: any) => {
+const TextListItem = (props: TextListItemProps) => {
+  const { t, i18n } = useTranslation();
   const post = props.post ? props.post : undefined;
   const hasLink = props.link ? true : false;
   const url = () => {
-    if (!hasLink) return;
+    if (!hasLink || props.link === null) return;
     return new URL(props.link).hostname;
   };
 
@@ -38,18 +42,11 @@ const TextListItem = (props: any) => {
         mb={3}
       >
         {hasLink ? (
-          <a target="_blank" href={post.link}>
-            {props.headline}
+          <a target="_blank" href={props.link ? props.link : undefined}>
+            {props.title}
           </a>
         ) : (
-          <AniLink
-            cover
-            bg="rebeccapurple"
-            direction="up"
-            to={post ? post.path : `/`}
-          >
-            {props.headline}
-          </AniLink>
+          <LocalizedLink to={props.path}>{props.title}</LocalizedLink>
         )}
       </StyledLinkHeading>
     </Box>
