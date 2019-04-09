@@ -21,7 +21,6 @@ module.exports = {
   plugins: [
     `gatsby-mdx`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-lodash`,
     `gatsby-plugin-styled-components`,

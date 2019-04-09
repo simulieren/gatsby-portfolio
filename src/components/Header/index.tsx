@@ -1,8 +1,7 @@
 import React, { useState, useContext, Fragment } from "react";
 //@ts-ignore
-// import { Link } from "gatsby"
-import { AniLink } from "gatsby-plugin-transition-link";
-import { Spring, Trail, animated } from "react-spring";
+import { Link } from "gatsby";
+import { animated } from "react-spring";
 import styled from "styled-components";
 import { Flex, Box, Text } from "rebass";
 import { useTranslation } from "react-i18next";
@@ -43,27 +42,27 @@ const Header = (props: any) => {
 
   return (
     <HeaderContainer className={scrolled ? `scrolled` : ``}>
-      <Spring
+      {/* <Spring
         from={{ opacity: 0 }}
         to={{ opacity: 1 }}
         config={{ duration: 500 }}
       >
-        {props => (
-          <Flex
-            style={props}
-            fontSize={[2, 2, 2, 2]}
-            px={[3, 5, 6, 6] as any}
-            py={[3, 4, 4] as any}
-          >
-            <Logo />
-            {size.width > 640 ? (
-              <NavList scrolled={scrolled} />
-            ) : (
-              <MobileNavList scrolled={scrolled} />
-            )}
-          </Flex>
+        {props => ( */}
+      <Flex
+        style={props}
+        fontSize={[2, 2, 2, 2]}
+        px={[3, 5] as any}
+        py={[3] as any}
+      >
+        <Logo />
+        {size.width > 640 ? (
+          <NavList scrolled={scrolled} />
+        ) : (
+          <MobileNavList scrolled={scrolled} />
         )}
-      </Spring>
+      </Flex>
+      {/* )}
+      </Spring> */}
     </HeaderContainer>
   );
 };
@@ -78,7 +77,7 @@ const Logo = (props: any) => {
 
   return (
     <Box onClick={handleClick} width={[1, 1, 1, 1 / 4]} css={{ zIndex: 1000 }}>
-      <LocalizedLink animate {...transitionSettings} to="/">
+      <LocalizedLink to="/">
         <StyledLinkText fontFamily="Apercu">Simon Halimonov</StyledLinkText>
       </LocalizedLink>
     </Box>
@@ -93,12 +92,8 @@ const SwitchLanguage = (props: any) => {
 
   return (
     <>
-      <AniLink {...transitionSettings} to="/">
-        DE
-      </AniLink>
-      <AniLink {...transitionSettings} to="/en">
-        EN
-      </AniLink>
+      <Link to="/">DE</Link>
+      <Link to="/en">EN</Link>
     </>
   );
 };
@@ -126,9 +121,7 @@ const NavLink = ({ to, children, p, fontSize }: any) => (
     textAlign={[`center`, `left`] as any}
     fontSize={fontSize}
   >
-    <LocalizedLink animate {...transitionSettings} to={to}>
-      {children}
-    </LocalizedLink>
+    <LocalizedLink to={to}>{children}</LocalizedLink>
   </StyledLinkText>
 );
 
@@ -164,7 +157,7 @@ const MobileNavList = (props: any) => {
         MENU
       </Text>
 
-      <Spring
+      {/* <Spring
         delay={context.open ? 0 : time * (navLinks.length / 1.5)}
         config={{
           duration: context.open ? time : (time * navLinks.length) / 4
@@ -186,7 +179,7 @@ const MobileNavList = (props: any) => {
             }}
           />
         )}
-      </Spring>
+      </Spring> */}
 
       <Flex
         flexDirection="column"
@@ -203,7 +196,7 @@ const MobileNavList = (props: any) => {
           ...pointerEvents
         }}
       >
-        <Trail
+        {/* <Trail
           items={navLinks}
           reverse={!context.open}
           keys={item => item.text}
@@ -224,7 +217,7 @@ const MobileNavList = (props: any) => {
               </NavLink>
             </animated.div>
           )}
-        </Trail>
+        </Trail> */}
       </Flex>
     </Flex>
   );

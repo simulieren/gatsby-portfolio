@@ -19,7 +19,7 @@ export const IntroSection = (props: any) => {
       overline={t("homepage.overline")}
       headline={t("homepage.headline")}
     >
-      <Section px={[3, 4, 5]} py={[3, 4, 5]}>
+      <Section px={[3, 0]} py={[3, 4, 5]}>
         <Box width={[1, 1, 1, 1 / 5]}>
           <SectionOverline>{t("nav.work")}</SectionOverline>
         </Box>
@@ -60,19 +60,27 @@ export const IntroSection = (props: any) => {
             {t("projects")}
           </Heading>
           <TextListItem
-            category={`t("design").toUpperCase() + t("development").toUpperCase()`}
+            category={`${t("design").toUpperCase()} + ${t(
+              "development"
+            ).toUpperCase()}`}
             title="Origami Films"
           />
           <TextListItem
-            category={`t("design").toUpperCase() + t("development").toUpperCase()`}
+            category={`${t("design").toUpperCase()} + ${t(
+              "development"
+            ).toUpperCase()}`}
             title="StreetstyleCon"
           />
           <TextListItem
-            category={`t("design").toUpperCase() + t("development").toUpperCase()`}
+            category={`${t("design").toUpperCase()} + ${t(
+              "development"
+            ).toUpperCase()}`}
             title="MultiKulti Markt"
           />
           <TextListItem
-            category={`t("design").toUpperCase() + t("development").toUpperCase()`}
+            category={`${t("design").toUpperCase()} + ${t(
+              "development"
+            ).toUpperCase()}`}
             title="Futur.ist"
           />
         </Box>

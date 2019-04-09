@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import { Box, Text, Heading } from "rebass";
-import { AniLink } from "gatsby-plugin-transition-link";
 import { useTranslation } from "react-i18next";
 
 import HeaderFader from "../Animations/HeaderSlider";
@@ -11,7 +10,7 @@ import { Section } from "../Grid";
 const Footer = props => {
   const { t, i18n } = useTranslation();
 
-  const { config } = this.props;
+  const { config } = props;
   const url = config.siteRss;
 
   return (
@@ -35,7 +34,7 @@ const Footer = props => {
           color="#fff"
           css={{ position: `relative` }}
         >
-          <HeaderFader
+          {/* <HeaderFader
             time={4000}
             items={[
               `Warte nicht länger, lass uns einfach reden.`,
@@ -44,7 +43,7 @@ const Footer = props => {
               `Jeder Gedanke in uns ist bestrebt, Wirklichkeit zu werden.`,
               `Vergiss niemals das "Warum".`
             ]}
-          />
+          /> */}
         </Heading>
       </Section>
       <Section py={4} bg="#00f">

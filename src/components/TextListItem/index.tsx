@@ -3,8 +3,6 @@ import { Box, Text, Heading } from "rebass";
 import { useTranslation } from "react-i18next";
 
 import { Caps, StyledLinkHeading } from "../Typography";
-// @ts-ignore
-import { AniLink } from "gatsby-plugin-transition-link";
 
 // @ts-ignore
 import PostTags from "../PostTags/PostTags";
@@ -13,7 +11,7 @@ import LocalizedLink from "../LocalizedLink";
 
 interface TextListItemProps extends Post {
   post: Post;
-  headlineFontSize: number | number[];
+  headlineFontSize?: number | number[];
 }
 
 const TextListItem = (props: TextListItemProps) => {

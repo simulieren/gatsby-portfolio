@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Text, Heading, TextProps } from 'rebass';
-import './fonts/index.css';
-import 'typeface-spectral';
+import React from "react";
+import styled from "styled-components";
+import { Text, Heading, TextProps } from "rebass";
+import "./fonts/index.css";
+import "typeface-spectral";
 
 //@ts-ignore
-import { DotPattern } from './DotPattern.js';
+import { DotPattern } from "./DotPattern.js";
 
 export { DotPattern };
 
@@ -21,7 +21,7 @@ export const Caps = (props: ITextProps) => (
     css={{
       fontSize: `12px`,
       textTransform: `uppercase`,
-      letterSpacing: `0.2em`,
+      letterSpacing: `0.2em`
     }}
   />
 );
@@ -41,6 +41,10 @@ export const SectionOverline = (props: any) => (
   />
 );
 
+export const SectionHeading = (props: any) => (
+  <Heading as="h3" fontSize={[5, 6]} fontFamily="Spectral" mt={0} {...props} />
+);
+
 export const StyledLinkText = styled(Text)<{ inverted?: boolean }>`
   position: relative;
   transition: all 0.2s ease;
@@ -52,7 +56,7 @@ export const StyledLinkText = styled(Text)<{ inverted?: boolean }>`
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 2px;
@@ -101,7 +105,7 @@ const RightArrowSVG = () => (
   </svg>
 );
 
-const Button: React.ComponentType<{ children?: React.ReactNode }> = props => {
+const Button = (props: any) => {
   return (
     <div className="button no-arrow-effect do-hover" {...props}>
       {props.children}
@@ -120,10 +124,10 @@ const Button: React.ComponentType<{ children?: React.ReactNode }> = props => {
   );
 };
 export const StyledButton = styled(Button)<{
-  inverted?: boolean;
+  inverted?: any;
   size?: string;
 }>`
-  font-family: 'Apercu', sans-serif;
+  font-family: "Apercu", sans-serif;
   color: ${props => (props.inverted ? `#fff` : `#00f`)};
   border: 0.125rem solid ${props => (props.inverted ? `#fff` : `#00f`)};
   height: 3.125rem;

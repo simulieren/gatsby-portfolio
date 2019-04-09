@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
-import { AniLink } from "gatsby-plugin-transition-link";
 
 import locales from "../../locales/config";
 
@@ -28,17 +27,7 @@ const LocalizedLink = ({
     ? to
     : `${locales[locale].path}${isIndex ? `` : `${to}`}`;
 
-  return animate ? (
-    <AniLink
-      {...props}
-      cover
-      bg="rebeccapurple"
-      direction="up"
-      to={path ? path : "/"}
-    />
-  ) : (
-    <Link {...props} to={path ? path : "/"} />
-  );
+  return <Link {...props} to={path ? path : "/"} />;
 };
 
 export default LocalizedLink;

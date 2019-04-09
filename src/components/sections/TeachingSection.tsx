@@ -4,7 +4,12 @@ import Img from "gatsby-image";
 import { useTranslation } from "react-i18next";
 
 import { Section } from "../Grid";
-import { SectionOverline, P, StyledButton } from "../Typography";
+import {
+  SectionOverline,
+  P,
+  StyledButton,
+  SectionHeading
+} from "../Typography";
 
 export const TeachingSection = (props: any) => {
   const { t, i18n } = useTranslation();
@@ -22,9 +27,7 @@ export const TeachingSection = (props: any) => {
         <SectionOverline color="#fff" textAlign="left">
           {t("teaching.overline")}
         </SectionOverline>
-        <Heading as="h3" fontSize={[5, 6]} fontFamily="Spectral" mt={0}>
-          {t("teaching.headline")}
-        </Heading>
+        <SectionHeading>{t("teaching.headline")}</SectionHeading>
         <P>{t("teaching.paragraph")}</P>
 
         <StyledButton inverted size="10rem">

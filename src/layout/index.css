@@ -42,10 +42,15 @@ hr + p {
   text-indent: 0;
 }
 
+img {
+  width: 100%;
+  display: block;
+}
+
 .post-content p {
   max-width: 30rem;
 }
 
 .post-content > *:first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
