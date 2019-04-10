@@ -1,5 +1,6 @@
 import React from "react";
 import { AnimationStateContainer } from "./src/context/animationContext";
+import { NavigationStateContainer } from "./src/components/Header";
 import theme from "./src/theme";
 import { ThemeProvider } from "styled-components";
 
@@ -7,9 +8,11 @@ import { ThemeProvider } from "styled-components";
 const wrapPageElement = ({ element, ...props }) => {
   return (
     <ThemeProvider theme={theme}>
-      <AnimationStateContainer.Provider>
-        {element}
-      </AnimationStateContainer.Provider>
+      <NavigationStateContainer.Provider>
+        <AnimationStateContainer.Provider>
+          {element}
+        </AnimationStateContainer.Provider>
+      </NavigationStateContainer.Provider>
     </ThemeProvider>
   );
 };

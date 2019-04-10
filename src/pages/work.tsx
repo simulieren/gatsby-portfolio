@@ -52,10 +52,10 @@ const WorkPage = (props: any) => {
 
   return (
     <Layout>
-      {/* <Helmet title={`About | ${config.siteTitle}`} /> */}
+      <Helmet title={`${t("work.headline")} | ${config.siteTitle}`} />
       <Section my={verticalMargin}>
         <Box width={1} mb="5">
-          <SectionHeading>Selected Projects</SectionHeading>
+          <SectionHeading>{t("work.headline")}</SectionHeading>
         </Box>
         <Flex
           width={[1, 1 / 5]}
@@ -115,7 +115,7 @@ const WorkPage = (props: any) => {
               <Caps fontWeight={`bold`}>Design</Caps>
               <PostTags tags={["UX", "UI", "Development"]} />
             </Text>
-            <SectionHeading fontSize={[4]}>Projektname 1</SectionHeading>
+            <SectionHeading fontSize={[4]}>WordPress Theme Elle</SectionHeading>
           </Box>
         </Flex>
       </Section>

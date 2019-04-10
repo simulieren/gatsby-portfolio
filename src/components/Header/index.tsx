@@ -1,10 +1,10 @@
-import React, { useState, useContext, Fragment } from "react";
+import React, { useState, Fragment } from "react";
 //@ts-ignore
 import { Link } from "gatsby";
-import { animated } from "react-spring";
 import styled from "styled-components";
 import { Flex, Box, Text } from "rebass";
 import { useTranslation } from "react-i18next";
+import { useSpring, animated, useTrail } from "react-spring";
 
 import navLinks from "../../../data/NavigationLinks";
 import useWindowScrollPosition from "../../util/useWindowScrollPosition";
@@ -13,17 +13,30 @@ import { StyledLinkText } from "../Typography";
 import LocalizedLink from "../LocalizedLink";
 
 import locales from "../../locales/config";
+import createContainer from "constate";
+import {
+  MailIcon,
+  LinkedInIcon,
+  GitHubIcon,
+  CodepenIcon,
+  GitlabIcon
+} from "../Icons";
 
-const navContext = React.createContext({
-  open: false,
-  scrolled: false
-});
+const useNavigationState = () => {
+  const [state, setState] = useState({
+    open: false,
+    scrolled: false
+  });
 
-const transitionSettings = {
-  cover: true,
-  bg: `rebeccapurple`,
-  direction: `up`
+  const toggleNavigation = () => setState({ ...state, open: !state.open });
+
+  const toggleScrolled = () =>
+    setState({ ...state, scrolled: !state.scrolled });
+
+  return { state, toggleNavigation, toggleScrolled };
 };
+
+export const NavigationStateContainer = createContainer(useNavigationState);
 
 const HeaderContainer = styled.header`
   position: fixed;
@@ -68,15 +81,8 @@ const Header = (props: any) => {
 };
 
 const Logo = (props: any) => {
-  const context = useContext(navContext);
-  const [x, y] = useState(context.open);
-  const handleClick = () => {
-    context.open = false;
-    y();
-  };
-
   return (
-    <Box onClick={handleClick} width={[1, 1, 1, 1 / 4]} css={{ zIndex: 1000 }}>
+    <Box width={[1, 1, 1, 1 / 4]} css={{ zIndex: 1000 }}>
       <LocalizedLink to="/">
         <StyledLinkText fontFamily="Apercu">Simon Halimonov</StyledLinkText>
       </LocalizedLink>
@@ -84,17 +90,35 @@ const Logo = (props: any) => {
   );
 };
 
-// FIX THIS
 const SwitchLanguage = (props: any) => {
   const { t, i18n } = useTranslation();
-  // const locale = i18n.language;
-  // const isIndex = locales[locale].default ? true : false;
+  const locale = i18n.language;
+  const isIndex = locales[locale].default ? true : false;
 
   return (
-    <>
-      <Link to="/">DE</Link>
-      <Link to="/en">EN</Link>
-    </>
+    <Flex as="span" flexDirection="row" alignItems="center" {...props}>
+      {!isIndex ? (
+        <>
+          <StyledLinkText fontFamily="Apercu" mx="3">
+            <Link to="/">DE</Link>
+          </StyledLinkText>
+          <span> — </span>
+          <Text fontFamily="Apercu" mx="3" css={{ opacity: 0.5 }}>
+            EN
+          </Text>
+        </>
+      ) : (
+        <>
+          <Text fontFamily="Apercu" mx="3" css={{ opacity: 0.5 }}>
+            DE
+          </Text>
+          <span> — </span>
+          <StyledLinkText fontFamily="Apercu" mx="3">
+            <Link to="/en">EN</Link>
+          </StyledLinkText>
+        </>
+      )}
+    </Flex>
   );
 };
 
@@ -129,14 +153,38 @@ const MobileNavList = (props: any) => {
   const { t, i18n } = useTranslation();
 
   const time = 200;
-  const context = useContext(navContext);
-  const [x, y] = useState(context.open);
-  const handleClick = () => {
-    context.open = !context.open;
-    y();
-  };
+  const { state, toggleNavigation, toggleScrolled } = useNavigationState(
+    NavigationStateContainer.Context
+  );
 
-  const pointerEvents = { pointerEvents: context.open ? `all` : `none` };
+  const navBg = useSpring({
+    to: {
+      opacity: state.open ? 1 : 0
+    },
+    from: { opacity: 1 },
+    duration: state.open ? time : (time * navLinks.length) / 4,
+    config: {
+      duration: state.open ? time : (time * navLinks.length) / 4
+    },
+    delay: state.open ? 0 : time * navLinks.length
+  });
+
+  const trail = useTrail(navLinks.length, {
+    to: { opacity: state.open ? 1 : 0, x: state.open ? 0 : 100 },
+    from: { opacity: 0, x: 100 },
+    reverse: !state.open
+  });
+
+  const switchLanguage = useSpring({
+    to: {
+      opacity: state.open ? 1 : 0,
+      transform: state.open ? "translateY(100)" : "translateY(0)"
+    },
+    from: { opacity: 1, transform: "translateY(100)" },
+    delay: state.open ? time * navLinks.length + 5 : 0
+  });
+
+  const pointerEvents = { pointerEvents: state.open ? `all` : `none` };
 
   return (
     <Flex width={[1 / 2]}>
@@ -144,7 +192,7 @@ const MobileNavList = (props: any) => {
         p={3}
         width="100%"
         fontFamily="Apercu"
-        onClick={handleClick}
+        onClick={toggleNavigation}
         textAlign="right"
         css={{
           position: `fixed`,
@@ -157,29 +205,18 @@ const MobileNavList = (props: any) => {
         MENU
       </Text>
 
-      {/* <Spring
-        delay={context.open ? 0 : time * (navLinks.length / 1.5)}
-        config={{
-          duration: context.open ? time : (time * navLinks.length) / 4
+      <animated.div
+        style={{
+          background: `white`,
+          position: `fixed`,
+          top: 0,
+          right: 0,
+          left: 0,
+          bottom: 0,
+          ...navBg,
+          ...pointerEvents
         }}
-        from={{ transform: `translateY(100%)` }}
-        to={{ transform: context.open ? `translateY(0%)` : `translateY(100%)` }}
-      >
-        {props => (
-          <animated.div
-            style={{
-              background: `white`,
-              position: `fixed`,
-              top: 0,
-              right: 0,
-              left: 0,
-              bottom: 0,
-              ...props,
-              ...pointerEvents
-            }}
-          />
-        )}
-      </Spring> */}
+      />
 
       <Flex
         flexDirection="column"
@@ -196,29 +233,88 @@ const MobileNavList = (props: any) => {
           ...pointerEvents
         }}
       >
-        {/* <Trail
-          items={navLinks}
-          reverse={!context.open}
-          keys={item => item.text}
-          from={{ opacity: 0, x: 0 }}
-          to={{ opacity: context.open ? 1 : 0, x: context.open ? 0 : 100 }}
-        >
-          {link => props => (
+        {trail.map((props, index) => {
+          return (
             <animated.div
-              onClick={handleClick}
+              onClick={toggleNavigation}
               style={{
                 opacity: props.opacity,
-                transform: `translateY(${props.x *
-                  4}%) rotate3d(1, 1, 1,${props.x * 2}deg)`
+                transform: props.x.interpolate(
+                  x => `translateY(${x * 4}%) rotate3d(1, 1, 1,${x * 2}deg)`
+                )
               }}
+              key={index}
             >
-              <NavLink to={link.to} p={3} fontSize={[4, 5]}>
-                {t("nav." + link.text)}
+              <NavLink to={navLinks[index].to} p={3} fontSize={[4, 5]}>
+                {t("nav." + navLinks[index].text)}
               </NavLink>
             </animated.div>
-          )}
-        </Trail> */}
+          );
+        })}
+
+        <animated.div
+          onClick={toggleNavigation}
+          style={{ ...pointerEvents, ...switchLanguage }}
+        >
+          <SwitchLanguage mt={[3, 4, 5, 6]} />
+        </animated.div>
+
+        <animated.div style={{ ...pointerEvents, ...switchLanguage }}>
+          <SocialLinks mt={[3, 4, 5, 6]} />
+        </animated.div>
       </Flex>
+    </Flex>
+  );
+};
+
+export const SocialLinks = props => {
+  return (
+    <Flex mt="3" flexDirection={["row"]} {...props}>
+      <Box
+        p="2"
+        as="a"
+        target="_blank"
+        rel="noopener"
+        href="mailto:hello@simonhalimonov.de"
+      >
+        <MailIcon stroke={props.color} />
+      </Box>
+      <Box
+        p="2"
+        as="a"
+        target="_blank"
+        rel="noopener"
+        href="https://www.linkedin.com/in/simon-halimonov-745431181/"
+      >
+        <LinkedInIcon stroke={props.color} />
+      </Box>
+      <Box
+        p="2"
+        as="a"
+        target="_blank"
+        rel="noopener"
+        href="https://github.com/simulieren"
+      >
+        <GitHubIcon stroke={props.color} />
+      </Box>
+      <Box
+        p="2"
+        as="a"
+        target="_blank"
+        rel="noopener"
+        href="https://gitlab.com/simulieren"
+      >
+        <GitlabIcon stroke={props.color} />
+      </Box>
+      <Box
+        p="2"
+        as="a"
+        target="_blank"
+        rel="noopener"
+        href="https://codepen.io/simulieren"
+      >
+        <CodepenIcon stroke={props.color} />
+      </Box>
     </Flex>
   );
 };

@@ -31,8 +31,6 @@ const PortalContainer = styled.div`
 const MainLayout = (props: any) => {
   const { current, send } = useContext(AnimationStateContainer.Context);
 
-  if (current.value === "enter") send("NEXT");
-
   const { children } = props;
   return (
     <div>
@@ -46,7 +44,7 @@ const MainLayout = (props: any) => {
 
       <Portal>
         <PortalContainer>
-          <PageTransition />
+          {/* <PageTransition /> */}
           <Header />
         </PortalContainer>
       </Portal>

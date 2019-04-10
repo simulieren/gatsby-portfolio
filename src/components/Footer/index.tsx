@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import HeaderFader from "../Animations/HeaderSlider";
 import { SectionOverline, P, StyledLinkText } from "../Typography";
 import { Section } from "../Grid";
+import { SocialLinks } from "../Header";
 
 const Footer = props => {
   const { t, i18n } = useTranslation();
@@ -45,6 +46,7 @@ const Footer = props => {
             ]}
           /> */}
         </Heading>
+        <SocialLinks mt="4" color={"#fff"} />
       </Section>
       <Section py={4} bg="#00f">
         <Box width={[1, 1 / 3]}>

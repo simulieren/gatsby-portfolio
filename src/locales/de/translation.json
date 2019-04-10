@@ -42,5 +42,24 @@
   "development": "Entwicklung",
   "button": {
     "read": "Mehr erfahren"
+  },
+  "about": {
+    "headline": "Digital by default",
+    "section1": {
+      "headline": "Über mich",
+      "paragraph": "Hi, mein Name ist Simon. Ich glaube, dass die Kombination aus gutem digitalen Design und moderner Technologie Produkte und unseren Umgang mit ihnen verbessern kann. Ich bin misstrauisch gegenüber dem, was ist und entschlossen, die Art und Weise, wie unsere digitalen Produkte aussehen und funktionieren, verändern zu wollen."
+    },
+    "section2": {
+      "headline": "Digitale Produkte in Handarbeit",
+      "paragraph1": "Ich entwickle jedes Projekt, egal ob Website oder Web App, individuell in Handarbeit nach ihren Bedürfnissen. Ich verwende aktuellste Technologien, die auch bei Google, Facebook, Airbnb oder Trivago, eingesetzt werden. Ich arbeite gerne mit Menschen, die etwas bewegen wollen. Und die verstanden haben, wie digitale Projekte funktionieren.",
+      "paragraph2": "Ich liebe das, was ich tue, und ich verfeinere ständig meine Fähigkeit, Markengeschichten in eine visuell einzigartige und ansprechende Benutzererfahrung zu übersetzen."
+    },
+    "section3": {
+      "headline": "Dozent beim Digital Career Institute",
+      "paragraph": "Seit Dezember 2017 unterrichte ich beim Digital Career Institute und habe seitdem insgesamt über 100 Teilnehmer in Düsseldorf, Hamburg und Berlin zum Thema “Modern Web Development” und “Digital Design” unterrichtet."
+    }
+  },
+  "work": {
+    "headline": "Ausgewählte Arbeiten"
   }
 }

@@ -6,14 +6,25 @@ interface HeaderFaderProps {
   time: number;
 }
 
+let faderInterval: any = null;
+
+const setFaderInterval = () => {
+  faderInterval = setInterval(() => {
+    if (state.timer) return;
+    console.log("Interval");
+
+    setState({ index: (state.index + 1) % items.length });
+  }, 2000);
+};
+
 const HeaderFader = (props: HeaderFaderProps) => {
   const { time, items } = props;
   const [state, setState] = useState({
-    textItems: [`Hello`],
+    textItems: [],
     index: 0,
-    timer: true
+    timer: false
   });
-  const transitions = useTransition(state.textItems, item => item.key, {
+  const transitions = useTransition(state.textItems, item => item, {
     from: {
       opacity: 0,
       transform: `translateY(-100%) rotateX(60deg)`
@@ -28,32 +39,24 @@ const HeaderFader = (props: HeaderFaderProps) => {
     }
   });
 
-  let faderInterval: any = null;
+  if (!state.timer) {
+    setState({ ...state, textItems: items, timer: true });
+    console.log(items, state.index);
 
-  const setFaderInterval = () => {
-    faderInterval = setInterval(() => {
-      if (!state.timer) return;
-      let i = state.index;
-      i++;
-      i = i % state.textItems.length;
-      setState({ index: i });
-    }, 2000);
-  };
+    setFaderInterval();
+  }
 
-  setState({ ...state, textItems: items, timer: true });
-  setFaderInterval();
-
-  setState({ ...state, timer: false });
-  clearInterval(faderInterval);
+  // clearInterval(faderInterval);
 
   return (
     <div style={{ perspective: `400px` }}>
       {transitions.map(({ item, props, key }, i) => {
-        return (
-          <animated.div key={key} style={props}>
-            {item.text}
+        let El = props => (
+          <animated.div key={i} style={props.style}>
+            {items[state.index]}
           </animated.div>
         );
+        return <El style={props} />;
       })}
     </div>
   );

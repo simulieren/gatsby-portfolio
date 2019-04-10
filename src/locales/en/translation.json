@@ -42,5 +42,24 @@
   "development": "Development",
   "button": {
     "read": "Read more"
+  },
+  "about": {
+    "headline": "Digital by default",
+    "section1": {
+      "headline": "About me",
+      "paragraph": "Hi, my name is Simon. I believe that the combination of good digital design and modern technology can improve products and how we deal with them. I am suspicious of what is and determined to change the way our digital products look and work."
+    },
+    "section2": {
+      "headline": "Digital products by craftsmanship",
+      "paragraph1": "I develop every project, no matter if website or web app, individually by hand according to your needs. I use the latest technologies, which are also used by Google, Facebook, Airbnb or Trivago. I like to work with people who want to make a difference. And who have understood how digital projects work.",
+      "paragraph2": "I love what I do and I am constantly refining my ability to translate brand stories into a visually unique and engaging user experience."
+    },
+    "section3": {
+      "headline": "Lecturer at the Digital Career Institute",
+      "paragraph": "Since December 2017 I have been teaching at the Digital Career Institute and since then I have taught more than 100 participants in Düsseldorf, Hamburg and Berlin about Modern Web Development and Digital Design."
+    }
+  },
+  "work": {
+    "headline": "Selected works"
   }
 }
