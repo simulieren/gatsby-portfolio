@@ -12,6 +12,7 @@ import { TeachingSection } from "../components/sections/TeachingSection";
 import { HireSection } from "../components/sections/HireSection";
 import { PostSection } from "../components/sections/PostSection";
 import { IntroSection } from "../components/sections/IntroSection";
+import ProjectSection from "../components/sections/ProjectSection";
 
 const changeLanguage = debounce(
   (locale, i18n) => i18n.changeLanguage(locale),
@@ -35,6 +36,8 @@ const Index = (props: any) => {
   return (
     <Layout>
       <IntroSection mdxEdges={allMdxEdges} />
+
+      <ProjectSection />
 
       <MissionSection />
 

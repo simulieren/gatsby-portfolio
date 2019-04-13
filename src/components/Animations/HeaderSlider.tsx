@@ -8,7 +8,7 @@ interface HeaderFaderProps {
 
 let faderInterval: any = null;
 
-const setFaderInterval = () => {
+const setFaderInterval = (setState, state, items) => {
   faderInterval = setInterval(() => {
     if (state.timer) return;
     console.log("Interval");
@@ -43,20 +43,22 @@ const HeaderFader = (props: HeaderFaderProps) => {
     setState({ ...state, textItems: items, timer: true });
     console.log(items, state.index);
 
-    setFaderInterval();
+    setFaderInterval(setState, state, items);
   }
+  const renderItems = (props, i) => {
+    return (
+      <animated.div key={i} style={props.style}>
+        {items[state.index]}
+      </animated.div>
+    );
+  };
 
   // clearInterval(faderInterval);
 
   return (
     <div style={{ perspective: `400px` }}>
       {transitions.map(({ item, props, key }, i) => {
-        let El = props => (
-          <animated.div key={i} style={props.style}>
-            {items[state.index]}
-          </animated.div>
-        );
-        return <El style={props} />;
+        // return i === state.index ? renderItems(props, i) : null;
       })}
     </div>
   );

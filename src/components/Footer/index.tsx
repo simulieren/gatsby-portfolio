@@ -24,7 +24,7 @@ const Footer = props => {
         pb={6}
         bg="#00f"
       >
-        <SectionOverline textAlign="center" mr={0} mb={4} color="#fff">
+        {/* <SectionOverline textAlign="center" mr={0} mb={4} color="#fff">
           {t("footer.letsChat")}
         </SectionOverline>
         <Heading
@@ -35,7 +35,7 @@ const Footer = props => {
           color="#fff"
           css={{ position: `relative` }}
         >
-          {/* <HeaderFader
+          <HeaderFader
             time={4000}
             items={[
               `Warte nicht länger, lass uns einfach reden.`,
@@ -44,8 +44,8 @@ const Footer = props => {
               `Jeder Gedanke in uns ist bestrebt, Wirklichkeit zu werden.`,
               `Vergiss niemals das "Warum".`
             ]}
-          /> */}
-        </Heading>
+          />
+        </Heading> */}
         <SocialLinks mt="4" color={"#fff"} />
       </Section>
       <Section py={4} bg="#00f">
