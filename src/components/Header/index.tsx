@@ -39,28 +39,15 @@ const useNavigationState = () => {
 export const NavigationStateContainer = createContainer(useNavigationState);
 
 const HeaderContainer = styled.header`
+  z-index: 1000;
   position: fixed;
   width: 100vw;
   transition: all 0.5s ease;
-
-  &.scrolled {
-    background: white;
-  }
 `;
 
 const Header = (props: any) => {
-  const { x, y } = useWindowScrollPosition();
-  const size = useWindowSize();
-  const scrolled = y > 20;
-
   return (
-    <HeaderContainer className={scrolled ? `scrolled` : ``}>
-      {/* <Spring
-        from={{ opacity: 0 }}
-        to={{ opacity: 1 }}
-        config={{ duration: 500 }}
-      >
-        {props => ( */}
+    <HeaderContainer>
       <Flex
         style={props}
         fontSize={[2, 2, 2, 2]}
@@ -68,14 +55,9 @@ const Header = (props: any) => {
         py={[3] as any}
       >
         <Logo />
-        {size.width > 640 ? (
-          <NavList scrolled={scrolled} />
-        ) : (
-          <MobileNavList scrolled={scrolled} />
-        )}
+
+        <MobileNavList />
       </Flex>
-      {/* )}
-      </Spring> */}
     </HeaderContainer>
   );
 };
@@ -141,7 +123,7 @@ const NavLink = ({ to, children, p, fontSize }: any) => (
   <StyledLinkText
     fontFamily="Apercu"
     p={p}
-    mr={[0, 3, 4, 5] as any}
+    mr={0}
     textAlign={[`center`, `left`] as any}
     fontSize={fontSize}
   >

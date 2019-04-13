@@ -42,12 +42,7 @@ const MainLayout = (props: any) => {
 
       <SEO />
 
-      <Portal>
-        <PortalContainer>
-          {/* <PageTransition /> */}
-          <Header />
-        </PortalContainer>
-      </Portal>
+      <Header />
 
       {children}
 

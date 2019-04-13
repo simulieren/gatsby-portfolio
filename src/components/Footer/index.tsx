@@ -46,7 +46,6 @@ const Footer = props => {
             ]}
           />
         </Heading> */}
-        <SocialLinks mt="4" color={"#fff"} />
       </Section>
       <Section py={4} bg="#00f">
         <Box width={[1, 1 / 3]}>
@@ -66,11 +65,7 @@ const Footer = props => {
           <SectionOverline textAlign="left" color="#fff">
             Social Media
           </SectionOverline>
-          {/* <div className="notice-container">
-            <Link to={url}>
-              <button>RSS Abonnieren</button>
-            </Link>
-          </div> */}
+          <SocialLinks mt="4" color={"#fff"} />
         </Box>
         <Box width={[1, 1 / 3]}>
           <SectionOverline textAlign="left" color="#fff">

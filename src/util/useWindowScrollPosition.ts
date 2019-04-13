@@ -1,18 +1,19 @@
 // We need to import lodash throttle if we want to throttle our scroll events
-import React from 'react';
-import throttle from 'lodash.throttle';
+import React from "react";
+import throttle from "lodash.throttle";
 
 const useWindowScrollPosition = (options = {}) => {
+  if (typeof window === "undefined") return;
   const { throttleMs = 100 } = options;
   const [scroll, setScroll] = React.useState({
     x: window.pageXOffset,
-    y: window.pageYOffset,
+    y: window.pageYOffset
   });
 
   const handle = throttle(() => {
     setScroll({
       x: window.pageXOffset,
-      y: window.pageYOffset,
+      y: window.pageYOffset
     });
   }, throttleMs);
 
