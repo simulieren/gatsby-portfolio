@@ -19,6 +19,7 @@ const TextListItem = (props: TextListItemProps) => {
   const post = props.post ? props.post : undefined;
   const hasLink = props.link ? true : false;
   const url = () => {
+    if (typeof window === "undefined") return;
     if (!hasLink || props.link === null) return;
     return new URL(props.link).hostname;
   };
