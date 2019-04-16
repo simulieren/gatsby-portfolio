@@ -1,0 +1,6 @@
+node_modules
+.cache
+.vscode
+src
+data
+static
