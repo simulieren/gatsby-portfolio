@@ -40,8 +40,9 @@ export const NavigationStateContainer = createContainer(useNavigationState);
 
 const HeaderContainer = styled.header`
   z-index: 1000;
-  position: fixed;
+  position: absolute;
   width: 100vw;
+  max-width: 100%;
   transition: all 0.5s ease;
 `;
 
@@ -53,6 +54,8 @@ const Header = (props: any) => {
         fontSize={[2, 2, 2, 2]}
         px={[3, 5] as any}
         py={[3] as any}
+        alignItems="center"
+        justifyContent="space-between"
       >
         <Logo />
 
@@ -169,18 +172,13 @@ const MobileNavList = (props: any) => {
   const pointerEvents = { pointerEvents: state.open ? `all` : `none` };
 
   return (
-    <Flex width={[1 / 2]}>
+    <Flex>
       <Text
         p={3}
-        width="100%"
         fontFamily="Apercu"
         onClick={toggleNavigation}
         textAlign="right"
         css={{
-          position: `fixed`,
-          top: 0,
-          right: 0,
-          width: `50%`,
           zIndex: 1000
         }}
       >
