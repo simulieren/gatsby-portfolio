@@ -10,6 +10,7 @@ import {
   StyledButton,
   SectionHeading
 } from "../Typography";
+import { Image } from "../Image/Image";
 
 export const TeachingSection = (props: any) => {
   const { t, i18n } = useTranslation();
@@ -35,7 +36,19 @@ export const TeachingSection = (props: any) => {
         </StyledButton>
       </Box>
 
-      <Img
+      <Image
+        alt="Image with a students notebook"
+        filename="desk.jpg"
+        style={{
+          minHeight: `100%`,
+          width: `100%`,
+          position: `absolute`,
+          right: 0,
+          opacity: `0.75`,
+          mixBlendMode: `multiply`
+        }}
+      />
+      {/* <Img
         style={{
           minHeight: `100%`,
           width: `100%`,
@@ -45,7 +58,7 @@ export const TeachingSection = (props: any) => {
           mixBlendMode: `multiply`
         }}
         fluid={props.img}
-      />
+      /> */}
     </Section>
   );
 };
