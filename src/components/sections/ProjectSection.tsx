@@ -69,14 +69,6 @@ const ProjectSection = (props: any) => {
         linkText={visit}
         background="rgba(176, 39, 28, .15)"
       />
-
-      <PortfolioCarousel
-        images={["tc_01", "tc_02", "tc_03"]}
-        overline="Design"
-        tags={["UX", "UI"]}
-        title="TechnoCargo"
-        background="rgba(149, 187, 93, .3)"
-      />
     </>
   );
 };
