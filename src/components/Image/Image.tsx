@@ -18,7 +18,7 @@ export const Image = (props: ImageProps) => (
               relativePath
               name
               childImageSharp {
-                sizes(maxWidth: 600) {
+                sizes(maxWidth: 1200) {
                   ...GatsbyImageSharpSizes
                 }
               }

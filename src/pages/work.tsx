@@ -9,6 +9,9 @@ import config from "../../data/SiteConfig";
 import ProjectSection from "../components/sections/ProjectSection";
 
 import { changeLanguage } from "../util/changeLanguage";
+import { Section } from "../components/Grid";
+import { Box } from "rebass";
+import { SectionHeading } from "../components/Typography";
 
 const WorkPage = (props: any) => {
   const { t, i18n } = useTranslation();
@@ -19,6 +22,12 @@ const WorkPage = (props: any) => {
   return (
     <Layout>
       <Helmet title={`${t("work.headline")} | ${config.siteTitle}`} />
+
+      <Section mb={[4, 5]} pt={[4, 5, 6]}>
+        <Box width={1}>
+          <SectionHeading>{t("work.headline")}</SectionHeading>
+        </Box>
+      </Section>
       <ProjectSection />
     </Layout>
   );

@@ -1,137 +1,91 @@
 import React, { useContext } from "react";
-import { Box, Flex, Text } from "rebass";
 import { useTranslation } from "react-i18next";
 
-import { Caps, SectionHeading } from "../Typography";
-import { Section } from "../Grid";
-import PostTags from "../PostTags/PostTags";
 import { PortfolioCarousel } from "../PortfolioSlider/PortfolioSlider";
-
-const ImageBox = (props: any) => {
-  const { children, shadow } = props;
-  return (
-    <Box
-      width={[1, 4 / 5]}
-      p={[3, 4, 5]}
-      bg={"#fff6f6"}
-      css={{ overflow: "hidden" }}
-      {...props}
-    >
-      <Box
-        css={{
-          boxShadow: shadow
-            ? "0 10px 40px rgba(0,0,0,.2)" || props.boxShadow
-            : ""
-        }}
-      >
-        {children}
-      </Box>
-    </Box>
-  );
-};
 
 const ProjectSection = (props: any) => {
   const { t, i18n } = useTranslation();
 
-  const verticalMargin = [5, 6];
-
-  const MockImageData = [
-    "https://picsum.photos/600/700",
-    "https://picsum.photos/500/700",
-    "https://picsum.photos/800/700"
-  ];
+  console.log(i18n.language);
 
   return (
     <>
-      <Section mb={verticalMargin} pt={verticalMargin}>
-        <Box width={1}>
-          <SectionHeading>{t("work.headline")}</SectionHeading>
-        </Box>
-      </Section>
-
       <PortfolioCarousel
-        images={MockImageData}
+        images={["mk_01", "mk_02", "mk_03", "mk_04"]}
         overline="Design + Development"
         tags={["UX", "UI", "Development"]}
-        title="Portfolio Project"
+        title="MultiKulti Markt"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
         dolores alias quibusdam asperiores explicabo, laborum natus
         accusantium blanditiis cum quia?"
+        background="rgba(255, 223, 223, .5)"
       />
 
       <PortfolioCarousel
-        images={MockImageData}
+        images={["of_01", "of_02", "of_03"]}
         overline="Design + Development"
         tags={["UX", "UI", "Development"]}
-        title="Portfolio Project"
+        title="Origami Films"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
         dolores alias quibusdam asperiores explicabo, laborum natus
         accusantium blanditiis cum quia?"
+        background="rgba(209, 143, 231, .2)"
       />
 
-      <Section mb={verticalMargin} pt={verticalMargin}>
-        <Flex
-          width={[1, 1 / 5]}
-          flexDirection="column"
-          justifyContent="center"
-          p="3"
-        >
-          <Box>
-            <Text as="div" fontSize={1} fontFamily="Apercu">
-              <Caps fontWeight={`bold`}>Design</Caps>
-              <PostTags tags={["UX", "UI", "Development"]} />
-            </Text>
-            <SectionHeading fontSize={[4]}>MultiKulti Markt</SectionHeading>
-          </Box>
-        </Flex>
-        <ImageBox shadow>
-          <img src="/projects/multikulti/1.jpg" alt="" />
-        </ImageBox>
-      </Section>
+      <PortfolioCarousel
+        images={["sc_01", "sc_02", "sc_03"]}
+        overline="Design + Development"
+        tags={["UX", "UI", "Development"]}
+        title="SuperCode"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+        dolores alias quibusdam asperiores explicabo, laborum natus
+        accusantium blanditiis cum quia?"
+        background="rgba(61, 215, 172, 0.2)"
+      />
 
-      <Section my={verticalMargin}>
-        {/* LEFT */}
-        <Flex
-          width={[1, 1 / 2]}
-          flexDirection="column"
-          justifyContent="center"
-          p="3"
-        >
-          <Text as="div" fontSize={1} fontFamily="Apercu">
-            <Caps fontWeight={`bold`}>Design + Development</Caps>
-            <PostTags tags={["UX", "UI", "Development"]} />
-          </Text>
-          <SectionHeading fontSize={[4]}>Origami Films</SectionHeading>
-        </Flex>
+      <PortfolioCarousel
+        images={["bk_01", "bk_02", "bk_03"]}
+        overline="Design + Development"
+        tags={["UX", "UI", "Development"]}
+        title="beka GmbH"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+        dolores alias quibusdam asperiores explicabo, laborum natus
+        accusantium blanditiis cum quia?"
+        background="rgba(17, 95, 148, .2)"
+      />
 
-        {/* RIGHT */}
-        <Box width={[1, 1 / 2]}>
-          <ImageBox bg="transparent">
-            <img src="projects/origami-1.png" alt="" />
-          </ImageBox>
-        </Box>
-      </Section>
+      <PortfolioCarousel
+        images={["wp_01", "wp_02", "wp_03"]}
+        overline="Design + Development"
+        tags={["UX", "UI", "Development"]}
+        title="Wordpress Theme Elle"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+        dolores alias quibusdam asperiores explicabo, laborum natus
+        accusantium blanditiis cum quia?"
+        background="rgba(220, 202, 230, .4)"
+      />
 
-      <Section my={verticalMargin}>
-        <ImageBox>
-          <img src="projects/theme-elle-1.jpg" alt="" />
-        </ImageBox>
+      <PortfolioCarousel
+        images={["tc_01", "tc_02", "tc_03"]}
+        overline="Design + Development"
+        tags={["UX", "UI", "Development"]}
+        title="TechnoCargo"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+        dolores alias quibusdam asperiores explicabo, laborum natus
+        accusantium blanditiis cum quia?"
+        background="rgba(149, 187, 93, .3)"
+      />
 
-        <Flex
-          width={[1, 1 / 5]}
-          flexDirection="column"
-          justifyContent="center"
-          p="3"
-        >
-          <Box>
-            <Text as="div" fontSize={1} fontFamily="Apercu">
-              <Caps fontWeight={`bold`}>Design</Caps>
-              <PostTags tags={["UX", "UI", "Development"]} />
-            </Text>
-            <SectionHeading fontSize={[4]}>WordPress Theme Elle</SectionHeading>
-          </Box>
-        </Flex>
-      </Section>
+      <PortfolioCarousel
+        images={["af_01", "af_02", "af_03"]}
+        overline="Design + Development"
+        tags={["UX", "UI", "Development"]}
+        title="alle freiheit"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+        dolores alias quibusdam asperiores explicabo, laborum natus
+        accusantium blanditiis cum quia?"
+        background="rgba(176, 39, 28, .15)"
+      />
     </>
   );
 };

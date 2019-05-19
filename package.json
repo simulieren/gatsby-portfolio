@@ -60,6 +60,7 @@
     "react-twitter-widgets": "^1.7.1",
     "rebass": "^3.0.0-11",
     "styled-components": "^4.0.3",
+    "tiny-slider-react": "^0.3.7",
     "typeface-spectral": "0.0.54",
     "url-join": "^4.0.0",
     "xstate": "^4.4.0"

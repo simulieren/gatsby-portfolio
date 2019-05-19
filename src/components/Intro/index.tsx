@@ -10,8 +10,9 @@ const Intro = props => (
     as="section"
     px={[3, 4, 5]}
     pt={[6, 6, 7]}
+    pb={[4, 5]}
     css={{
-      minHeight: `100vh`,
+      minHeight: `60vh`,
       background: props.bg,
       backgroundSize: `cover`,
       backgroundPosition: `top center`,
