@@ -45,13 +45,16 @@ export const SectionHeading = (props: any) => (
   <Heading as="h3" fontSize={[5, 6]} fontFamily="Spectral" mt={0} {...props} />
 );
 
-export const StyledLinkText = styled(Text)<{ inverted?: boolean }>`
+export const StyledLinkText = styled(Text)<{
+  inverted?: boolean;
+  color?: string;
+}>`
   position: relative;
   transition: all 0.2s ease;
   display: inline-block;
 
   &:hover {
-    color: ${props => (props.inverted ? `#fff` : `#00f`)};
+    color: ${props => (props.inverted ? `#fff` : props.color || `#00f`)};
     transform: translateY(-4px);
   }
 
@@ -63,7 +66,7 @@ export const StyledLinkText = styled(Text)<{ inverted?: boolean }>`
     bottom: 0;
     left: 0;
     right: 0;
-    background: ${props => (props.inverted ? `#fff` : `#00f`)};
+    background: ${props => (props.inverted ? `#fff` : props.color || `#00f`)};
     transform: scaleX(0) translateY(0px);
     transition: transform 0.2s ease;
     will-change: transform;
@@ -84,7 +87,7 @@ export const StyledLinkHeading = styled(Heading)`
   }
 `;
 
-const RightArrowSVG = () => (
+export const RightArrowSVG = () => (
   <svg
     version="1.1"
     id="Layer_1"

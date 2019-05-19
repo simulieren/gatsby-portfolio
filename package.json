@@ -4,6 +4,7 @@
   "version": "1.1.0",
   "author": "Ruben Harutyunyan <vagr9k@gmail.com>",
   "dependencies": {
+    "@glidejs/glide": "^3.3.0",
     "@hocs/with-intersection-observer-props": "^0.5.0",
     "@mdx-js/mdx": "^0.20.3",
     "@mdx-js/tag": "^0.20.3",
@@ -60,7 +61,6 @@
     "react-twitter-widgets": "^1.7.1",
     "rebass": "^3.0.0-11",
     "styled-components": "^4.0.3",
-    "tiny-slider-react": "^0.3.7",
     "typeface-spectral": "0.0.54",
     "url-join": "^4.0.0",
     "xstate": "^4.4.0"

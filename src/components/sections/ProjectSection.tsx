@@ -6,7 +6,7 @@ import { PortfolioCarousel } from "../PortfolioSlider/PortfolioSlider";
 const ProjectSection = (props: any) => {
   const { t, i18n } = useTranslation();
 
-  console.log(i18n.language);
+  const visit = t("button.visit");
 
   return (
     <>
@@ -15,10 +15,9 @@ const ProjectSection = (props: any) => {
         overline="Design + Development"
         tags={["UX", "UI", "Development"]}
         title="MultiKulti Markt"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-        dolores alias quibusdam asperiores explicabo, laborum natus
-        accusantium blanditiis cum quia?"
         background="rgba(255, 223, 223, .5)"
+        link="https://multikulti-markt.de/"
+        linkText={visit}
       />
 
       <PortfolioCarousel
@@ -26,9 +25,8 @@ const ProjectSection = (props: any) => {
         overline="Design + Development"
         tags={["UX", "UI", "Development"]}
         title="Origami Films"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-        dolores alias quibusdam asperiores explicabo, laborum natus
-        accusantium blanditiis cum quia?"
+        link="http://origami-films.com/"
+        linkText={visit}
         background="rgba(209, 143, 231, .2)"
       />
 
@@ -37,9 +35,8 @@ const ProjectSection = (props: any) => {
         overline="Design + Development"
         tags={["UX", "UI", "Development"]}
         title="SuperCode"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-        dolores alias quibusdam asperiores explicabo, laborum natus
-        accusantium blanditiis cum quia?"
+        link="https://www.super-code.de/"
+        linkText={visit}
         background="rgba(61, 215, 172, 0.2)"
       />
 
@@ -48,9 +45,8 @@ const ProjectSection = (props: any) => {
         overline="Design + Development"
         tags={["UX", "UI", "Development"]}
         title="beka GmbH"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-        dolores alias quibusdam asperiores explicabo, laborum natus
-        accusantium blanditiis cum quia?"
+        link="https://www.beka.de/"
+        linkText={visit}
         background="rgba(17, 95, 148, .2)"
       />
 
@@ -59,21 +55,9 @@ const ProjectSection = (props: any) => {
         overline="Design + Development"
         tags={["UX", "UI", "Development"]}
         title="Wordpress Theme Elle"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-        dolores alias quibusdam asperiores explicabo, laborum natus
-        accusantium blanditiis cum quia?"
+        link="http://themes.simonhalimonov.de/"
+        linkText={visit}
         background="rgba(220, 202, 230, .4)"
-      />
-
-      <PortfolioCarousel
-        images={["tc_01", "tc_02", "tc_03"]}
-        overline="Design + Development"
-        tags={["UX", "UI", "Development"]}
-        title="TechnoCargo"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-        dolores alias quibusdam asperiores explicabo, laborum natus
-        accusantium blanditiis cum quia?"
-        background="rgba(149, 187, 93, .3)"
       />
 
       <PortfolioCarousel
@@ -81,10 +65,17 @@ const ProjectSection = (props: any) => {
         overline="Design + Development"
         tags={["UX", "UI", "Development"]}
         title="alle freiheit"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-        dolores alias quibusdam asperiores explicabo, laborum natus
-        accusantium blanditiis cum quia?"
+        link="http://film.allefreiheit.de/"
+        linkText={visit}
         background="rgba(176, 39, 28, .15)"
+      />
+
+      <PortfolioCarousel
+        images={["tc_01", "tc_02", "tc_03"]}
+        overline="Design"
+        tags={["UX", "UI"]}
+        title="TechnoCargo"
+        background="rgba(149, 187, 93, .3)"
       />
     </>
   );

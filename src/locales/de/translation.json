@@ -42,7 +42,8 @@
   "design": "Design",
   "development": "Entwicklung",
   "button": {
-    "read": "Mehr erfahren"
+    "read": "Mehr erfahren",
+    "visit": "Webseite besuchen"
   },
   "about": {
     "headline": "Digital by default",
