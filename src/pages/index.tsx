@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 import get from "lodash/get";
-import debounce from "lodash/debounce";
 import { useTranslation } from "react-i18next";
 
 import Layout from "../layout";
@@ -13,16 +12,12 @@ import { PostSection } from "../components/sections/PostSection";
 import { IntroSection } from "../components/sections/IntroSection";
 import ProjectSection from "../components/sections/ProjectSection";
 
-const changeLanguage = debounce(
-  (locale, i18n) => i18n.changeLanguage(locale),
-  1000,
-  { leading: true, trailing: false }
-);
+import { changeLanguage } from "../util/changeLanguage";
 
 const Index = (props: any) => {
   const { t, i18n } = useTranslation();
-  const locale: string | undefined = get(props, "pageContext.locale");
 
+  const locale: string | undefined = get(props, "pageContext.locale");
   if (locale && locale !== i18n.language) changeLanguage(locale, i18n);
 
   const allMdxEdges = get(props, "data.allMdx.edges");
@@ -43,18 +38,6 @@ const Index = (props: any) => {
       <TeachingSection img={images[2]} />
 
       <HireSection />
-
-      <PostSection
-        type="blog"
-        mdxEdges={allMdxEdges}
-        overline={t("nav.blog")}
-      />
-
-      <PostSection
-        type="note"
-        mdxEdges={allMdxEdges}
-        overline={t("nav.notes")}
-      />
     </Layout>
   );
 };

@@ -16,8 +16,8 @@ export const MissionSection = (props: any) => {
         <Heading as="h3" fontSize={[5, 6]} fontFamily="Spectral" mt={0}>
           {t("mission.headline")}
         </Heading>
-        <P>{t("mission.paragraph")}</P>
-        <P>{t("mission.paragraph")}</P>
+        <P>{t("mission.paragraph1")}</P>
+        <P>{t("mission.paragraph2")}</P>
       </Box>
     </Section>
   );

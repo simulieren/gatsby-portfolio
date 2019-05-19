@@ -14,7 +14,8 @@
   "mission": {
     "overline": "Mission",
     "headline": "Digital focus",
-    "paragraph": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque ratione veniam nobis, expedita impedit earum, minima, ex quo amet quis assumenda nam. Nesciunt officiis sit aperiam suscipit odit nihil distinctio."
+    "paragraph1": "As an independent Digital Product Designer and Frontend Developer I conceive, design and develop digital products for companies and company founders. My goal is to make technical and complex processes user-friendly.",
+    "paragraph2": "For cross-platform solutions, I work with proven processes and state-of-the-art technology. In order to bridge functionality and design, I create comprehensively designed user interfaces for your website or app."
   },
   "teaching": {
     "overline": "Teaching",
@@ -27,7 +28,7 @@
     "step1": "I plan, conceive, design and realize your digital project.",
     "step2": "I support your team with my competences in your project.",
     "step3": "I'm giving her team a workshop to take you to the next level.",
-    "step4": "Ich spreche bei ihrem Event über aktuelle Themem im Bereich Design und Development."
+    "step4": "I'm talking about current topics in the field of design and development at your event."
   },
   "footer": {
     "letsChat": "Let's chat",

@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Caps, SectionHeading } from "../Typography";
 import { Section } from "../Grid";
 import PostTags from "../PostTags/PostTags";
+import { PortfolioCarousel } from "../PortfolioSlider/PortfolioSlider";
 
 const ImageBox = (props: any) => {
   const { children, shadow } = props;
@@ -34,12 +35,41 @@ const ProjectSection = (props: any) => {
 
   const verticalMargin = [5, 6];
 
+  const MockImageData = [
+    "https://picsum.photos/600/700",
+    "https://picsum.photos/500/700",
+    "https://picsum.photos/800/700"
+  ];
+
   return (
     <>
-      <Section my={verticalMargin}>
-        <Box width={1} mb="5">
+      <Section mb={verticalMargin} pt={verticalMargin}>
+        <Box width={1}>
           <SectionHeading>{t("work.headline")}</SectionHeading>
         </Box>
+      </Section>
+
+      <PortfolioCarousel
+        images={MockImageData}
+        overline="Design + Development"
+        tags={["UX", "UI", "Development"]}
+        title="Portfolio Project"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+        dolores alias quibusdam asperiores explicabo, laborum natus
+        accusantium blanditiis cum quia?"
+      />
+
+      <PortfolioCarousel
+        images={MockImageData}
+        overline="Design + Development"
+        tags={["UX", "UI", "Development"]}
+        title="Portfolio Project"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+        dolores alias quibusdam asperiores explicabo, laborum natus
+        accusantium blanditiis cum quia?"
+      />
+
+      <Section mb={verticalMargin} pt={verticalMargin}>
         <Flex
           width={[1, 1 / 5]}
           flexDirection="column"
