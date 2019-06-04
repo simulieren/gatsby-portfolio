@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
-import { Box, Text, Heading } from "rebass";
+import { Box, Text, Heading, Flex } from "rebass";
 import { useTranslation } from "react-i18next";
 
 import HeaderFader from "../Animations/HeaderSlider";
@@ -48,40 +48,23 @@ const Footer = props => {
         </Heading> */}
       </Section>
       <Section py={4} bg="#00f">
-        <Box width={[1, 1 / 3]}>
-          <SectionOverline textAlign="left" color="#fff">
-            {t("nav.contact")}
-          </SectionOverline>
+        <Flex alignItems="center" justifyContent="space-between" width="100%">
           <Text fontFamily="Apercu" fontSize={2} color="#fff">
-            Simon Halimonov <br />
-            Marktstraße 8 <br />
-            50968 Köln <br /> <br />
             <a href="mailto:hello@simonhalimonov.de">
               <StyledLinkText inverted>hello@simonhalimonov.de</StyledLinkText>
             </a>
           </Text>
-        </Box>
-        <Box width={[1, 1 / 3]}>
-          <SectionOverline textAlign="left" color="#fff">
-            Social Media
-          </SectionOverline>
-          <SocialLinks mt="4" color={"#fff"} />
-        </Box>
-        <Box width={[1, 1 / 3]}>
-          <SectionOverline textAlign="left" color="#fff">
-            {t("footer.legal")}
-          </SectionOverline>
           <Text fontFamily="Apercu" fontSize={2} color="#fff">
             <a href="mailto:hello@simonhalimonov.de">
               <StyledLinkText inverted>{t("footer.imprint")}</StyledLinkText>
             </a>
-            {` `}
-            <br />
+            {` - `}
             <a href="mailto:hello@simonhalimonov.de">
               <StyledLinkText inverted>{t("footer.privacy")}</StyledLinkText>
             </a>
           </Text>
-        </Box>
+          <SocialLinks mt="0" color={"#fff"} />
+        </Flex>
       </Section>
     </footer>
   );

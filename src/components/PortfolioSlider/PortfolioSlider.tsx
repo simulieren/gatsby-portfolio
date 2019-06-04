@@ -18,7 +18,8 @@ import { Image } from "../Image/Image";
 const Wrapper = styled.section`
   overflow-x: hidden;
 
-  & .glide__track {
+  & .glide__track,
+  & .glide__slides {
     overflow: visible !important;
   }
 `;
@@ -59,11 +60,18 @@ interface CarouselItemProps {
 
 const CarouselItem = styled.div<CarouselItemProps>`
   cursor: grab;
+  box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.5s ease;
+  transform: scale(0.95);
+
+  &.glide__slide--active {
+    transform: scale(1.02);
+  }
 
   .gatsby-image-wrapper {
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.2);
   }
 `;
 

@@ -48,17 +48,6 @@ export const TeachingSection = (props: any) => {
           mixBlendMode: `multiply`
         }}
       />
-      {/* <Img
-        style={{
-          minHeight: `100%`,
-          width: `100%`,
-          position: `absolute`,
-          right: 0,
-          opacity: `0.75`,
-          mixBlendMode: `multiply`
-        }}
-        fluid={props.img}
-      /> */}
     </Section>
   );
 };

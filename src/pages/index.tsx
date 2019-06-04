@@ -13,6 +13,7 @@ import { IntroSection } from "../components/sections/IntroSection";
 import ProjectSection from "../components/sections/ProjectSection";
 
 import { changeLanguage } from "../util/changeLanguage";
+import { Box } from "rebass";
 
 const Index = (props: any) => {
   const { t, i18n } = useTranslation();
@@ -35,7 +36,7 @@ const Index = (props: any) => {
 
       <MissionSection />
 
-      <TeachingSection img={images[2]} />
+      <TeachingSection />
 
       <HireSection />
     </Layout>

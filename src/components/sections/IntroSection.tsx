@@ -6,6 +6,7 @@ import { SectionOverline } from "../Typography";
 import Intro from "../Intro";
 import TextListItem from "../TextListItem";
 import PostListing from "../PostListing/PostListing";
+import DotCanvas from "../DotCanvas";
 
 export const IntroSection = (props: any) => {
   const { t, i18n } = useTranslation();
@@ -18,6 +19,10 @@ export const IntroSection = (props: any) => {
             "
       overline={t("homepage.overline")}
       headline={t("homepage.headline")}
-    />
+    >
+      <DotCanvas
+        style={{ position: "absolute", top: 0, left: 0, zIndex: -1 }}
+      />
+    </Intro>
   );
 };

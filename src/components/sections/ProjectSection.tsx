@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 
 import { PortfolioCarousel } from "../PortfolioSlider/PortfolioSlider";
+import { Box } from "rebass";
 
 const ProjectSection = (props: any) => {
   const { t, i18n } = useTranslation();
@@ -9,7 +10,7 @@ const ProjectSection = (props: any) => {
   const visit = t("button.visit");
 
   return (
-    <>
+    <Box bg="white" css={{ position: "relative", zIndex: 1 }}>
       <PortfolioCarousel
         images={["mk_01", "mk_02", "mk_03", "mk_04"]}
         overline="Design + Development"
@@ -69,7 +70,7 @@ const ProjectSection = (props: any) => {
         linkText={visit}
         background="rgba(176, 39, 28, .15)"
       />
-    </>
+    </Box>
   );
 };
 

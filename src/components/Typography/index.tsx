@@ -52,6 +52,7 @@ export const StyledLinkText = styled(Text)<{
   position: relative;
   transition: all 0.2s ease;
   display: inline-block;
+  line-height: 1.5;
 
   &:hover {
     color: ${props => (props.inverted ? `#fff` : props.color || `#00f`)};
