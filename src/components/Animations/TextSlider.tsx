@@ -46,8 +46,6 @@ const TextSlider = (props: TextSliderProps) => {
     setState({ index: (state.index + 1) % items.length });
   }, time);
 
-  console.log(state.index);
-
   return (
     <div style={{ perspective: `400px` }}>
       {items.map((item, index) => {

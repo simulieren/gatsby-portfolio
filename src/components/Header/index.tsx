@@ -21,6 +21,7 @@ import {
   CodepenIcon,
   GitlabIcon
 } from "../Icons";
+import ToggleMenuButton from "../ToggleMenuButton/ToggleMenuButton";
 
 const useNavigationState = () => {
   const [state, setState] = useState({
@@ -173,17 +174,9 @@ const MobileNavList = (props: any) => {
 
   return (
     <Flex>
-      <Text
-        p={3}
-        fontFamily="Apercu"
-        onClick={toggleNavigation}
-        textAlign="right"
-        css={{
-          zIndex: 1000
-        }}
-      >
-        MENU
-      </Text>
+      <Box onClick={toggleNavigation}>
+        <ToggleMenuButton open={state.open} />
+      </Box>
 
       <animated.div
         style={{
