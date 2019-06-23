@@ -27,7 +27,7 @@ export const Caps = (props: ITextProps) => (
 );
 
 export const P = (props: ITextProps) => (
-  <Text as="p" fontSize={[3]} fontFamily="Apercu" {...props} />
+  <Text as="p" fontSize={[3]} fontFamily="Apercu" mt="0" {...props} />
 );
 
 export const SectionOverline = (props: any) => (
@@ -196,5 +196,24 @@ export const StyledButton = styled(Button)<{
     * {
       fill: ${props => (props.inverted ? `#fff` : `#00f`)};
     }
+  }
+`;
+
+export const ListItem = styled(P)`
+  font-family: Apercu, sans-serif;
+  position: relative;
+  padding-left: 2em;
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+  list-style: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.75em;
+    height: 1px;
+    background: #ddd;
+    width: 1.5em;
   }
 `;

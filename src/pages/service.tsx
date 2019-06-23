@@ -7,12 +7,11 @@ import Layout from "../layout";
 
 import config from "../../data/SiteConfig";
 import {
-  Caps,
   P,
   SectionOverline,
-  StyledButton,
   DotPattern,
-  SectionHeading
+  SectionHeading,
+  ListItem
 } from "../components/Typography";
 import { AnimationStateContainer } from "../context/animationContext";
 import Intro from "../components/Intro";
@@ -68,34 +67,34 @@ const ServicePage = (props: any) => {
           <SectionOverline>{t("skills")}</SectionOverline>
         </Box>
         <Box width={[1, 2 / 5]}>
-          <SectionHeading color="#000" fontSize={[4, 5]}>
+          <SectionHeading color="#000" fontSize={[4, 5]} mb="3">
             Design
           </SectionHeading>
-          <li>Digital Product Design</li>
-          <li>Responsive Webdesign</li>
-          <li>User Experience Design</li>
-          <li>User Interface Design</li>
-          <li>Interaction Design</li>
-          <li>Wireframing</li>
-          <li>Design System</li>
-          <li>Design Prototyping</li>
-          <li>Design Styleguides</li>
-          <li>Newsletter Design</li>
+          <ListItem as="li">Digital Product Design</ListItem>
+          <ListItem as="li">Responsive Webdesign</ListItem>
+          <ListItem as="li">User Experience Design</ListItem>
+          <ListItem as="li">User Interface Design</ListItem>
+          <ListItem as="li">Interaction Design</ListItem>
+          <ListItem as="li">Wireframing</ListItem>
+          <ListItem as="li">Design System</ListItem>
+          <ListItem as="li">Design Prototyping</ListItem>
+          <ListItem as="li">Design Styleguides</ListItem>
+          <ListItem as="li">Newsletter Design</ListItem>
         </Box>
         <Box width={[1, 2 / 5]}>
-          <SectionHeading color="#000" fontSize={[4, 5]}>
+          <SectionHeading color="#000" fontSize={[4, 5]} mb="3">
             Development
           </SectionHeading>
-          <li>Frontend Development</li>
-          <li>React.js Development</li>
-          <li>Wordpress CMS</li>
-          <li>Performance Optimization</li>
-          <li>Mobile Optimization</li>
-          <li>User Interface Animation</li>
-          <li>Technical Prototyping</li>
-          <li>Living Styleguide</li>
-          <li>Mobile-First RWD</li>
-          <li>Responsive Newsletter Development</li>
+          <ListItem as="li">Frontend Development</ListItem>
+          <ListItem as="li">React.js Development</ListItem>
+          <ListItem as="li">Wordpress CMS</ListItem>
+          <ListItem as="li">Performance Optimization</ListItem>
+          <ListItem as="li">Mobile Optimization</ListItem>
+          <ListItem as="li">User Interface Animation</ListItem>
+          <ListItem as="li">Technical Prototyping</ListItem>
+          <ListItem as="li">Living Styleguide</ListItem>
+          <ListItem as="li">Mobile-First RWD</ListItem>
+          <ListItem as="li">Responsive Newsletter Development</ListItem>
         </Box>
       </Section>
       <Section py={[3, 4, 5]}>
@@ -123,8 +122,8 @@ const ServicePage = (props: any) => {
           <P>{t("service.section.4.text.1")}</P>
         </Box>
         <Box width={[1, 4 / 12]}>
-          <li>{t("service.section.4.text.2")}</li>
-          <li>{t("service.section.4.text.3")}</li>
+          <ListItem as="li">{t("service.section.4.text.2")}</ListItem>
+          <ListItem as="li">{t("service.section.4.text.3")}</ListItem>
         </Box>
       </Flex>
 
@@ -141,9 +140,9 @@ const ServicePage = (props: any) => {
           <P>{t("service.section.5.text.1")}</P>
         </Box>
         <Box width={[1, 4 / 12]}>
-          <li>{t("service.section.5.text.2")}</li>
-          <li>{t("service.section.5.text.3")}</li>
-          <li>{t("service.section.5.text.4")}</li>
+          <ListItem as="li">{t("service.section.5.text.2")}</ListItem>
+          <ListItem as="li">{t("service.section.5.text.3")}</ListItem>
+          <ListItem as="li">{t("service.section.5.text.4")}</ListItem>
         </Box>
       </Flex>
 
@@ -160,8 +159,8 @@ const ServicePage = (props: any) => {
           <P>{t("service.section.6.text.1")}</P>
         </Box>
         <Box width={[1, 4 / 12]}>
-          <li>{t("service.section.6.text.2")}</li>
-          <li>{t("service.section.6.text.3")}</li>
+          <ListItem as="li">{t("service.section.6.text.2")}</ListItem>
+          <ListItem as="li">{t("service.section.6.text.3")}</ListItem>
         </Box>
       </Flex>
 
@@ -178,9 +177,9 @@ const ServicePage = (props: any) => {
           <P>{t("service.section.7.text.1")}</P>
         </Box>
         <Box width={[1, 4 / 12]}>
-          <li>{t("service.section.7.text.2")}</li>
-          <li>{t("service.section.7.text.3")}</li>
-          <li>{t("service.section.7.text.4")}</li>
+          <ListItem as="li">{t("service.section.7.text.2")}</ListItem>
+          <ListItem as="li">{t("service.section.7.text.3")}</ListItem>
+          <ListItem as="li">{t("service.section.7.text.4")}</ListItem>
         </Box>
       </Flex>
     </Layout>

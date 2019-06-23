@@ -55,8 +55,8 @@ const TextSlider = (props: TextSliderProps) => {
             index={index}
             sliderIndex={state.index}
             textAlign="center"
-            fontFamily="Apercu"
-            fontSize={2}
+            fontSize={[4, 5]}
+            fontFamily="Spectral"
             color="#fff"
           >
             {item}
