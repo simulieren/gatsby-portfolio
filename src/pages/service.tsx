@@ -25,7 +25,7 @@ const ServicePage = (props: any) => {
 
   return (
     <Layout>
-      {/* <Helmet title={`About | ${config.siteTitle}`} /> */}
+      <Helmet title={`About | ${config.siteTitle}`} />
       <Intro
         bg="
             radial-gradient(rgba(255,255,255,0), rgba(255,255,255,1)),
@@ -45,14 +45,10 @@ const ServicePage = (props: any) => {
           <SectionOverline>01</SectionOverline>
         </Box>
         <Box width={[1, 4 / 5, 3 / 5]}>
-          <SectionHeading color="#000">Dienstleistung</SectionHeading>
-          <P>
-            Ich sehe mich als Ihr Partner und arbeite im Interesse Ihrer Kunden.
-            Vertrauen und Ehrlichkeit sind mir wichtig als Basis für eine
-            erfolgreiche Partnerschaft. Von der Webseite bis zur App, von der
-            ersten Idee bis zur Veröffentlichung: Ich berate und begleite Sie
-            durch alle Phasen – von der Planung bis zum fertigen Konzept.
-          </P>
+          <SectionHeading color="#000">
+            {t("service.section.1.headline")}
+          </SectionHeading>
+          <P>{t("service.section.1.text")}</P>
         </Box>
       </Section>
       <Section py={[3, 4, 5]}>
@@ -61,26 +57,15 @@ const ServicePage = (props: any) => {
         </Box>
         <Box width={[1, 4 / 5, 3 / 5]}>
           <SectionHeading color="#000">
-            Digitale Produkte in Handarbeit
+            {t("service.section.2.headline")}
           </SectionHeading>
-          <P>
-            Ich entwickle jedes Projekt, egal ob Website oder Web App,
-            individuell in Handarbeit nach ihren Bedürfnissen. Ich verwende
-            aktuellste Technologien, die auch bei Google, Facebook, Airbnb oder
-            Trivago, eingesetzt werden. Ich arbeite gerne mit Menschen, die
-            etwas bewegen wollen. Und die verstanden haben, wie digitale
-            Projekte funktionieren.
-          </P>
-          <P>
-            Ich liebe das, was ich tue, und ich verfeinere ständig meine
-            Fähigkeit, Markengeschichten in eine visuell einzigartige und
-            ansprechende Benutzererfahrung zu übersetzen.
-          </P>
+          <P>{t("service.section.2.text.1")}</P>
+          <P>{t("service.section.2.text.2")}</P>
         </Box>
       </Section>
       <Section py={[3, 4, 5]}>
         <Box width={[1, 1 / 5]}>
-          <SectionOverline>Kompetenzen</SectionOverline>
+          <SectionOverline>{t("skills")}</SectionOverline>
         </Box>
         <Box width={[1, 2 / 5]}>
           <SectionHeading color="#000" fontSize={[4, 5]}>
@@ -118,11 +103,10 @@ const ServicePage = (props: any) => {
           <SectionOverline>.</SectionOverline>
         </Box>
         <Box width={[1, 4 / 5, 3 / 5]}>
-          <SectionHeading color="#000">Prozess</SectionHeading>
-          <P>
-            Sorgfalt und die richtige Methodik führen zum Erfolg jedes Projekts
-            und jeder Idee.
-          </P>
+          <SectionHeading color="#000">
+            {t("service.section.3.headline")}
+          </SectionHeading>
+          <P>{t("service.section.3.text")}</P>
         </Box>
       </Section>
 
@@ -132,23 +116,15 @@ const ServicePage = (props: any) => {
         </Box>
         <Box width={[1, 2 / 12]}>
           <SectionHeading color="#000" fontSize={[4, 5]}>
-            Plannung und Strategie
+            {t("service.section.4.headline")}
           </SectionHeading>
         </Box>
         <Box width={[1, 4 / 12]}>
-          <P>
-            Hier fängt alles an. Wir starten mit einem ersten Meeting, um Ihre
-            Bedürfnisse zu ermitteln. Indem ich von Anfang an ein klares
-            Verständnis für Projektumfang und -kosten gewinne, kann ich
-            erkennen, was kurz-, mittel- und langfristig zu tun ist. Mein Fokus
-            liegt darauf, Ihre Unternehmensziele in Kommunikationsziele zu
-            verwandeln und einen klaren Aktionsplan zu entwickeln, um Sie
-            dorthin zu bringen, wo Sie hinwollen.
-          </P>
+          <P>{t("service.section.4.text.1")}</P>
         </Box>
         <Box width={[1, 4 / 12]}>
-          <li>Erstes Meeting</li>
-          <li>Zuhören, verstehen, fragen</li>
+          <li>{t("service.section.4.text.2")}</li>
+          <li>{t("service.section.4.text.3")}</li>
         </Box>
       </Flex>
 
@@ -158,20 +134,16 @@ const ServicePage = (props: any) => {
         </Box>
         <Box width={[1, 2 / 12]}>
           <SectionHeading color="#000" fontSize={[4, 5]}>
-            Konzept
+            {t("service.section.5.headline")}
           </SectionHeading>
         </Box>
         <Box width={[1, 4 / 12]}>
-          <P>
-            Dies ist das Rückgrat meines kreativen Prozesses. Ich dekonstruiere
-            Ideen in ihre einfachste Form, ein Prozess, der mir hilft, die
-            richtige Positionierung der Marke zu finden.
-          </P>
+          <P>{t("service.section.5.text.1")}</P>
         </Box>
         <Box width={[1, 4 / 12]}>
-          <li>Diskutieren</li>
-          <li>Recherchieren</li>
-          <li>Konzeptionieren</li>
+          <li>{t("service.section.5.text.2")}</li>
+          <li>{t("service.section.5.text.3")}</li>
+          <li>{t("service.section.5.text.4")}</li>
         </Box>
       </Flex>
 
@@ -181,18 +153,15 @@ const ServicePage = (props: any) => {
         </Box>
         <Box width={[1, 2 / 12]}>
           <SectionHeading color="#000" fontSize={[4, 5]}>
-            Kreative Entwicklung
+            {t("service.section.6.headline")}
           </SectionHeading>
         </Box>
         <Box width={[1, 4 / 12]}>
-          <P>
-            Hier setze ich Ideen in Prototypen um. In dieser Phase weiß ich, in
-            welche Richtung wir gehen, aber wir sind immer noch auf halbem Weg.
-          </P>
+          <P>{t("service.section.6.text.1")}</P>
         </Box>
         <Box width={[1, 4 / 12]}>
-          <li>Wireframe & Prototypen</li>
-          <li>User Testing</li>
+          <li>{t("service.section.6.text.2")}</li>
+          <li>{t("service.section.6.text.3")}</li>
         </Box>
       </Flex>
 
@@ -202,20 +171,16 @@ const ServicePage = (props: any) => {
         </Box>
         <Box width={[1, 2 / 12]}>
           <SectionHeading color="#000" fontSize={[4, 5]}>
-            Technische Realisierung
+            {t("service.section.7.headline")}
           </SectionHeading>
         </Box>
         <Box width={[1, 4 / 12]}>
-          <P>
-            Jetzt nehmen die Dinge Gestalt an. Sobald die Konzepte, Mock-ups und
-            Prototypen genehmigt sind, stellen ich das beste Produktionsteam für
-            den Auftrag zusammen.
-          </P>
+          <P>{t("service.section.7.text.1")}</P>
         </Box>
         <Box width={[1, 4 / 12]}>
-          <li>Realistation</li>
-          <li>Performance Optimization</li>
-          <li>Monitoring</li>
+          <li>{t("service.section.7.text.2")}</li>
+          <li>{t("service.section.7.text.3")}</li>
+          <li>{t("service.section.7.text.4")}</li>
         </Box>
       </Flex>
     </Layout>

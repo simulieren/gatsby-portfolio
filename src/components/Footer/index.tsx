@@ -36,11 +36,11 @@ const Footer = (props: any) => {
           <TextSlider
             time={4000}
             items={[
-              `Warte nicht länger, lass uns einfach reden.`,
-              `Morgen ist es zu spät.`,
-              `Die Zukunft war früher auch besser.`,
-              `Jeder Gedanke in uns ist bestrebt, Wirklichkeit zu werden.`,
-              `Vergiss niemals das "Warum".`
+              t("footer.textslider.1"),
+              t("footer.textslider.2"),
+              t("footer.textslider.3"),
+              t("footer.textslider.4"),
+              t("footer.textslider.5")
             ]}
           />
         </Heading>

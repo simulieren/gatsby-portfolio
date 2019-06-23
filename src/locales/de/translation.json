@@ -34,13 +34,21 @@
     "letsChat": "Lass uns reden",
     "legal": "Rechtliches",
     "imprint": "Impressum und AGB",
-    "privacy": "Datenschutz"
+    "privacy": "Datenschutz",
+    "textslider": {
+      "1": "Warte nicht länger, lass uns einfach reden.",
+      "2": "Morgen ist es zu spät.",
+      "3": "Die Zukunft war früher auch besser.",
+      "4": "Jeder Gedanke in uns ist bestrebt, Wirklichkeit zu werden.",
+      "5": "Vergiss niemals das „Warum“."
+    }
   },
   "references": "Referenzen",
   "projects": "Projekte",
   "article": "Artikel",
   "design": "Design",
   "development": "Entwicklung",
+  "skills": "Kompetenzen",
   "button": {
     "read": "Mehr erfahren",
     "visit": "Webseite besuchen"
@@ -63,5 +71,58 @@
   },
   "work": {
     "headline": "Ausgewählte Arbeiten"
+  },
+  "service": {
+    "section": {
+      "1": {
+        "headline": "Dienstleistung",
+        "text": "Ich sehe mich als Ihr Partner und arbeite im Interesse Ihrer Kunden. Vertrauen und Ehrlichkeit sind mir wichtig als Basis für eine erfolgreiche Partnerschaft. Von der Webseite bis zur App, von der ersten Idee bis zur Veröffentlichung: Ich berate und begleite Sie durch alle Phasen – von der Planung bis zum fertigen Konzept."
+      },
+      "2": {
+        "headline": "Digitale Produkte in Handarbeit",
+        "text": {
+          "1": "Ich entwickle jedes Projekt, egal ob Website oder Web App, individuell in Handarbeit nach ihren Bedürfnissen. Ich verwende aktuellste Technologien, die auch bei Google, Facebook, Airbnb oder Trivago, eingesetzt werden. Ich arbeite gerne mit Menschen, die etwas bewegen wollen. Und die verstanden haben, wie digitale Projekte funktionieren.",
+          "2": "Ich liebe das, was ich tue, und ich verfeinere ständig meine Fähigkeit, Markengeschichten in eine visuell einzigartige und ansprechende Benutzererfahrung zu übersetzen."
+        }
+      },
+      "3": {
+        "headline": "Prozess",
+        "text": "Sorgfalt und die richtige Methodik führen zum Erfolg jedes Projekts und jeder Idee."
+      },
+      "4": {
+        "headline": "Plannung und Strategie",
+        "text": {
+          "1": "Hier fängt alles an. Wir starten mit einem ersten Meeting, um Ihre Bedürfnisse zu ermitteln. Indem ich von Anfang an ein klares Verständnis für Projektumfang und -kosten gewinne, kann ich erkennen, was kurz-, mittel- und langfristig zu tun ist. Mein Fokus liegt darauf, Ihre Unternehmensziele in Kommunikationsziele zu verwandeln und einen klaren Aktionsplan zu entwickeln, um Sie dorthin zu bringen, wo Sie hinwollen.",
+          "2": "Erstes Meeting",
+          "3": "Zuhören, verstehen, fragen"
+        }
+      },
+      "5": {
+        "headline": "Konzept",
+        "text": {
+          "1": "Dies ist das Rückgrat meines kreativen Prozesses. Ich dekonstruiere Ideen in ihre einfachste Form, ein Prozess, der mir hilft, die richtige Positionierung der Marke zu finden.",
+          "2": "Diskutieren",
+          "3": "Recherchieren",
+          "4": "Konzeptionieren"
+        }
+      },
+      "6": {
+        "headline": "Kreative Entwicklung",
+        "text": {
+          "1": "Hier setze ich Ideen in Prototypen um. In dieser Phase weiß ich, in welche Richtung wir gehen, aber wir sind immer noch auf halbem Weg.",
+          "2": "Wireframe & Prototypen",
+          "3": "User Testing"
+        }
+      },
+      "7": {
+        "headline": "Technische Realisierung",
+        "text": {
+          "1": "Jetzt nehmen die Dinge Gestalt an. Sobald die Konzepte, Mock-ups und Prototypen genehmigt sind, stelle ich das beste Produktionsteam für den Auftrag zusammen.",
+          "2": "Realisation",
+          "3": "Performance Optimization",
+          "4": "Monitoring"
+        }
+      }
+    }
   }
 }

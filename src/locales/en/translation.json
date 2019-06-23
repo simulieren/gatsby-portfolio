@@ -33,8 +33,15 @@
   "footer": {
     "letsChat": "Let's chat",
     "legal": "Legal",
-    "imprint": "Imprint and AGB",
-    "privacy": "Privacy"
+    "imprint": "Imprint and TOS",
+    "privacy": "Privacy",
+    "textslider": {
+      "1": "Don't wait any longer, let's just talk.",
+      "2": "It'll be too late tomorrow.",
+      "3": "The future used to be better too.",
+      "4": "Every thought in us strives to become reality.",
+      "5": "Never forget the „why“."
+    }
   },
   "references": "References",
   "projects": "Projects",
@@ -63,5 +70,58 @@
   },
   "work": {
     "headline": "Selected works"
+  },
+  "service": {
+    "section": {
+      "1": {
+        "headline": "Services",
+        "text": "I see myself as your partner and work in the interest of your customers. Trust and honesty are important to me as the basis for a successful partnership. From the website to the app, from the first idea to the publication: I advise and accompany you through all phases - from planning to the finished concept."
+      },
+      "2": {
+        "headline": "Digital handcrafted products",
+        "text": {
+          "1": "I develop every project, no matter if website or web app, individually by hand according to your needs. I use the latest technologies, which are also used by Google, Facebook, Airbnb or Trivago. I like to work with people who want to make a difference. And who have understood how digital projects work.",
+          "2": "I love what I do and I am constantly refining my ability to translate brand stories into a visually unique and engaging user experience."
+        }
+      },
+      "3": {
+        "headline": "Process",
+        "text": "Care and the right methodology lead to the success of every project and every idea."
+      },
+      "4": {
+        "headline": "Planning and strategy",
+        "text": {
+          "1": "This is where it all starts. We start with a first meeting to determine your needs. By gaining a clear understanding of the scope and cost of the project from the start, I can see what needs to be done in the short, medium and long term. My focus is on turning your business goals into communication goals and developing a clear action plan to get you where you want to go.",
+          "2": "First Meeting",
+          "3": "Listen, understand, ask"
+        }
+      },
+      "5": {
+        "headline": "Concept",
+        "text": {
+          "1": "This is the backbone of my creative process. I deconstruct ideas into their simplest form, a process that helps me find the right positioning for the brand and product.",
+          "2": "Discuss",
+          "3": "Research",
+          "4": "Conception"
+        }
+      },
+      "6": {
+        "headline": "Creative development",
+        "text": {
+          "1": "Here I turn ideas into prototypes. At this stage I know where we're going, but we're still halfway there.",
+          "2": "Wireframe & Prototypes",
+          "3": "User Testing"
+        }
+      },
+      "7": {
+        "headline": "Technical development",
+        "text": {
+          "1": "Now things are taking shape. Once the concepts, mock-ups and prototypes are approved, I put together the best production team for the job.",
+          "2": "Realisation",
+          "3": "Performance Optimization",
+          "4": "Monitoring"
+        }
+      }
+    }
   }
 }
