@@ -1,18 +1,16 @@
-import React, { Component } from "react";
-import { Link } from "gatsby";
-import { Box, Text, Heading, Flex } from "rebass";
+import React from "react";
+import { Text, Heading, Flex } from "rebass";
 import { useTranslation } from "react-i18next";
 
-import HeaderFader from "../Animations/HeaderSlider";
+import TextSlider from "../Animations/TextSlider";
 import { SectionOverline, P, StyledLinkText } from "../Typography";
 import { Section } from "../Grid";
 import { SocialLinks } from "../Header";
 
-const Footer = props => {
+const Footer = (props: any) => {
   const { t, i18n } = useTranslation();
 
   const { config } = props;
-  const url = config.siteRss;
 
   return (
     <footer className="footer">
@@ -24,7 +22,7 @@ const Footer = props => {
         pb={6}
         bg="#00f"
       >
-        {/* <SectionOverline textAlign="center" mr={0} mb={4} color="#fff">
+        <SectionOverline textAlign="center" mr={0} mb={4} color="#fff">
           {t("footer.letsChat")}
         </SectionOverline>
         <Heading
@@ -35,7 +33,7 @@ const Footer = props => {
           color="#fff"
           css={{ position: `relative` }}
         >
-          <HeaderFader
+          <TextSlider
             time={4000}
             items={[
               `Warte nicht länger, lass uns einfach reden.`,
@@ -45,7 +43,7 @@ const Footer = props => {
               `Vergiss niemals das "Warum".`
             ]}
           />
-        </Heading> */}
+        </Heading>
       </Section>
       <Section py={4} bg="#00f">
         <Flex alignItems="center" justifyContent="space-between" width="100%">
