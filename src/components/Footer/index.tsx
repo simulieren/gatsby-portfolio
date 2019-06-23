@@ -46,7 +46,12 @@ const Footer = (props: any) => {
         </Heading>
       </Section>
       <Section py={4} bg="#00f">
-        <Flex alignItems="center" justifyContent="space-between" width="100%">
+        <Flex
+          alignItems="center"
+          justifyContent="space-between"
+          width="100%"
+          flexDirection={["column", "column", "row"]}
+        >
           <Text fontFamily="Apercu" fontSize={2} color="#fff">
             <a href="mailto:hello@simonhalimonov.de">
               <StyledLinkText inverted>hello@simonhalimonov.de</StyledLinkText>

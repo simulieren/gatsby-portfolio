@@ -104,7 +104,13 @@ export function PortfolioCarousel(props: PortfolioCarouselProps) {
 
   const settings = {
     gap: 32,
-    peek: { before: 0, after: 32 }
+    peek: { before: 0, after: 32 },
+    breakpoints: {
+      660: {
+        gap: 8,
+        peek: { before: 0, after: 8 }
+      }
+    }
   };
 
   React.useLayoutEffect(() => {

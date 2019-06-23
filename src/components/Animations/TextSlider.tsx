@@ -12,7 +12,7 @@ const TextSliderItem = styled(Text)<TextSliderItemProps>`
   position: absolute;
   width: 100%;
 
-  transition: all 0.25s ease;
+  transition: all 1s ease;
 
   transform: translateY(
     ${props =>

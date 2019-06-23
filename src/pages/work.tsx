@@ -23,7 +23,7 @@ const WorkPage = (props: any) => {
     <Layout>
       <Helmet title={`${t("work.headline")} | ${config.siteTitle}`} />
 
-      <Section mb={[4, 5]} pt={[4, 5, 6]}>
+      <Section mb={[4, 5]} pt={[5, 5, 6]}>
         <Box width={1}>
           <SectionHeading>{t("work.headline")}</SectionHeading>
         </Box>

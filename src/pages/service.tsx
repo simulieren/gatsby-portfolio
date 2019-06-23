@@ -31,13 +31,8 @@ const ServicePage = (props: any) => {
             linear-gradient(rgba(0,0,255,0.1), rgba(0,0,255,0.4))
             "
         overline={t("homepage.overline")}
-        headline={t("homepage.headline")}
-      >
-        <DotPattern
-          fill="#00f"
-          style={{ position: "absolute", right: 0, top: 0 }}
-        />
-      </Intro>
+        headline={t("service.headline")}
+      />
 
       <Section py={[3, 4, 5]}>
         <Box width={[1, 1 / 5]}>
@@ -109,7 +104,7 @@ const ServicePage = (props: any) => {
         </Box>
       </Section>
 
-      <Flex py={[3, 4, 5]}>
+      <Flex py={[3, 4, 5]} p={[3]} flexDirection={["column", "row"]}>
         <Box width={[1, 1 / 12]}>
           <SectionOverline>01</SectionOverline>
         </Box>
@@ -127,7 +122,7 @@ const ServicePage = (props: any) => {
         </Box>
       </Flex>
 
-      <Flex py={[3, 4, 5]}>
+      <Flex py={[3, 4, 5]} p={[3]} flexDirection={["column", "row"]}>
         <Box width={[1, 1 / 12]}>
           <SectionOverline>02</SectionOverline>
         </Box>
@@ -146,7 +141,7 @@ const ServicePage = (props: any) => {
         </Box>
       </Flex>
 
-      <Flex py={[3, 4, 5]}>
+      <Flex py={[3, 4, 5]} p={[3]} flexDirection={["column", "row"]}>
         <Box width={[1, 1 / 12]}>
           <SectionOverline>03</SectionOverline>
         </Box>
@@ -164,7 +159,7 @@ const ServicePage = (props: any) => {
         </Box>
       </Flex>
 
-      <Flex py={[3, 4, 5]}>
+      <Flex py={[3, 4, 5]} p={[3]} flexDirection={["column", "row"]}>
         <Box width={[1, 1 / 12]}>
           <SectionOverline>04</SectionOverline>
         </Box>

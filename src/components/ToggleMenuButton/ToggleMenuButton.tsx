@@ -10,6 +10,7 @@ const MenuLines = styled(Flex)<MenuLinesProps>`
   z-index: 100;
   position: relative;
   cursor: pointer;
+  margin-top: 5px;
   width: 44px;
   height: 22px;
   transition: transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
@@ -20,7 +21,7 @@ const MenuLines = styled(Flex)<MenuLinesProps>`
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #7b7b7b;
+    background-color: #00f;
     position: absolute;
     left: 0;
     transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99),

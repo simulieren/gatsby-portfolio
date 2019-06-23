@@ -36,12 +36,7 @@ const AboutPage = (props: any) => {
             "
           overline={t("homepage.overline")}
           headline={t("about.headline")}
-        >
-          <DotPattern
-            fill="#00f"
-            style={{ position: "absolute", right: 0, top: 0 }}
-          />
-        </Intro>
+        />
 
         <Section py={[3, 4, 5]}>
           <Box width={[1, 1 / 5]}>
