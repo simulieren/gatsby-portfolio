@@ -56,7 +56,7 @@ interface ToggleMenuButtonProps {
 }
 
 const ToggleMenuButton = ({ open }: ToggleMenuButtonProps) => {
-  return <MenuLines as="a" p="3" open={open} />;
+  return <MenuLines p="3" open={open} />;
 };
 
 export default ToggleMenuButton;
