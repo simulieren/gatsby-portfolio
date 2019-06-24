@@ -1,4 +1,7 @@
-html * {
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyles = createGlobalStyle`
+  html * {
   box-sizing: border-box;
 }
 
@@ -54,3 +57,5 @@ img {
 .post-content > *:first-child {
   margin-top: 0;
 }
+
+`;

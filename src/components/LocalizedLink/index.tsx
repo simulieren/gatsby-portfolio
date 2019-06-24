@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 
 import locales from "../../locales/config";
+import { LocaleContext } from "../../context/LocaleContext";
 
 // Use the globally available context to choose the right path
 const LocalizedLink = ({
@@ -15,7 +16,11 @@ const LocalizedLink = ({
   props: any;
 }) => {
   const { t, i18n } = useTranslation();
-  const locale = i18n.language;
+  // const locale = i18n.language;
+  let locale;
+  locale = useContext(LocaleContext).locale || "de";
+
+  if (locale === undefined) return;
 
   const isIndex = to === `/`;
 
@@ -23,6 +28,7 @@ const LocalizedLink = ({
   // If it's another language, add the "path"
   // However, if the homepage/index page is linked don't add the "to"
   // Because otherwise this would add a trailing slash
+
   const path = locales[locale].default
     ? to
     : `${locales[locale].path}${isIndex ? `` : `${to}`}`;

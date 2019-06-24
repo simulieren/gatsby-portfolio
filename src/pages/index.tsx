@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { graphql } from "gatsby";
 import get from "lodash/get";
 import { useTranslation } from "react-i18next";
 
-import Layout from "../layout";
+import Layout from "../components/Layout";
 
 import { MissionSection } from "../components/sections/MissionSection";
 import { TeachingSection } from "../components/sections/TeachingSection";
@@ -29,7 +29,7 @@ const Index = (props: any) => {
   );
 
   return (
-    <Layout>
+    <>
       <IntroSection mdxEdges={allMdxEdges} />
 
       <ProjectSection />
@@ -39,7 +39,7 @@ const Index = (props: any) => {
       <TeachingSection />
 
       <HireSection />
-    </Layout>
+    </>
   );
 };
 
@@ -59,7 +59,6 @@ export const pageQuery = graphql`
             category
             tags
             type
-            link
           }
           fields {
             locale

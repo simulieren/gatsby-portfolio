@@ -5,8 +5,8 @@ module.exports = {
     dateFormat: `DD/MM/YYYY`,
     siteLanguage: `en`,
     ogLanguage: `en_US`,
-    defaultTitle: `Using i18n with Gatsby`,
-    defaultDescription: `Gatsby example site using MDX and dependency-free i18n`,
+    defaultTitle: `Simon Halimonov | Portfolio`,
+    defaultDescription: `The design and development portfolio of Simon Halimonov`,
   },
   de: {
     default: true,
@@ -16,6 +16,6 @@ module.exports = {
     siteLanguage: `de`,
     ogLanguage: `de_DE`,
     defaultTitle: `i18n mit Gatsby nutzen`,
-    defaultDescription: `Gatsby Beispielseite, die MDX und i18n (frei von dependencies) nutzt`,
+    defaultDescription: `Das Design und Development portfolio von Simon Halimonov`,
   },
 };

@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, Fragment } from "react";
 import Helmet from "react-helmet";
 import { useTranslation } from "react-i18next";
 import get from "lodash/get";
 
-import Layout from "../layout";
+import Layout from "../components/Layout";
 
 import config from "../../data/SiteConfig";
 import ProjectSection from "../components/sections/ProjectSection";
@@ -20,7 +20,7 @@ const WorkPage = (props: any) => {
   if (locale && locale !== i18n.language) changeLanguage(locale, i18n);
 
   return (
-    <Layout>
+    <>
       <Helmet title={`${t("work.headline")} | ${config.siteTitle}`} />
 
       <Section mb={[4, 5]} pt={[5, 5, 6]}>
@@ -29,7 +29,7 @@ const WorkPage = (props: any) => {
         </Box>
       </Section>
       <ProjectSection />
-    </Layout>
+    </>
   );
 };
 

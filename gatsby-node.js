@@ -25,11 +25,17 @@ exports.onPreBootstrap = () => {
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
+
   const { path } = page;
+
+  if (path.includes('404')) {
+    return
+  }
+  
   const localeKeys = Object.keys(locales);
   deletePage(page);
   // You can access the variable "house" in your page queries now
-
+  
   localeKeys.forEach(lang => {
     const local = locales[lang].default ? `` : lang;
     const newPath = local === `` ? `${path}` : `/${local}${path}`;
@@ -63,7 +69,6 @@ exports.onCreateNode = ({ node, actions }) => {
 
     // Find the key that has "default: true" set (in this case it returns "en")
     const defaultKey = findKey(locales, o => o.default === true);
-
     // Files are defined with "name-with-dashes.lang.mdx"
     // name returns "name-with-dashes.lang"
     // So grab the lang from that string

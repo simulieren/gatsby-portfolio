@@ -3,7 +3,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import MdxLink from "../components/MdxLink/index";
-import Layout from "../layout";
+import Layout from "../components/Layout";
 // import UserInfo from "../components/UserInfo/UserInfo";
 // import PostTags from "../components/PostTags/PostTags";
 // import SocialLinks from "../components/SocialLinks/SocialLinks";

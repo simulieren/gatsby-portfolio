@@ -41,13 +41,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/content/Notes`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: config.googleAnalyticsID,

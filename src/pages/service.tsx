@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, Fragment } from "react";
 import Helmet from "react-helmet";
 import { Box, Flex } from "rebass";
 import { useTranslation } from "react-i18next";
 
-import Layout from "../layout";
+import Layout from "../components/Layout";
 
 import config from "../../data/SiteConfig";
 import {
@@ -23,7 +23,7 @@ const ServicePage = (props: any) => {
   const { current, send } = useContext(AnimationStateContainer.Context);
 
   return (
-    <Layout>
+    <>
       <Helmet title={`About | ${config.siteTitle}`} />
       <Intro
         bg="
@@ -177,7 +177,7 @@ const ServicePage = (props: any) => {
           <ListItem as="li">{t("service.section.7.text.4")}</ListItem>
         </Box>
       </Flex>
-    </Layout>
+    </>
   );
 };
 

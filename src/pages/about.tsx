@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, Fragment } from "react";
 import Helmet from "react-helmet";
 import { Box } from "rebass";
 import { useTranslation } from "react-i18next";
 
-import Layout from "../layout";
+import Layout from "../components/Layout";
 
 import config from "../../data/SiteConfig";
 import {
@@ -24,7 +24,7 @@ const AboutPage = (props: any) => {
   const { current, send } = useContext(AnimationStateContainer.Context);
 
   return (
-    <Layout>
+    <>
       <div className="about-container">
         <Helmet
           title={`${t("about.section1.headline")} | ${config.siteTitle}`}
@@ -73,7 +73,7 @@ const AboutPage = (props: any) => {
           </Box>
         </Section>
       </div>
-    </Layout>
+    </>
   );
 };
 
