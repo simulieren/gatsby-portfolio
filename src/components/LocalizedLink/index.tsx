@@ -16,13 +16,26 @@ const LocalizedLink = ({
   props: any;
 }) => {
   const { t, i18n } = useTranslation();
-  // const locale = i18n.language;
+  const userLocale = i18n.language;
   let locale;
   locale = useContext(LocaleContext).locale || "de";
 
   if (locale === undefined) return;
 
   const isIndex = to === `/`;
+
+  if (isIndex) {
+    return (
+      <Link
+        {...props}
+        to={`/${
+          locales[userLocale || locale].default
+            ? "/"
+            : `/${userLocale || locale}`
+        }`}
+      />
+    );
+  }
 
   // If it's the default language, don't do anything
   // If it's another language, add the "path"
