@@ -13,5 +13,6 @@
   ],
   "github": {
     "autoAlias": false
-  }
+  },
+  "regions": ["bru1", "sin1"]
 }
