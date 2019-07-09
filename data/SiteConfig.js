@@ -19,23 +19,7 @@ module.exports = {
   userAvatar: ``, // User avatar to display in the author segment.
   userDescription: ``, // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
-  userLinks: [
-    {
-      label: `GitHub`,
-      url: `https://github.com/Vagr9K/gatsby-advanced-starter`,
-      iconClassName: `fa fa-github`,
-    },
-    {
-      label: `Twitter`,
-      url: `https://twitter.com/Vagr9K`,
-      iconClassName: `fa fa-twitter`,
-    },
-    {
-      label: `Email`,
-      url: `mailto:vagr9k@gmail.com`,
-      iconClassName: `fa fa-envelope`,
-    },
-  ],
+  userLinks: [],
   copyright: `Copyright © 2019. Simon Halimonov`, // Copyright string for the footer of the website and RSS feed.
   themeColor: `#fff`, // Used for setting manifest and progress theme colors.
   backgroundColor: `#000`, // Used for setting manifest background color.
