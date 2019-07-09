@@ -58,4 +58,8 @@ img {
   margin-top: 0;
 }
 
+video {
+  width: 100%;
+}
+
 `;

@@ -1,6 +1,11 @@
 {
   "version": 2,
-  "alias": ["www.simon-halimonov.de", "simon-halimonov.de"],
+  "alias": [
+    "www.simon-halimonov.de",
+    "simon-halimonov.de",
+    "simonhalimonov.de",
+    "www.simonhalimonov.de"
+  ],
   "name": "gatsby",
   "builds": [
     {

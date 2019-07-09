@@ -217,3 +217,53 @@ export const ListItem = styled(P)`
     width: 1.5em;
   }
 `;
+
+export const H2 = (props:any )=> (
+  <Heading
+    as="h2"
+    fontFamily="Apercu"
+    mb="4"
+    fontSize="5"
+    textAlign="center"
+    {...props}>
+    {props.children}
+  </Heading>
+);
+
+export const H3 = (props:any )=> (
+  <Heading
+    as="h3"
+    fontFamily="Apercu"
+    my={[4, 5]}
+    fontSize="3"
+    style={{ textTransform: 'uppercase', letterSpacing: '.2em' }}
+    {...props}>
+    {props.children}
+  </Heading>
+);
+
+export const BodyText = (props:any )=> (
+  <Text
+    as="p"
+    fontFamily="Apercu"
+    lineHeight="1.7"
+    fontSize={[3, 4]}
+    style={{ wordSpacing: '.1em' }}
+    mb="4"
+    {...props}>
+    {props.children}
+  </Text>
+);
+
+export const Caption = (props:any )=> (
+  <Text
+    as="span"
+    fontFamily="Apercu"
+    fontWeight="bold"
+    style={{ textTransform: 'uppercase', fontStyle: 'normal' }}
+    fontSize={[2]}
+    letterSpacing="0.1em"
+    {...props}>
+    {props.children}
+  </Text>
+);
