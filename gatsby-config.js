@@ -22,7 +22,6 @@ module.exports = {
     `gatsby-mdx`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-lodash`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,

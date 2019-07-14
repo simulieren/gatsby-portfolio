@@ -55,7 +55,12 @@ const CV = (props: any) => {
   console.log("TCL: CV -> i18n", i18n);
 
   return (
-    <Flex flexDirection="column" css={{ overflowX: "hidden" }}>
+    <Flex
+      flexDirection="column"
+      css={`
+        overflowx: hidden;
+      `}
+    >
       <Flex alignItems="center" justifyContent="center" flexDirection="column">
         <Box p={[4]}>
           <H3 textAlign="center">CV Profile</H3>

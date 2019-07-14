@@ -31,7 +31,9 @@ const Footer = (props: any) => {
           fontFamily="Spectral"
           fontSize={[4, 5]}
           color="#fff"
-          css={{ position: `relative` }}
+          css={`
+            position: relative;
+          `}
         >
           <TextSlider
             time={4000}

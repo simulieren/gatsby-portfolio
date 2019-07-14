@@ -10,7 +10,13 @@ const ProjectSection = (props: any) => {
   const visit = t("button.visit");
 
   return (
-    <Box bg="white" css={{ position: "relative", zIndex: 1 }}>
+    <Box
+      bg="white"
+      css={`
+        position: relative;
+        z-index: 1;
+      `}
+    >
       <PortfolioCarousel
         images={["mk_01", "mk_02", "mk_03", "mk_04"]}
         overline="Design + Development"

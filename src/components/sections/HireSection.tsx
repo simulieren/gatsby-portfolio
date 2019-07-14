@@ -12,7 +12,9 @@ export const HireSection = (props: any) => {
     <Section
       py={[4, 5]}
       bg="rgba(255,255,255,0.9)"
-      css={{ position: `relative` }}
+      css={`
+        position: relative;
+      `}
     >
       <Box width={[1, 1 / 5]}>
         <SectionOverline>{t("hire.overline")}</SectionOverline>
@@ -37,7 +39,10 @@ export const HireSection = (props: any) => {
             fontWeight="900"
             lineHeight={1}
             color="#00f"
-            css={{ fontStyle: `italic`, float: `left` }}
+            css={`
+              font-style: italic;
+              float: left;
+            `}
           >
             1.
           </Text>
@@ -59,7 +64,10 @@ export const HireSection = (props: any) => {
             fontWeight="900"
             lineHeight={1}
             color="#00f"
-            css={{ fontStyle: `italic`, float: `left` }}
+            css={`
+              font-style: italic;
+              float: left;
+            `}
           >
             2.
           </Text>
@@ -81,7 +89,10 @@ export const HireSection = (props: any) => {
             fontWeight="900"
             lineHeight={1}
             color="#00f"
-            css={{ fontStyle: `italic`, float: `left` }}
+            css={`
+              font-style: italic;
+              float: left;
+            `}
           >
             3.
           </Text>
@@ -103,7 +114,10 @@ export const HireSection = (props: any) => {
             fontWeight="900"
             lineHeight={1}
             color="#00f"
-            css={{ fontStyle: `italic`, float: `left` }}
+            css={`
+              font-style: italic;
+              float: left;
+            `}
           >
             4.
           </Text>

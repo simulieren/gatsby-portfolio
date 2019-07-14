@@ -6,7 +6,10 @@ export const Section = props => (
     flexWrap="wrap"
     px={[3, 5]}
     bg="white"
-    css={{ position: `relative`, zIndex: 1 }}
+    css={`
+      position: relative;
+      z-index: 1;
+    `}
     {...props}
   >
     {props.children}

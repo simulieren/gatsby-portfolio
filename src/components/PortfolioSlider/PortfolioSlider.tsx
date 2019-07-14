@@ -30,6 +30,7 @@ interface CarouselSectionProps {
 
 const CarouselSection = styled(Flex)<CarouselSectionProps>`
   position: relative;
+  border-radius: 5px;
 
   &::before,
   &::after {
@@ -39,6 +40,7 @@ const CarouselSection = styled(Flex)<CarouselSectionProps>`
     background: ${props => props.background};
     right: 0;
     bottom: 0;
+    border-radius: 5px;
   }
 
   &::after {
@@ -129,7 +131,9 @@ export function PortfolioCarousel(props: PortfolioCarouselProps) {
         px={[3, 4, 6]}
         py={[4, 5, 6]}
         flexDirection="column"
-        css={{ background }}
+        css={`
+          background: ${background};
+        `}
         background={background}
       >
         <Flex alignItems="flex-end" mb={[5]}>
@@ -144,21 +148,20 @@ export function PortfolioCarousel(props: PortfolioCarouselProps) {
 
             {description && <P>{description}</P>}
 
-            {link &&
-              linkText && (
-                <Text
-                  as="a"
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  fontFamily="Apercu"
-                  fontSize={3}
-                  lineHeight="1.5"
-                  color="#000"
-                >
-                  <StyledLinkText color="#000">{linkText} ➝</StyledLinkText>
-                </Text>
-              )}
+            {link && linkText && (
+              <Text
+                as="a"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                fontFamily="Apercu"
+                fontSize={3}
+                lineHeight="1.5"
+                color="#000"
+              >
+                <StyledLinkText color="#000">{linkText} ➝</StyledLinkText>
+              </Text>
+            )}
           </Box>
         </Flex>
 

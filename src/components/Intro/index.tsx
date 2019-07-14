@@ -11,14 +11,14 @@ const Intro = props => (
     px={[3, 4, 5]}
     pt={[6, 6, 7]}
     pb={[4, 5]}
-    css={{
-      minHeight: `60vh`,
-      background: props.bg,
-      backgroundSize: `cover`,
-      backgroundPosition: `top center`,
-      position: `relative`,
-      zIndex: 1
-    }}
+    css={`
+      min-height: 60vh;
+      background: ${props.bg};
+      background-size: cover;
+      background-position: top center;
+      position: relative;
+      z-index: 1;
+    `}
   >
     <Box px={[0, 4, 5]}>
       <Caps as="div" fontSize={3} mt={0} mb={[4, 5, 5]}>

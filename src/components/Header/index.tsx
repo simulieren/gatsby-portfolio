@@ -68,7 +68,12 @@ const Header = (props: any) => {
 
 const Logo = (props: any) => {
   return (
-    <Box width={[1, 1, 1, 1 / 4]} css={{ zIndex: 1000 }}>
+    <Box
+      width={[1, 1, 1, 1 / 4]}
+      css={`
+        z-index: 1000;
+      `}
+    >
       <LocalizedLink to="/">
         <StyledLinkText fontFamily="Apercu">Simon Halimonov</StyledLinkText>
       </LocalizedLink>
@@ -89,13 +94,25 @@ const SwitchLanguage = (props: any) => {
             <Link to="/">DE</Link>
           </StyledLinkText>
           <span> — </span>
-          <Text fontFamily="Apercu" mx="3" css={{ opacity: 0.5 }}>
+          <Text
+            fontFamily="Apercu"
+            mx="3"
+            css={`
+              opacity: 0.5;
+            `}
+          >
             EN
           </Text>
         </>
       ) : (
         <>
-          <Text fontFamily="Apercu" mx="3" css={{ opacity: 0.5 }}>
+          <Text
+            fontFamily="Apercu"
+            mx="3"
+            css={`
+              opacity: 0.5;
+            `}
+          >
             DE
           </Text>
           <span> — </span>
@@ -196,15 +213,15 @@ const MobileNavList = (props: any) => {
         justifyContent="center"
         alignItems="center"
         py={6}
-        css={{
-          position: `fixed`,
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0,
-          perspective: `200px`,
-          ...pointerEvents
-        }}
+        css={`
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          perspective: 200px;
+          pointer-events: ${state.open ? `all` : `none`};
+        `}
       >
         {trail.map((props, index) => {
           return (

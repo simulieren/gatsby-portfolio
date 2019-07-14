@@ -1,5 +1,4 @@
 import React, { useContext, useState, Fragment } from "react";
-import anime from "animejs";
 
 import styled from "styled-components";
 import { useSpring, animated, useTransition } from "react-spring";

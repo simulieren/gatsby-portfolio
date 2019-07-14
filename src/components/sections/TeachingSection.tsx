@@ -21,10 +21,20 @@ export const TeachingSection = (props: any) => {
       flexDirection="column"
       py={[4, 5]}
       pt={6}
-      css={{ overflow: `hidden`, minHeight: `80vh`, position: `relative` }}
+      css={`
+        overflow: hidden;
+        min-height: 80vh;
+        position: relative;
+      `}
       bg="hsla(240, 100%, 70%, 1)"
     >
-      <Box color="#fff" width={[1, 1 / 2]} css={{ zIndex: 1 }}>
+      <Box
+        color="#fff"
+        width={[1, 1 / 2]}
+        css={`
+          z-index: 1;
+        `}
+      >
         <SectionOverline color="#fff" textAlign="left">
           {t("teaching.overline")}
         </SectionOverline>
