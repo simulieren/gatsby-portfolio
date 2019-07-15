@@ -51,7 +51,6 @@
     "react-helmet": "^5.2.0",
     "react-i18next": "^10.6.1",
     "react-p5-wrapper": "0.0.4",
-    "react-share": "^2.0.0",
     "react-spring": "^8.0.19",
     "rebass": "^3.0.0-11",
     "styled-components": "^4.0.3",
@@ -104,7 +103,8 @@
     "lint:md": "remark content/posts/",
     "write-good": "write-good $(glob 'content/posts/**/*.md')",
     "format:js": "prettier '**/*.{js,jsx}' --write",
-    "now-build": "yarn build"
+    "now-build": "yarn build",
+    "deploy:production": "now --target production"
   },
   "remarkConfig": {
     "plugins": [

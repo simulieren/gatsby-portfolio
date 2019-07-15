@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import TextSlider from "../Animations/TextSlider";
 import { SectionOverline, P, StyledLinkText } from "../Typography";
 import { Section } from "../Grid";
-import { SocialLinks } from "../Header";
+import SocialLinks from "../SocialLinks/SocialLinks";
 
 const Footer = (props: any) => {
   const { t, i18n } = useTranslation();
