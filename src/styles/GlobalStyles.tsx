@@ -62,4 +62,33 @@ video {
   width: 100%;
 }
 
+pre {
+  font-size: .75rem;
+}
+
+div > pre {
+  border: 2px solid #eee;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+pre pre {
+  border: none;
+
+  & code {
+    border: none;
+  }
+}
+
+code {
+  font-size: 1em;
+  padding: .2em .4em;
+}
+
+div > code {
+  border: 2px solid #eee;
+  border-radius: 5px;
+
+}
+
 `;

@@ -23,15 +23,17 @@ const PostListing = (props: PostListingProps) => {
 
   return (
     <div>
-      {posts.filter(p => p.type === type).map(post => (
-        <TextListItem
-          post={post}
-          {...post}
-          key={`${post.title}-${post.locale}`}
-          path={`/${post.path}`}
-          headlineFontgatSize={headlineFontSize || [4, 5, 6]}
-        />
-      ))}
+      {posts
+        .filter(p => p.type === type)
+        .map(post => (
+          <TextListItem
+            post={post}
+            {...post}
+            key={`${post.title}-${post.locale}`}
+            path={`/${post.path}`}
+            headlineFontSize={headlineFontSize || [4, 5, 6]}
+          />
+        ))}
     </div>
   );
 };

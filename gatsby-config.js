@@ -1,6 +1,10 @@
 const config = require(`./data/SiteConfig`);
 const urljoin = require(`url-join`);
 
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
@@ -79,5 +83,13 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-source-trello',
+      options: {
+        teamId: `portfoliocms`,
+        apiKey: process.env.TRELLO_API_KEY,
+        secret: process.env.TRELLO_API_SECRET
+      }
+    }
   ],
 };

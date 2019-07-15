@@ -218,15 +218,14 @@ export const ListItem = styled(P)`
   }
 `;
 
+export const H1 = (props: any) => (
+  <Heading as="h1" fontFamily="Apercu" mb="4" fontSize="6" {...props}>
+    {props.children}
+  </Heading>
+);
+
 export const H2 = (props: any) => (
-  <Heading
-    as="h2"
-    fontFamily="Apercu"
-    mb="4"
-    fontSize="5"
-    textAlign="center"
-    {...props}
-  >
+  <Heading as="h2" fontFamily="Apercu" mb="4" fontSize="5" {...props}>
     {props.children}
   </Heading>
 );

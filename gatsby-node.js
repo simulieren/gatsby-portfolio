@@ -10,6 +10,7 @@ const {
   localizedSlug,
   findKey,
   removeTrailingSlash,
+  slugify
 } = require(`./src/util/gatsby-node-helpers`);
 
 const postNodes = [];
@@ -111,6 +112,38 @@ exports.createPages = async ({ graphql, actions }) => {
     return;
   }
 
+  const trelloQuery = await graphql(`
+    {
+      allTrelloCard {
+        edges {
+          node {
+            childMdx {
+              id
+              frontmatter {
+                title
+                locale
+                date_posted
+              }
+              code {
+                body
+                scope
+              }
+            }
+            id
+          }
+        }
+      }
+    }
+  `)
+
+  if (trelloQuery.errors) {
+    console.error("trelloQuery Errors: ", trelloQuery.errors);
+    return;
+  }
+
+  
+  const trelloPostList = trelloQuery.data.allTrelloCard.edges
+
   const postList = result.data.blog.edges;
 
   postList.forEach(({ node: post }) => {
@@ -134,6 +167,38 @@ exports.createPages = async ({ graphql, actions }) => {
           // in different languages, e.g. because an english phrase is also common in german
           locale,
           title,
+        },
+      });
+    }
+  });
+
+  // Generate pages based on content from Trello
+  trelloPostList.forEach(({ node: post }) => {
+    // Generate slug based on title
+    const title = _.get(post, `childMdx.frontmatter.title`);
+    const date = _.get(post, `childMdx.frontmatter.date`);
+    const locale = _.get(post, `childMdx.frontmatter.locale`);
+    const slug = slugify(title)
+
+    const mdx = _.get(post, 'childMdx.code.body')
+
+    // Use the frontmatter locale to determine the locale
+    const isDefault = _.get(post, `childMdx.frontmatter.isDefault`);
+    const path = localizedSlug({ isDefault, locale, slug });
+    console.log("TCL: path", path)    
+
+    if (title && locale && slug) {
+      createPage({
+        path: path,
+        component: postTemplate,
+        context: {
+          // Pass both the "title" and "locale" to find a unique file
+          // Only the title would not have been sufficient as articles could have the same title
+          // in different languages, e.g. because an english phrase is also common in german
+          locale,
+          title,
+          date_posted,
+          mdx
         },
       });
     }

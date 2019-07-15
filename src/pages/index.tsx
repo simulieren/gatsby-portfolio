@@ -11,6 +11,7 @@ import { HireSection } from "../components/sections/HireSection";
 import { PostSection } from "../components/sections/PostSection";
 import { IntroSection } from "../components/sections/IntroSection";
 import ProjectSection from "../components/sections/ProjectSection";
+import TrelloList from "../components/BlogList/TrelloList";
 
 import { changeLanguage } from "../util/changeLanguage";
 import { Box } from "rebass";
@@ -39,6 +40,8 @@ const Index = (props: any) => {
       <TeachingSection />
 
       <HireSection />
+
+      <TrelloList />
     </>
   );
 };
