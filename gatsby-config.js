@@ -1,12 +1,6 @@
 const config = require(`./data/SiteConfig`);
 const urljoin = require(`url-join`);
 
-require("dotenv").config({
-  path: `.env`,
-})
-
-console.log("TCL: process.env.GOOGLE_ANALYTICS_TRACKING_ID", process.env.GOOGLE_ANALYTICS_TRACKING_ID)
-
 module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
@@ -48,7 +42,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        trackingId: "UA-144227609-1",
         anonymize: true
       },
     },
