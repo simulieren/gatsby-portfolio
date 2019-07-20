@@ -52,7 +52,6 @@ const Divider = styled(Box)`
 const CV = (props: any) => {
   const { t, i18n } = useTranslation();
   i18n.changeLanguage("en");
-  console.log("TCL: CV -> i18n", i18n);
 
   return (
     <Flex
