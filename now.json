@@ -19,5 +19,8 @@
   "github": {
     "autoAlias": false
   },
-  "regions": ["bru1", "sin1"]
+  "regions": ["bru1", "sin1"],
+  "env": {
+    "GOOGLE_ANALYTICS_TRACKING_ID": "@portfolio-google-analytics-tracking-id"
+  }
 }
