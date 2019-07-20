@@ -5,7 +5,8 @@
     "service": "Dienstleistung",
     "contact": "Kontakt",
     "blog": "Blog",
-    "notes": "Notizen"
+    "notes": "Notizen",
+    "hire-me": "Anwerben"
   },
   "homepage": {
     "overline": "Digitales Produktdesign & Frontend-Entwicklung",
@@ -125,5 +126,41 @@
         }
       }
     }
+  },
+  "hire-me": {
+    "overline": "✔ Verfügbar für Design- und Entwicklungsarbeiten.",
+    "headline": "Stellen Sie mich ein",
+    "contact": "Kontakt",
+    "cv": "CV ansehen",
+    "section": {
+      "1": {
+        "headline": "Designer + Developer",
+        "text": {
+          "1": "Ich bin ein Frontend-Entwickler mit Fokus auf cutting-edge HTML, CSS, JavaScript, TypeScript und dazugehörige Frameworks wie React.js, Next.js, Gatsby.js und viele andere moderne JavaScript-Libaries.",
+          "2": "Ich habe mehrere Jahre Erfahrung als UI-Designer in Internetagenturen gesammelt. Dadruch konnte ich für kleine Start-ups und internationale Unternehmen arbeiten. Ich kann Styleguides folgen und Designsysteme für internationale mehrsprachige Websites und digitale Anwendungen erstellen."
+        }
+      }
+    },
+    "work": "Verschiedene Referenzen"
+  },
+  "contactform": {
+    "name": {
+      "label": "Wie heißen Sie?",
+      "placeholder": "Ihr Name, please.",
+      "error": "Bitte teilen Sie mir Ihren Namen oder Firmennamen mit."
+    },
+    "email": {
+      "label": "Ihre E-Mail",
+      "placeholder": "Ihre E-Mail, bitte.",
+      "error": "Die E-Mail ist ungültig. Ich muss dich irgendwie kontaktieren."
+    },
+    "message": {
+      "label": "Lassen Sie mich wissen, worüber Sie reden wollen.",
+      "placeholder": "Erzählen Sie mir etwas über sich selbst und Ihre Arbeit.",
+      "error": "Bitte lassen Sie mich wissen, was Sie wollen. Mindestens 10 Zeichen."
+    },
+    "button": "Nachricht senden",
+    "success": "Vielen Dank!",
+    "error": "Etwas ist schief gelaufen! Probieren Sie es bitte später noch einmal."
   }
 }

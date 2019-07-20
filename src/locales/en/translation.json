@@ -5,7 +5,8 @@
     "service": "Service",
     "contact": "Contact",
     "blog": "Blog",
-    "notes": "Notes"
+    "notes": "Notes",
+    "hire-me": "Hire me"
   },
   "homepage": {
     "overline": "Digital product design & frontend development",
@@ -125,5 +126,41 @@
         }
       }
     }
+  },
+  "hire-me": {
+    "overline": "✔ Available for design and development work.",
+    "headline": "Hire me",
+    "contact": "Contact",
+    "cv": "View CV",
+    "section": {
+      "1": {
+        "headline": "Designer + Developer",
+        "text": {
+          "1": "I am a frontend developer focusing on cutting-edge HTML, CSS, JavaScript, TypeScript and related frameworks like React.js, Next.js, Gatsby.js and many other modern JavaScript libraries.",
+          "2": "I have gained several years of experience as a UI designer in Internet agencies. This allowed me to work for small start-ups and international companies. I can follow style guides to create design systems for international multilingual websites and digital applications."
+        }
+      }
+    },
+    "work": "Various projects"
+  },
+  "contactform": {
+    "name": {
+      "label": "What's your name?",
+      "placeholder": "Your name, please.",
+      "error": "Please let me know your name or company name."
+    },
+    "email": {
+      "label": "Your E-Mail",
+      "placeholder": "Your E-Mail, please.",
+      "error": "The E-Mail is not valid. I need to somehow contact you."
+    },
+    "message": {
+      "label": "Let me know what you want to talk about.",
+      "placeholder": "Tell me something about you and your work.",
+      "error": "Please let me know what you want. Minimum of 10 Characters."
+    },
+    "button": "Send message",
+    "success": "Thank you!",
+    "error": "Something's gone wrong! Please try again later."
   }
 }

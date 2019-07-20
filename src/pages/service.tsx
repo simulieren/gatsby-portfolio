@@ -24,7 +24,7 @@ const ServicePage = (props: any) => {
 
   return (
     <>
-      <Helmet title={`About | ${config.siteTitle}`} />
+      <Helmet title={`Service | ${config.siteTitle}`} />
       <Intro
         bg="
             radial-gradient(rgba(255,255,255,0), rgba(255,255,255,1)),

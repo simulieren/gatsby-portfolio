@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, Heading } from "rebass";
+import { Box, Heading, Text } from "rebass";
 import { relative } from "path";
-import { Caps } from "../Typography";
+import { Caps, StyledLinkText } from "../Typography";
 
 import { SpringFadeIn, SpringFadeInUp } from "../Animations/Animations";
 
@@ -34,6 +34,21 @@ const Intro = props => (
       >
         {props.headline}
       </Heading>
+
+      {props.link && props.linkText && (
+        <Text
+          as="a"
+          href={props.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          fontFamily="Apercu"
+          fontSize={3}
+          lineHeight="1.5"
+          color="#000"
+        >
+          <StyledLinkText color="#000">{props.linkText} ➝</StyledLinkText>
+        </Text>
+      )}
     </Box>
 
     {props.children}

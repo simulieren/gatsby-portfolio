@@ -4,6 +4,7 @@ import { Box, Flex, Text } from "rebass";
 import { Caption, BodyText, H3, H2 } from "../components/Typography";
 import { Carousel } from "../components/Carousel/Carousel";
 import { useTranslation } from "react-i18next";
+import ContactForm from "../components/ContactForm/ContactForm";
 
 const ListItem = styled.li`
   list-style: none;
@@ -210,7 +211,12 @@ const CV = (props: any) => {
         <H2>Project History</H2>
       </Flex>
 
-      <Flex px="3" justifyContent="center" alignItems="flex-start">
+      <Flex
+        px="3"
+        justifyContent="center"
+        alignItems="flex-start"
+        style={{ overflowX: "hidden" }}
+      >
         <Box as="ul" width={[1, 5 / 7, 5 / 7, 4 / 8]}>
           <Carousel images={["mystudiolo-1.png", "mystudiolo-2.png"]} />
           <Caption as="div" my="4">
@@ -472,6 +478,18 @@ const CV = (props: any) => {
           hello@simonhalimonov.de
         </Text>
       </Flex>
+
+      <Flex
+        px="3"
+        justifyContent="center"
+        alignItems="flex-start"
+        style={{ overflowX: "hidden" }}
+      >
+        <Box as="ul" width={[1, 5 / 7, 5 / 7, 4 / 8]}>
+          <ContactForm subject={t("hire-me.headline")} />
+        </Box>
+      </Flex>
+
       <Flex
         p={3}
         as="footer"
