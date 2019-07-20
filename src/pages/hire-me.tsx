@@ -20,9 +20,19 @@ import { HireSection } from "../components/sections/HireSection";
 import { PortfolioCarousel } from "../components/PortfolioSlider/PortfolioSlider";
 import LocalizedLink from "../components/LocalizedLink";
 import { Link } from "gatsby";
+import { changeLanguage } from "../util/changeLanguage";
+import get from "lodash/get";
+import { LocaleContext } from "../context/LocaleContext";
 
 const HireMePage = (props: any) => {
   const { t, i18n } = useTranslation();
+  const [state, setState] = useContext(LocaleContext);
+
+  const locale: string | undefined = get(props, "pageContext.locale");
+  if (locale && locale !== i18n.language) {
+    changeLanguage(locale, i18n);
+    setState(locale);
+  }
 
   return (
     <>

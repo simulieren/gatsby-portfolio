@@ -18,7 +18,10 @@ const LocalizedLink = ({
   const { t, i18n } = useTranslation();
   const userLocale = i18n.language;
   let locale;
-  locale = useContext(LocaleContext).locale || "de";
+
+  const [state, setState] = useContext(LocaleContext);
+
+  locale = state || "de";
 
   if (locale === undefined) return;
 

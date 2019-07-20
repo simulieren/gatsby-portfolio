@@ -136,17 +136,19 @@ function NavList(props: any) {
   );
 }
 
-const NavLink = ({ to, children, p, fontSize }: any) => (
-  <StyledLinkText
-    fontFamily="Apercu"
-    p={p}
-    mr={0}
-    textAlign={[`center`, `left`] as any}
-    fontSize={fontSize}
-  >
-    <LocalizedLink to={to}>{children}</LocalizedLink>
-  </StyledLinkText>
-);
+const NavLink = ({ to, children, p, fontSize }: any) => {
+  return (
+    <StyledLinkText
+      fontFamily="Apercu"
+      p={p}
+      mr={0}
+      textAlign={[`center`, `left`] as any}
+      fontSize={fontSize}
+    >
+      <LocalizedLink to={to}>{children}</LocalizedLink>
+    </StyledLinkText>
+  );
+};
 
 const MobileNavList = (props: any) => {
   const { t, i18n } = useTranslation();

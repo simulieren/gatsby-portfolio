@@ -15,9 +15,13 @@ import { SectionHeading } from "../components/Typography";
 
 const WorkPage = (props: any) => {
   const { t, i18n } = useTranslation();
+  const [state, setState] = useContext(LocaleContext);
 
   const locale: string | undefined = get(props, "pageContext.locale");
-  if (locale && locale !== i18n.language) changeLanguage(locale, i18n);
+  if (locale && locale !== i18n.language) {
+    changeLanguage(locale, i18n);
+    setState(locale);
+  }
 
   return (
     <>

@@ -17,7 +17,7 @@ import "../i18next/i18n";
 import Portal from "./Portal";
 import { PageTransition } from "./Animations/PageTransition";
 import { AnimationStateContainer } from "../context/animationContext";
-import { LocaleContext } from "../context/LocaleContext";
+import { LocaleContext, LocaleProvider } from "../context/LocaleContext";
 import { GlobalStyles } from "../styles/GlobalStyles";
 
 setConfig({ pureSFC: true });
@@ -40,7 +40,7 @@ const Layout = props => {
     <div>
       <GlobalStyles />
 
-      <LocaleContext.Provider value={{ locale }}>
+      <LocaleProvider>
         <Helmet>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
@@ -54,7 +54,7 @@ const Layout = props => {
         {children}
 
         <Footer config={config} />
-      </LocaleContext.Provider>
+      </LocaleProvider>
     </div>
   );
 };

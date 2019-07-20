@@ -20,7 +20,13 @@ import { TransitionLink } from "../components/TransitionLink";
 
 const ServicePage = (props: any) => {
   const { t, i18n } = useTranslation();
-  const { current, send } = useContext(AnimationStateContainer.Context);
+  const [state, setState] = useContext(LocaleContext);
+
+  const locale: string | undefined = get(props, "pageContext.locale");
+  if (locale && locale !== i18n.language) {
+    changeLanguage(locale, i18n);
+    setState(locale);
+  }
 
   return (
     <>
