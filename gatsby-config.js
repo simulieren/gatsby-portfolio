@@ -5,6 +5,8 @@ require("dotenv").config({
   path: `.env`,
 })
 
+console.log("TCL: process.env.GOOGLE_ANALYTICS_TRACKING_ID", process.env.GOOGLE_ANALYTICS_TRACKING_ID)
+
 module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
@@ -46,7 +48,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || "",
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
         anonymize: true
       },
     },
@@ -56,7 +58,6 @@ module.exports = {
         color: config.themeColor,
       },
     },
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-twitter`,
     `gatsby-plugin-sitemap`,
