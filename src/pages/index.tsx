@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import { graphql } from "gatsby";
 import get from "lodash/get";
 import { useTranslation } from "react-i18next";
@@ -14,6 +14,7 @@ import ProjectSection from "../components/sections/ProjectSection";
 
 import { changeLanguage } from "../util/changeLanguage";
 import { Box } from "rebass";
+import { LocaleContext } from "../context/LocaleContext";
 
 const Index = (props: any) => {
   const { t, i18n } = useTranslation();

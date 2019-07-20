@@ -18,6 +18,10 @@ import Intro from "../components/Intro";
 import { Section } from "../components/Grid";
 import { TransitionLink } from "../components/TransitionLink";
 
+import { LocaleContext } from "../context/LocaleContext";
+import { changeLanguage } from "../util/changeLanguage";
+import get from "lodash/get";
+
 const ServicePage = (props: any) => {
   const { t, i18n } = useTranslation();
   const [state, setState] = useContext(LocaleContext);

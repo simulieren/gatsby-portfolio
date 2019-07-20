@@ -18,6 +18,9 @@ import { AnimationStateContainer } from "../context/animationContext";
 import Intro from "../components/Intro";
 import { Section } from "../components/Grid";
 import { TransitionLink } from "../components/TransitionLink";
+import { LocaleContext } from "../context/LocaleContext";
+import { changeLanguage } from "../util/changeLanguage";
+import get from "lodash/get";
 
 const AboutPage = (props: any) => {
   const { t, i18n } = useTranslation();

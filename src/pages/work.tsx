@@ -1,14 +1,15 @@
 import React, { useContext, Fragment } from "react";
 import Helmet from "react-helmet";
 import { useTranslation } from "react-i18next";
-import get from "lodash/get";
 
 import Layout from "../components/Layout";
 
 import config from "../../data/SiteConfig";
 import ProjectSection from "../components/sections/ProjectSection";
-
+import { LocaleContext } from "../context/LocaleContext";
 import { changeLanguage } from "../util/changeLanguage";
+import get from "lodash/get";
+
 import { Section } from "../components/Grid";
 import { Box } from "rebass";
 import { SectionHeading } from "../components/Typography";
