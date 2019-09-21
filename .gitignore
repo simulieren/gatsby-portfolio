@@ -60,3 +60,6 @@ bundle-stats.json
 
 # Environment variables
 .env
+
+# Remove content from the main repository
+content
