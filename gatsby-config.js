@@ -42,14 +42,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-144227609-1",
-        anonymize: true
+        trackingId: 'UA-144227609-1',
+        anonymize: true,
       },
     },
     {
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {
-        pixelId: '496920991136731',
+        pixelId: `496920991136731`,
       },
     },
     {
