@@ -7,6 +7,7 @@
 		"@glidejs/glide": "^3.3.0",
 		"@mdx-js/mdx": "^0.20.3",
 		"@mdx-js/tag": "^0.20.3",
+		"@sindresorhus/slugify": "^0.9.1",
 		"@xstate/react": "^0.2.0",
 		"babel-plugin-styled-components": "^1.10.6",
 		"constate": "^1.0.0",
@@ -54,6 +55,7 @@
 		"rebass": "^3.0.0-11",
 		"styled-components": "^4.0.3",
 		"styled-system": "^5.0.15",
+		"typeface-cardo": "^0.0.72",
 		"typeface-spectral": "0.0.54",
 		"url-join": "^4.0.0",
 		"xstate": "^4.4.0"
@@ -104,7 +106,7 @@
 		"write-good": "write-good $(glob 'content/posts/**/*.md')",
 		"format:js": "prettier '**/*.{js,jsx}' --write",
 		"now-build": "yarn build",
-		"deploy:production": "now --target production"
+		"deploy:production": "now --prod"
 	},
 	"remarkConfig": {
 		"plugins": [

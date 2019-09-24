@@ -7,11 +7,11 @@ export interface MdxEdges {
 interface Post {
   category: string;
   type: string;
-  path: string;
   tags: string[];
   title: string;
   link: string | null;
-  locale: string;
+  path?: string;
+  locale?: string;
 }
 
 // GraphQL

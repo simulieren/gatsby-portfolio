@@ -1,11 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { Text, Heading, TextProps } from "rebass";
-import "./fonts/index.css";
-import "typeface-spectral";
+import React from 'react';
+import styled from 'styled-components';
+import { Text, Heading, TextProps } from 'rebass';
 
 //@ts-ignore
-import { DotPattern } from "./DotPattern.js";
+import { DotPattern } from './DotPattern.js';
 
 export { DotPattern };
 
@@ -60,7 +58,7 @@ export const StyledLinkText = styled(Text)<{
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 2px;
@@ -131,7 +129,7 @@ export const StyledButton = styled(Button)<{
   inverted?: any;
   size?: string;
 }>`
-  font-family: "Apercu", sans-serif;
+  font-family: 'Apercu', sans-serif;
   color: ${props => (props.inverted ? `#fff` : `#00f`)};
   border: 0.125rem solid ${props => (props.inverted ? `#fff` : `#00f`)};
   height: 3.125rem;
@@ -208,7 +206,7 @@ export const ListItem = styled(P)`
   list-style: none;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     top: 0.75em;
@@ -237,7 +235,7 @@ export const H3 = (props: any) => (
     fontFamily="Apercu"
     my={[4, 5]}
     fontSize="3"
-    style={{ textTransform: "uppercase", letterSpacing: ".2em" }}
+    style={{ textTransform: `uppercase`, letterSpacing: `.2em` }}
     {...props}
   >
     {props.children}
@@ -250,7 +248,7 @@ export const BodyText = (props: any) => (
     fontFamily="Apercu"
     lineHeight="1.7"
     fontSize={[3, 4]}
-    style={{ wordSpacing: ".1em" }}
+    style={{ wordSpacing: `.1em` }}
     mb="4"
     {...props}
   >
@@ -263,7 +261,7 @@ export const Caption = (props: any) => (
     as="span"
     fontFamily="Apercu"
     fontWeight="bold"
-    style={{ textTransform: "uppercase", fontStyle: "normal" }}
+    style={{ textTransform: `uppercase`, fontStyle: `normal` }}
     fontSize={[2]}
     letterSpacing="0.1em"
     {...props}

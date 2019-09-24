@@ -1,16 +1,12 @@
 const fs = require(`fs-extra`);
 const path = require(`path`);
 const _ = require(`lodash`);
-const moment = require(`moment`);
-const siteConfig = require(`./data/SiteConfig`);
+const slugify = require(`@sindresorhus/slugify`);
 
+const siteConfig = require(`./data/SiteConfig`);
 const locales = require(`./src/locales/config`);
 
-const {
-  localizedSlug,
-  findKey,
-  removeTrailingSlash,
-} = require(`./src/util/gatsby-node-helpers`);
+const { findKey } = require(`./src/util/gatsby-node-helpers`);
 
 const postNodes = [];
 
@@ -28,14 +24,14 @@ exports.onCreatePage = ({ page, actions }) => {
 
   const { path } = page;
 
-  if (path.includes('404')) {
-    return
+  if (path.includes(`404`)) {
+    return;
   }
-  
+
   const localeKeys = Object.keys(locales);
   deletePage(page);
   // You can access the variable "house" in your page queries now
-  
+
   localeKeys.forEach(lang => {
     const local = locales[lang].default ? `` : lang;
     const newPath = local === `` ? `${path}` : `/${local}${path}`;
@@ -75,67 +71,26 @@ exports.onCreateNode = ({ node, actions }) => {
     // If it's the default language, pass the locale for that
     const lang = isDefault ? defaultKey : name.split(`.`)[1];
 
+    // Get the title from the frontmatter so we can use it
+    // to create a slug for the createNodeField function
+    const title = _.get(node, `frontmatter.title`);
+    if (title) {
+      const slug = slugify(title);
+      createNodeField({ node, name: `slug`, value: slug });
+    }
+
+    // Create a node field for the date based on the
+    // date from the frontmatter
+    const date = _.get(node, `frontmatter.date`);
+    if (date) {
+      const dateString = new Date(date);
+      createNodeField({ node, name: `date`, value: dateString });
+    }
+
     createNodeField({ node, name: `locale`, value: lang });
     createNodeField({ node, name: `isDefault`, value: isDefault });
   }
 };
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
-
-  const postTemplate = require.resolve(`./src/templates/post.tsx`);
-
-  const result = await graphql(`
-    {
-      blog: allFile(filter: { sourceInstanceName: { eq: "posts" } }) {
-        edges {
-          node {
-            relativeDirectory
-            childMdx {
-              fields {
-                locale
-                isDefault
-              }
-              frontmatter {
-                title
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  if (result.errors) {
-    console.error(result.errors);
-    return;
-  }
-
-  const postList = result.data.blog.edges;
-
-  postList.forEach(({ node: post }) => {
-    // All files for a blogpost are stored in a folder
-    // relativeDirectory is the name of the folder
-    const slug = post.relativeDirectory;
-
-    const title = _.get(post, `childMdx.frontmatter.title`);
-    // Use the fields created in exports.onCreateNode
-    const locale = _.get(post, `childMdx.fields.locale`);
-    const isDefault = _.get(post, `childMdx.fields.isDefault`);
-    const path = localizedSlug({ isDefault, locale, slug });
-
-    if (title && locale && slug) {
-      createPage({
-        path: path,
-        component: postTemplate,
-        context: {
-          // Pass both the "title" and "locale" to find a unique file
-          // Only the title would not have been sufficient as articles could have the same title
-          // in different languages, e.g. because an english phrase is also common in german
-          locale,
-          title,
-        },
-      });
-    }
-  });
-};
+const createPages = require(`./gatsby/createPages/createPages`);
+exports.createPages = createPages;

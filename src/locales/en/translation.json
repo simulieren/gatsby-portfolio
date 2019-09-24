@@ -1,166 +1,169 @@
 {
-  "nav": {
-    "work": "Work",
-    "about": "About",
-    "service": "Service",
-    "contact": "Contact",
-    "blog": "Blog",
-    "notes": "Notes",
-    "hire-me": "Hire me"
-  },
-  "homepage": {
-    "overline": "Digital product design & frontend development",
-    "headline": "I design and develop digital products."
-  },
-  "mission": {
-    "overline": "Mission",
-    "headline": "Digital focus",
-    "paragraph1": "As an independent Digital Product Designer and Frontend Developer I conceive, design and develop digital products for companies and company founders. My goal is to make technical and complex processes user-friendly.",
-    "paragraph2": "For cross-platform solutions, I work with proven processes and state-of-the-art technology. In order to bridge functionality and design, I create comprehensively designed user interfaces for your website or app."
-  },
-  "teaching": {
-    "overline": "Teaching",
-    "headline": "I teach at the Digital Career Institute.",
-    "paragraph": "Since December 2018 I have taught over 100 participants about webdevelopment. I worked together with other teachers on the curriculum and taught the students how to program. \n From HTML, CSS and JavaScript to React.js, Node.js and MongoDB I trained the students to become Fullstack JavaScript Developers."
-  },
-  "hire": {
-    "overline": "Hire me",
-    "headline": "How I can help you",
-    "step1": "I plan, conceive, design and realize your digital project.",
-    "step2": "I support your team with my competences in your project.",
-    "step3": "I'm giving her team a workshop to take you to the next level.",
-    "step4": "I'm talking about current topics in the field of design and development at your event."
-  },
-  "footer": {
-    "letsChat": "Let's chat",
-    "legal": "Legal",
-    "imprint": "Imprint and TOS",
-    "privacy": "Privacy",
-    "textslider": {
-      "1": "Don't wait any longer, let's just talk.",
-      "2": "It'll be too late tomorrow.",
-      "3": "The future used to be better too.",
-      "4": "Every thought in us strives to become reality.",
-      "5": "Never forget the „why“."
-    }
-  },
-  "references": "References",
-  "projects": "Projects",
-  "article": "Article",
-  "design": "Design",
-  "development": "Development",
-  "skills": "Skills",
-  "button": {
-    "read": "Read more",
-    "visit": "Visit website"
-  },
-  "about": {
-    "headline": "Digital by default",
-    "section1": {
-      "headline": "About me",
-      "paragraph": "Hi, my name is Simon. I believe that the combination of good digital design and modern technology can improve products and how we deal with them. I am suspicious of what is and determined to change the way our digital products look and work."
-    },
-    "section2": {
-      "headline": "Digital products by craftsmanship",
-      "paragraph1": "I develop every project, no matter if website or web app, individually by hand according to your needs. I use the latest technologies, which are also used by Google, Facebook, Airbnb or Trivago. I like to work with people who want to make a difference. And who have understood how digital projects work.",
-      "paragraph2": "I love what I do and I am constantly refining my ability to translate brand stories into a visually unique and engaging user experience."
-    },
-    "section3": {
-      "headline": "Lecturer at the Digital Career Institute",
-      "paragraph": "Since December 2017 I have been teaching at the Digital Career Institute and since then I have taught more than 100 participants in Düsseldorf, Hamburg and Berlin about Modern Web Development and Digital Design."
-    }
-  },
-  "work": {
-    "headline": "Selected works"
-  },
-  "service": {
-    "headline": "Digital focus with the user at the center",
-    "section": {
-      "1": {
-        "headline": "Services",
-        "text": "I see myself as your partner and work in the interest of your customers. Trust and honesty are important to me as the basis for a successful partnership. From the website to the app, from the first idea to the publication: I advise and accompany you through all phases - from planning to the finished concept."
-      },
-      "2": {
-        "headline": "Digital handcrafted products",
-        "text": {
-          "1": "I develop every project, no matter if website or web app, individually by hand according to your needs. I use the latest technologies, which are also used by Google, Facebook, Airbnb or Trivago. I like to work with people who want to make a difference. And who have understood how digital projects work.",
-          "2": "I love what I do and I am constantly refining my ability to translate brand stories into a visually unique and engaging user experience."
-        }
-      },
-      "3": {
-        "headline": "Process",
-        "text": "Care and the right methodology lead to the success of every project and every idea."
-      },
-      "4": {
-        "headline": "Planning and strategy",
-        "text": {
-          "1": "This is where it all starts. We start with a first meeting to determine your needs. By gaining a clear understanding of the scope and cost of the project from the start, I can see what needs to be done in the short, medium and long term. My focus is on turning your business goals into communication goals and developing a clear action plan to get you where you want to go.",
-          "2": "First Meeting",
-          "3": "Listen, understand, ask"
-        }
-      },
-      "5": {
-        "headline": "Concept",
-        "text": {
-          "1": "This is the backbone of my creative process. I deconstruct ideas into their simplest form, a process that helps me find the right positioning for the brand and product.",
-          "2": "Discuss",
-          "3": "Research",
-          "4": "Conception"
-        }
-      },
-      "6": {
-        "headline": "Creative development",
-        "text": {
-          "1": "Here I turn ideas into prototypes. At this stage I know where we're going, but we're still halfway there.",
-          "2": "Wireframe & Prototypes",
-          "3": "User Testing"
-        }
-      },
-      "7": {
-        "headline": "Technical development",
-        "text": {
-          "1": "Now things are taking shape. Once the concepts, mock-ups and prototypes are approved, I put together the best production team for the job.",
-          "2": "Realisation",
-          "3": "Performance Optimization",
-          "4": "Monitoring"
-        }
-      }
-    }
-  },
-  "hire-me": {
-    "overline": "✔ Available for design and development work.",
-    "headline": "Hire me",
-    "contact": "Contact",
-    "cv": "View CV",
-    "section": {
-      "1": {
-        "headline": "Designer + Developer",
-        "text": {
-          "1": "I am a frontend developer focusing on cutting-edge HTML, CSS, JavaScript, TypeScript and related frameworks like React.js, Next.js, Gatsby.js and many other modern JavaScript libraries.",
-          "2": "I have gained several years of experience as a UI designer in Internet agencies. This allowed me to work for small start-ups and international companies. I can follow style guides to create design systems for international multilingual websites and digital applications."
-        }
-      }
-    },
-    "work": "Various projects"
-  },
-  "contactform": {
-    "name": {
-      "label": "What's your name?",
-      "placeholder": "Your name, please.",
-      "error": "Please let me know your name or company name."
-    },
-    "email": {
-      "label": "Your E-Mail",
-      "placeholder": "Your E-Mail, please.",
-      "error": "The E-Mail is not valid. I need to somehow contact you."
-    },
-    "message": {
-      "label": "Let me know what you want to talk about.",
-      "placeholder": "Tell me something about you and your work.",
-      "error": "Please let me know what you want. Minimum of 10 Characters."
-    },
-    "button": "Send message",
-    "success": "Thank you!",
-    "error": "Something's gone wrong! Please try again later."
-  }
+	"nav": {
+		"work": "Work",
+		"about": "About",
+		"service": "Service",
+		"contact": "Contact",
+		"blog": "Blog",
+		"notes": "Notes",
+		"hire-me": "Hire me"
+	},
+	"homepage": {
+		"overline": "Digital product design & frontend development",
+		"headline": "I design and develop digital products."
+	},
+	"mission": {
+		"overline": "Mission",
+		"headline": "Digital focus",
+		"paragraph1": "As an independent Digital Product Designer and Frontend Developer I conceive, design and develop digital products for companies and company founders. My goal is to make technical and complex processes user-friendly.",
+		"paragraph2": "For cross-platform solutions, I work with proven processes and state-of-the-art technology. In order to bridge functionality and design, I create comprehensively designed user interfaces for your website or app."
+	},
+	"teaching": {
+		"overline": "Teaching",
+		"headline": "I teach at the Digital Career Institute.",
+		"paragraph": "Since December 2018 I have taught over 100 participants about webdevelopment. I worked together with other teachers on the curriculum and taught the students how to program. \n From HTML, CSS and JavaScript to React.js, Node.js and MongoDB I trained the students to become Fullstack JavaScript Developers."
+	},
+	"hire": {
+		"overline": "Hire me",
+		"headline": "How I can help you",
+		"step1": "I plan, conceive, design and realize your digital project.",
+		"step2": "I support your team with my competences in your project.",
+		"step3": "I'm giving her team a workshop to take you to the next level.",
+		"step4": "I'm talking about current topics in the field of design and development at your event."
+	},
+	"footer": {
+		"letsChat": "Let's chat",
+		"legal": "Legal",
+		"imprint": "Imprint and TOS",
+		"privacy": "Privacy",
+		"textslider": {
+			"1": "Don't wait any longer, let's just talk.",
+			"2": "It'll be too late tomorrow.",
+			"3": "The future used to be better too.",
+			"4": "Every thought in us strives to become reality.",
+			"5": "Never forget the „why“."
+		}
+	},
+	"references": "References",
+	"projects": "Projects",
+	"article": "Article",
+	"design": "Design",
+	"development": "Development",
+	"skills": "Skills",
+	"button": {
+		"read": "Read more",
+		"visit": "Visit website"
+	},
+	"about": {
+		"headline": "Digital by default",
+		"section1": {
+			"headline": "About me",
+			"paragraph": "Hi, my name is Simon. I believe that the combination of good digital design and modern technology can improve products and how we deal with them. I am suspicious of what is and determined to change the way our digital products look and work."
+		},
+		"section2": {
+			"headline": "Digital products by craftsmanship",
+			"paragraph1": "I develop every project, no matter if website or web app, individually by hand according to your needs. I use the latest technologies, which are also used by Google, Facebook, Airbnb or Trivago. I like to work with people who want to make a difference. And who have understood how digital projects work.",
+			"paragraph2": "I love what I do and I am constantly refining my ability to translate brand stories into a visually unique and engaging user experience."
+		},
+		"section3": {
+			"headline": "Lecturer at the Digital Career Institute",
+			"paragraph": "Since December 2017 I have been teaching at the Digital Career Institute and since then I have taught more than 100 participants in Düsseldorf, Hamburg and Berlin about Modern Web Development and Digital Design."
+		}
+	},
+	"work": {
+		"headline": "Selected works"
+	},
+	"service": {
+		"headline": "Digital focus with the user at the center",
+		"section": {
+			"1": {
+				"headline": "Services",
+				"text": "I see myself as your partner and work in the interest of your customers. Trust and honesty are important to me as the basis for a successful partnership. From the website to the app, from the first idea to the publication: I advise and accompany you through all phases - from planning to the finished concept."
+			},
+			"2": {
+				"headline": "Digital handcrafted products",
+				"text": {
+					"1": "I develop every project, no matter if website or web app, individually by hand according to your needs. I use the latest technologies, which are also used by Google, Facebook, Airbnb or Trivago. I like to work with people who want to make a difference. And who have understood how digital projects work.",
+					"2": "I love what I do and I am constantly refining my ability to translate brand stories into a visually unique and engaging user experience."
+				}
+			},
+			"3": {
+				"headline": "Process",
+				"text": "Care and the right methodology lead to the success of every project and every idea."
+			},
+			"4": {
+				"headline": "Planning and strategy",
+				"text": {
+					"1": "This is where it all starts. We start with a first meeting to determine your needs. By gaining a clear understanding of the scope and cost of the project from the start, I can see what needs to be done in the short, medium and long term. My focus is on turning your business goals into communication goals and developing a clear action plan to get you where you want to go.",
+					"2": "First Meeting",
+					"3": "Listen, understand, ask"
+				}
+			},
+			"5": {
+				"headline": "Concept",
+				"text": {
+					"1": "This is the backbone of my creative process. I deconstruct ideas into their simplest form, a process that helps me find the right positioning for the brand and product.",
+					"2": "Discuss",
+					"3": "Research",
+					"4": "Conception"
+				}
+			},
+			"6": {
+				"headline": "Creative development",
+				"text": {
+					"1": "Here I turn ideas into prototypes. At this stage I know where we're going, but we're still halfway there.",
+					"2": "Wireframe & Prototypes",
+					"3": "User Testing"
+				}
+			},
+			"7": {
+				"headline": "Technical development",
+				"text": {
+					"1": "Now things are taking shape. Once the concepts, mock-ups and prototypes are approved, I put together the best production team for the job.",
+					"2": "Realisation",
+					"3": "Performance Optimization",
+					"4": "Monitoring"
+				}
+			}
+		}
+	},
+	"hire-me": {
+		"overline": "✔ Available for design and development work.",
+		"headline": "Hire me",
+		"contact": "Contact",
+		"cv": "View CV",
+		"section": {
+			"1": {
+				"headline": "Designer + Developer",
+				"text": {
+					"1": "I am a frontend developer focusing on cutting-edge HTML, CSS, JavaScript, TypeScript and related frameworks like React.js, Next.js, Gatsby.js and many other modern JavaScript libraries.",
+					"2": "I have gained several years of experience as a UI designer in Internet agencies. This allowed me to work for small start-ups and international companies. I can follow style guides to create design systems for international multilingual websites and digital applications."
+				}
+			}
+		},
+		"work": "Various projects"
+	},
+	"contactform": {
+		"name": {
+			"label": "What's your name?",
+			"placeholder": "Your name, please.",
+			"error": "Please let me know your name or company name."
+		},
+		"email": {
+			"label": "Your E-Mail",
+			"placeholder": "Your E-Mail, please.",
+			"error": "The E-Mail is not valid. I need to somehow contact you."
+		},
+		"message": {
+			"label": "Let me know what you want to talk about.",
+			"placeholder": "Tell me something about you and your work.",
+			"error": "Please let me know what you want. Minimum of 10 Characters."
+		},
+		"button": "Send message",
+		"success": "Thank you!",
+		"error": "Something's gone wrong! Please try again later."
+	},
+	"notes": {
+		"title": "Notes"
+	}
 }

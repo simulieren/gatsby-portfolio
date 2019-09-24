@@ -40,9 +40,16 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `notes`,
+        path: `${__dirname}/content/Notes`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-144227609-1',
+        trackingId: `UA-144227609-1`,
         anonymize: true,
       },
     },

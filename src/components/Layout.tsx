@@ -1,24 +1,29 @@
-import React, { useContext } from "react";
-import Helmet from "react-helmet";
-import styled from "styled-components";
-import get from "lodash/get";
-
+import React, { useContext } from 'react';
+import Helmet from 'react-helmet';
+import styled from 'styled-components';
+import get from 'lodash/get';
 // Enable experimental react hooks: https://github.com/gatsbyjs/gatsby/issues/9489#issuecomment-434868882
-import { setConfig } from "react-hot-loader";
+import { setConfig } from 'react-hot-loader';
 
-import config from "../../data/SiteConfig";
-import Header from "./Header";
-import Footer from "./Footer";
+// Import Typefaces from node modules
+import 'typeface-spectral';
+import 'typeface-cardo';
+// Import local typeface
+import '../fonts/fonts.css';
 
-import SEO from "./SEO/SEO";
+import config from '../../data/SiteConfig';
+import Header from './Header';
+import Footer from './Footer';
 
-import SiteConfig from "../../data/SiteConfig";
-import "../i18next/i18n";
-import Portal from "./Portal";
-import { PageTransition } from "./Animations/PageTransition";
-import { AnimationStateContainer } from "../context/animationContext";
-import { LocaleContext, LocaleProvider } from "../context/LocaleContext";
-import { GlobalStyles } from "../styles/GlobalStyles";
+import SEO from './SEO/SEO';
+
+import SiteConfig from '../../data/SiteConfig';
+import '../i18next/i18n';
+import Portal from './Portal';
+import { PageTransition } from './Animations/PageTransition';
+import { AnimationStateContainer } from '../context/animationContext';
+import { LocaleContext, LocaleProvider } from '../context/LocaleContext';
+import { GlobalStyles } from '../styles/GlobalStyles';
 
 setConfig({ pureSFC: true });
 
@@ -34,7 +39,7 @@ const Layout = props => {
   const { current, send } = useContext(AnimationStateContainer.Context);
 
   const { children } = props;
-  const locale = get(props, "pageContext.locale");
+  const locale = get(props, `pageContext.locale`);
 
   return (
     <div>
