@@ -1,19 +1,19 @@
-import * as React from "react";
-import styled from "styled-components";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import Glide from "@glidejs/glide";
-import "@glidejs/glide/dist/css/glide.core.min.css";
+import Glide from '@glidejs/glide';
+import '@glidejs/glide/dist/css/glide.core.min.css';
 
-import PostTags from "../PostTags/PostTags";
+import PostTags from '../PostTags/PostTags';
 import {
   SectionHeading,
   P,
   Caps,
   StyledLinkText,
-  RightArrowSVG
-} from "../Typography";
-import { Text, Flex, Box } from "rebass";
-import { Image } from "../Image/Image";
+  RightArrowSVG,
+} from '../Typography';
+import { Text, Flex, Box } from 'rebass';
+import { Image } from '../Image/Image';
 
 const Wrapper = styled.section`
   overflow-x: hidden;
@@ -35,7 +35,7 @@ const CarouselSection = styled(Flex)<CarouselSectionProps>`
   &::before,
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     z-index: -1;
     background: ${props => props.background};
     right: 0;
@@ -60,7 +60,7 @@ interface CarouselItemProps {
   key: number;
 }
 
-const CarouselItem = styled.div<CarouselItemProps>`
+const CarouselItem = styled.li<CarouselItemProps>`
   cursor: grab;
   box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.2);
 
@@ -97,12 +97,12 @@ export function PortfolioCarousel(props: PortfolioCarouselProps) {
     tags,
     background,
     link,
-    linkText
+    linkText,
   } = props;
 
   const [slide, setSlide] = React.useState(0);
   const imageNumber = images.length - 1;
-  const slider = React.useRef("");
+  const slider = React.useRef(``);
 
   const settings = {
     gap: 32,
@@ -110,9 +110,9 @@ export function PortfolioCarousel(props: PortfolioCarouselProps) {
     breakpoints: {
       660: {
         gap: 8,
-        peek: { before: 0, after: 8 }
-      }
-    }
+        peek: { before: 0, after: 8 },
+      },
+    },
   };
 
   React.useLayoutEffect(() => {

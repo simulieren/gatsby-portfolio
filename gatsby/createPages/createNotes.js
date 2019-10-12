@@ -36,7 +36,7 @@ module.exports = async (graphql, createPage) => {
     // Create the slug based on the title
     const slug = slugify(title);
     // Use the fields created in exports.onCreateNode
-    const path = `/${slug}`;
+    const path = `/notes/${slug}`;
 
     if (title && slug) {
       createPage({

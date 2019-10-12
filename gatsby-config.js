@@ -19,7 +19,27 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-mdx`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+              sizeByPixelDensity: true,
+            },
+          },
+          // For files that are not supported by gatsby-remark-images like .gif or .pdf
+          `gatsby-remark-copy-linked-files`,
+          // Syntax highlighting
+          `gatsby-remark-prismjs`,
+        ],
+      },
+    },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
@@ -30,8 +50,6 @@ module.exports = {
         path: `${__dirname}/static/`,
       },
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -51,12 +69,6 @@ module.exports = {
       options: {
         trackingId: `UA-144227609-1`,
         anonymize: true,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-facebook-pixel`,
-      options: {
-        pixelId: `496920991136731`,
       },
     },
     {

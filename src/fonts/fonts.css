@@ -1,5 +1,6 @@
 /* Light */
 @font-face {
+	font-display: swap;
 	font-family: "Apercu";
 	src: url("ApercuProLight.woff2") format("woff2"),
 		url("ApercuProLight.woff") format("woff");
@@ -9,6 +10,7 @@
 
 /* Light Italic */
 @font-face {
+	font-display: swap;
 	font-family: "Apercu";
 	src: url("ApercuProLightItalic.woff2") format("woff2"),
 		url("ApercuProLightItalic.woff") format("woff");
@@ -18,6 +20,7 @@
 
 /* Regular */
 @font-face {
+	font-display: swap;
 	font-family: "Apercu";
 	src: url("ApercuProRegular.woff2") format("woff2"),
 		url("ApercuProRegular.woff") format("woff");
@@ -27,6 +30,7 @@
 
 /* Italic */
 @font-face {
+	font-display: swap;
 	font-family: "Apercu";
 	src: url("ApercuProItalic.woff2") format("woff2"),
 		url("ApercuProItalic.woff") format("woff");
@@ -36,6 +40,7 @@
 
 /* Medium */
 @font-face {
+	font-display: swap;
 	font-family: "Apercu";
 	src: url("ApercuProMedium.woff2") format("woff2"),
 		url("ApercuProMedium.woff") format("woff");
@@ -45,6 +50,7 @@
 
 /* MediumItalic */
 @font-face {
+	font-display: swap;
 	font-family: "Apercu";
 	src: url("ApercuProMediumItalic.otf") format("opentype");
 	font-style: italic;
@@ -53,6 +59,7 @@
 
 /* Bold */
 @font-face {
+	font-display: swap;
 	font-family: "Apercu";
 	src: url("ApercuProBold.woff2") format("woff2"),
 		url("ApercuProBold.woff") format("woff");
@@ -62,6 +69,7 @@
 
 /* Bold Italic */
 @font-face {
+	font-display: swap;
 	font-family: "Apercu";
 	src: url("ApercuProBoldItalic.woff2") format("woff2"),
 		url("ApercuProBoldItalic.woff") format("woff");

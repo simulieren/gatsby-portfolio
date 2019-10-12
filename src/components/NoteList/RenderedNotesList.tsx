@@ -18,8 +18,9 @@ interface Edge {
 }
 
 interface Node {
-  fields: { date: string };
+  fields: { date: string; slug: string };
   frontmatter: Frontmatter;
+  body?: any;
 }
 
 interface Frontmatter {
@@ -31,10 +32,10 @@ interface Frontmatter {
   category: string;
 }
 
-const RenderedNotesList = ({ data }: { data: NoteData }) => {
+const RenderedNotesList = ({ edges }: { edges: Edge[] }) => {
   let lastMonth: number | null = null;
 
-  return data.allMdx.edges.map((edge, index) => {
+  return edges.map((edge, index) => {
     let date = edge.node.fields.date;
 
     let month = new Date(date).getMonth();
@@ -54,12 +55,22 @@ const RenderedNotesList = ({ data }: { data: NoteData }) => {
           >
             {getMonthString(date)} {year}
           </Text>
-          <TextListItem {...edge.node.frontmatter} />
+          <TextListItem
+            {...edge.node.frontmatter}
+            slug={edge.node.fields.slug}
+            body={edge.node.body}
+          />
         </Fragment>
       );
     }
 
-    return <TextListItem {...edge.node.frontmatter} />;
+    return (
+      <TextListItem
+        {...edge.node.frontmatter}
+        slug={edge.node.fields.slug}
+        body={edge.node.body}
+      />
+    );
   });
 };
 

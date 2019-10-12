@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: `Simon Halimonov | Digital Product Designer and Developer`, // Site title.
+  siteTitle: `Simon Halimonov | Digital Product Designer and Frontend Developer`, // Site title.
   siteTitleShort: `Simon Halimonov`, // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: `Simon Halimonov | Designer and Developer`, // Alternative site title for SEO.
   siteLogo: `/logos/logo-1024.png`, // Logo used for SEO and manifest.

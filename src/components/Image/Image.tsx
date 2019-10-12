@@ -1,6 +1,6 @@
-import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 interface ImageProps {
   filename: string;
@@ -18,8 +18,8 @@ export const Image = (props: ImageProps) => (
               relativePath
               name
               childImageSharp {
-                sizes(maxWidth: 1200) {
-                  ...GatsbyImageSharpSizes
+                fluid(maxWidth: 1400) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -35,9 +35,12 @@ export const Image = (props: ImageProps) => (
         return null;
       }
 
-      const imageSizes = image.node.childImageSharp.sizes;
       return (
-        <Img alt={props.alt as string} sizes={imageSizes} style={props.style} />
+        <Img
+          alt={props.alt as string}
+          fluid={image.node.childImageSharp.fluid}
+          style={props.style}
+        />
       );
     }}
   />

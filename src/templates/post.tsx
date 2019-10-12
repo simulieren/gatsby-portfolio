@@ -1,21 +1,13 @@
-import React from "react";
+import React from 'react';
 // import Helmet from "react-helmet";
-import { graphql } from "gatsby";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
-import MdxLink from "../components/MdxLink/index";
-import Layout from "../components/Layout";
-// import UserInfo from "../components/UserInfo/UserInfo";
-// import PostTags from "../components/PostTags/PostTags";
-// import SocialLinks from "../components/SocialLinks/SocialLinks";
-// import SEO from "../components/SEO/SEO";
-// import config from "../../data/SiteConfig";
-import "./b16-tomorrow-dark.css";
-import "./post.css";
+import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import MdxLink from '../components/MdxLink/index';
 
-import { Box, Flex } from "rebass";
-import { Caps, SectionOverline } from "../components/Typography";
-import { Section } from "../components/Grid";
-import Intro from "../components/Intro";
+import { Box, Flex } from 'rebass';
+import { Caps, SectionOverline } from '../components/Typography';
+import { Section } from '../components/Grid';
+import Intro from '../components/Intro';
 
 const isHash = str => /^#/.test(str);
 const isInternal = to => /^\/(?!\/)/.test(to);
@@ -99,10 +91,10 @@ const PostTemplate = ({ data: { mdx } }: any) => (
     <h1>{mdx.frontmatter.title}</h1>
     <MDXRenderer
       components={{
-        a: MdxLink
+        a: MdxLink,
       }}
     >
-      {mdx.code.body}
+      {mdx.body}
     </MDXRenderer>
   </div>
 );
@@ -119,9 +111,7 @@ export const query = graphql`
       frontmatter {
         title
       }
-      code {
-        body
-      }
+      body
     }
   }
 `;

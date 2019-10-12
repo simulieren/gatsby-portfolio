@@ -1,32 +1,33 @@
-import React, { Fragment, useContext } from "react";
-import { graphql } from "gatsby";
-import get from "lodash/get";
-import { useTranslation } from "react-i18next";
+import React, { Fragment, useContext } from 'react';
+import { graphql } from 'gatsby';
+import get from 'lodash/get';
+import { useTranslation } from 'react-i18next';
 
-import Layout from "../components/Layout";
+import Layout from '../components/Layout';
 
-import { MissionSection } from "../components/sections/MissionSection";
-import { TeachingSection } from "../components/sections/TeachingSection";
-import { HireSection } from "../components/sections/HireSection";
-import { PostSection } from "../components/sections/PostSection";
-import { IntroSection } from "../components/sections/IntroSection";
-import ProjectSection from "../components/sections/ProjectSection";
+import { MissionSection } from '../components/sections/MissionSection';
+import { TeachingSection } from '../components/sections/TeachingSection';
+import { HireSection } from '../components/sections/HireSection';
+import { PostSection } from '../components/sections/PostSection';
+import { IntroSection } from '../components/sections/IntroSection';
+import ProjectSection from '../components/sections/ProjectSection';
 
-import { changeLanguage } from "../util/changeLanguage";
-import { Box } from "rebass";
-import { LocaleContext } from "../context/LocaleContext";
+import { changeLanguage } from '../util/changeLanguage';
+import { Box } from 'rebass';
+import { LocaleContext } from '../context/LocaleContext';
+import { Helmet } from 'react-helmet';
 
 const Index = (props: any) => {
   const { t, i18n } = useTranslation();
   const [state, setState] = useContext(LocaleContext);
 
-  const locale: string | undefined = get(props, "pageContext.locale");
+  const locale: string | undefined = get(props, `pageContext.locale`);
   if (locale && locale !== i18n.language) {
     changeLanguage(locale, i18n);
     setState(locale);
   }
 
-  const allMdxEdges = get(props, "data.allMdx.edges");
+  const allMdxEdges = get(props, `data.allMdx.edges`);
 
   const imageEdges = get(props, `data.allFile.edges`);
   const images = imageEdges.map((img: any) =>
@@ -35,6 +36,7 @@ const Index = (props: any) => {
 
   return (
     <>
+      <Helmet title={t(`homepage.overline`)} />
       <IntroSection mdxEdges={allMdxEdges} />
 
       <ProjectSection />

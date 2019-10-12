@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Box, Text, Heading } from 'rebass';
 import { useTranslation } from 'react-i18next';
 
@@ -8,10 +10,12 @@ import { Caps, StyledLinkHeading } from '../Typography';
 import PostTags from '../PostTags/PostTags';
 import { Post } from '../Post/Post';
 import LocalizedLink from '../LocalizedLink';
-
-import getNumberWithOrdinal from '../../util/getNumberWithOrdinal';
+import { LinkIcon } from '../Icons/index';
+import MdxLink from '../MdxLink/index';
 
 interface TextListItemProps extends Post {
+  slug?: string;
+  body?: string;
   post?: Post;
   headlineFontSize?: number | number[];
 }
@@ -40,6 +44,14 @@ const TextListItem = (props: TextListItemProps) => {
         {props.tags ? <PostTags tags={props.tags} /> : ``}
         {` `}
         {hasLink ? ` · ` + url() : ``}
+        {props.slug ? (
+          <Link to={`/notes/${props.slug}`}>
+            {` `}
+            · <LinkIcon height="12" width="12" />
+          </Link>
+        ) : (
+          ``
+        )}
       </Text>
       <StyledLinkHeading
         as="h4"
@@ -56,6 +68,22 @@ const TextListItem = (props: TextListItemProps) => {
           <LocalizedLink to={props.path}>{props.title}</LocalizedLink>
         )}
       </StyledLinkHeading>
+      {props.body && (
+        <Box>
+          <MDXRenderer
+            components={{
+              a: MdxLink,
+            }}
+          >
+            {props.body}
+          </MDXRenderer>
+
+          <Box
+            my={[3]}
+            css={{ borderTop: `1px solid #eee`, height: `1px`, width: `100%` }}
+          />
+        </Box>
+      )}
     </Box>
   );
 };

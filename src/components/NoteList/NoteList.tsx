@@ -1,7 +1,6 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import RenderedNotesList from './RenderedNotesList';
-import TextListItem from '../TextListItem';
 
 interface NoteData {
   allMdx: AllMdx;
@@ -29,34 +28,49 @@ interface Frontmatter {
   category: string;
 }
 
-const NoteList = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allMdx(
-          filter: { frontmatter: { type: { eq: "note" } } }
-          sort: { fields: fields___date, order: DESC }
-        ) {
-          edges {
-            node {
-              fields {
-                date
-              }
-              frontmatter {
-                title
-                type
-                link
-                date
-                tags
-                category
-              }
+interface Props {
+  filter: string;
+}
+
+const NoteList = ({ filter }: Props) => {
+  const data: NoteData = useStaticQuery(graphql`
+    query {
+      allMdx(
+        filter: { frontmatter: { type: { eq: "note" } } }
+        sort: { fields: fields___date, order: DESC }
+      ) {
+        edges {
+          node {
+            fields {
+              date
+              slug
             }
+            frontmatter {
+              title
+              type
+              link
+              date
+              tags
+              category
+            }
+            body
           }
         }
       }
-    `}
-    render={(data: NoteData) => <RenderedNotesList data={data} />}
-  />
-);
+    }
+  `);
+
+  if (filter) {
+    return (
+      <RenderedNotesList
+        edges={data.allMdx.edges.filter(
+          edge => edge.node.fields.slug !== filter
+        )}
+      />
+    );
+  }
+
+  return <RenderedNotesList edges={data.allMdx.edges} />;
+};
 
 export default NoteList;

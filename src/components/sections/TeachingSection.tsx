@@ -1,16 +1,15 @@
-import React from "react";
-import { Box, Heading } from "rebass";
-import Img from "gatsby-image";
-import { useTranslation } from "react-i18next";
+import React from 'react';
+import { Box } from 'rebass';
+import { useTranslation } from 'react-i18next';
 
-import { Section } from "../Grid";
+import { Section } from '../Grid';
 import {
   SectionOverline,
   P,
   StyledButton,
-  SectionHeading
-} from "../Typography";
-import { Image } from "../Image/Image";
+  SectionHeading,
+} from '../Typography';
+import { Image } from '../Image/Image';
 
 export const TeachingSection = (props: any) => {
   const { t, i18n } = useTranslation();
@@ -36,13 +35,13 @@ export const TeachingSection = (props: any) => {
         `}
       >
         <SectionOverline color="#fff" textAlign="left">
-          {t("teaching.overline")}
+          {t(`teaching.overline`)}
         </SectionOverline>
-        <SectionHeading>{t("teaching.headline")}</SectionHeading>
-        <P>{t("teaching.paragraph")}</P>
+        <SectionHeading>{t(`teaching.headline`)}</SectionHeading>
+        <P>{t(`teaching.paragraph`)}</P>
 
         <StyledButton inverted size="10rem">
-          {t("button.read")}
+          {t(`button.read`)}
         </StyledButton>
       </Box>
 
@@ -55,7 +54,7 @@ export const TeachingSection = (props: any) => {
           position: `absolute`,
           right: 0,
           opacity: `0.75`,
-          mixBlendMode: `multiply`
+          mixBlendMode: `multiply`,
         }}
       />
     </Section>

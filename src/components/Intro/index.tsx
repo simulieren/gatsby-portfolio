@@ -1,9 +1,6 @@
-import React from "react";
-import { Box, Heading, Text } from "rebass";
-import { relative } from "path";
-import { Caps, StyledLinkText } from "../Typography";
-
-import { SpringFadeIn, SpringFadeInUp } from "../Animations/Animations";
+import React from 'react';
+import { Box, Heading, Text } from 'rebass';
+import { Caps, StyledLinkText } from '../Typography';
 
 const Intro = props => (
   <Box

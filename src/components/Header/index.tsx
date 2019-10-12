@@ -1,28 +1,27 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from 'react';
 //@ts-ignore
-import { Link } from "gatsby";
-import styled from "styled-components";
-import { Flex, Box, Text } from "rebass";
-import { useTranslation } from "react-i18next";
-import { useSpring, animated, useTrail } from "react-spring";
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import { Flex, Box, Text } from 'rebass';
+import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import navLinks from "../../../data/NavigationLinks";
-import useWindowScrollPosition from "../../util/useWindowScrollPosition";
-import useWindowSize from "../../util/useWindowSize";
-import { StyledLinkText } from "../Typography";
-import LocalizedLink from "../LocalizedLink";
+import navLinks from '../../../data/NavigationLinks';
+import { StyledLinkText } from '../Typography';
+import LocalizedLink from '../LocalizedLink';
 
-import locales from "../../locales/config";
-import createContainer from "constate";
+import locales from '../../locales/config';
+import createContainer from 'constate';
 
-import SocialLinks from "../SocialLinks/SocialLinks";
+import SocialLinks from '../SocialLinks/SocialLinks';
 
-import ToggleMenuButton from "../ToggleMenuButton/ToggleMenuButton";
+import ToggleMenuButton from '../ToggleMenuButton/ToggleMenuButton';
+import { Helmet } from 'react-helmet';
 
 const useNavigationState = () => {
   const [state, setState] = useState({
     open: false,
-    scrolled: false
+    scrolled: false,
   });
 
   const toggleNavigation = () => setState({ ...state, open: !state.open });
@@ -71,7 +70,9 @@ const Logo = (props: any) => {
       `}
     >
       <LocalizedLink to="/">
-        <StyledLinkText fontFamily="Apercu">Simon Halimonov</StyledLinkText>
+        <StyledLinkText fontFamily="Apercu" fontWeight="300">
+          Simon Halimonov
+        </StyledLinkText>
       </LocalizedLink>
     </Box>
   );
@@ -128,7 +129,7 @@ function NavList(props: any) {
     <Flex width={[`100%`] as any}>
       {navLinks.map((link, i) => (
         <NavLink key={i} to={link.to}>
-          {t("nav." + link.text)}
+          {t(`nav.` + link.text)}
         </NavLink>
       ))}
       <SwitchLanguage />
@@ -138,119 +139,109 @@ function NavList(props: any) {
 
 const NavLink = ({ to, children, p, fontSize }: any) => {
   return (
-    <StyledLinkText
-      fontFamily="Apercu"
-      p={p}
-      mr={0}
-      textAlign={[`center`, `left`] as any}
-      fontSize={fontSize}
-    >
-      <LocalizedLink to={to}>{children}</LocalizedLink>
-    </StyledLinkText>
+    <LocalizedLink to={to}>
+      <StyledLinkText
+        fontFamily="Apercu"
+        p={p}
+        mr={0}
+        textAlign={[`center`, `left`] as any}
+        fontSize={fontSize}
+        fontWeight="300"
+        style={{ cursor: `pointer` }}
+      >
+        {children}
+      </StyledLinkText>
+    </LocalizedLink>
   );
 };
 
 const MobileNavList = (props: any) => {
   const { t, i18n } = useTranslation();
-
-  const time = 200;
   const { state, toggleNavigation, toggleScrolled } = useNavigationState(
     NavigationStateContainer.Context
   );
 
-  const navBg = useSpring({
-    to: {
-      opacity: state.open ? 1 : 0
-    },
-    from: { opacity: 1 },
-    duration: state.open ? time : (time * navLinks.length) / 4,
-    config: {
-      duration: state.open ? time : (time * navLinks.length) / 4
-    },
-    delay: state.open ? 0 : time * navLinks.length
-  });
-
-  const trail = useTrail(navLinks.length, {
-    to: { opacity: state.open ? 1 : 0, x: state.open ? 0 : 100 },
-    from: { opacity: 0, x: 100 },
-    reverse: !state.open
-  });
-
-  const switchLanguage = useSpring({
-    to: {
-      opacity: state.open ? 1 : 0,
-      transform: state.open ? "translateY(100)" : "translateY(0)"
-    },
-    from: { opacity: 1, transform: "translateY(100)" },
-    delay: state.open ? time * navLinks.length + 5 : 0
-  });
-
-  const pointerEvents = { pointerEvents: state.open ? `all` : `none` };
-
   return (
     <Flex>
+      <Helmet>
+        <html lang={i18n.language} />
+      </Helmet>
       <Box onClick={toggleNavigation}>
         <ToggleMenuButton open={state.open} />
       </Box>
 
-      <animated.div
-        style={{
-          background: `white`,
-          position: `fixed`,
-          top: 0,
-          right: 0,
-          left: 0,
-          bottom: 0,
-          ...navBg,
-          ...pointerEvents
-        }}
-      />
-
-      <Flex
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="center"
-        py={6}
-        css={`
-          position: fixed;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          perspective: 200px;
-          pointer-events: ${state.open ? `all` : `none`};
-        `}
-      >
-        {trail.map((props, index) => {
-          return (
-            <animated.div
-              onClick={toggleNavigation}
+      <AnimatePresence>
+        {state.open && (
+          <div key="header-mobile-menu">
+            <motion.div
+              key="header-mobile-menu-bg"
               style={{
-                opacity: props.opacity,
-                transform: props.x.interpolate(
-                  x => `translateY(${x * 4}%) rotate3d(1, 1, 1,${x * 2}deg)`
-                )
+                background: `white`,
+                position: `fixed`,
+                top: 0,
+                right: 0,
+                left: 0,
+                bottom: 0,
               }}
-              key={index}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            />
+
+            <Flex
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              py={6}
+              css={`
+                zindex: 1000;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                perspective: 200px;
+              `}
             >
-              <NavLink to={navLinks[index].to} p={3} fontSize={[4, 5]}>
-                {t("nav." + navLinks[index].text)}
-              </NavLink>
-            </animated.div>
-          );
-        })}
+              {navLinks.map((navLink, index) => {
+                return (
+                  <motion.div
+                    key={`header-mobile-menu-item-${index}`}
+                    onClick={toggleNavigation}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ delay: state.open ? 0.2 * index : 0 }}
+                  >
+                    <NavLink to={navLink.to} p={3} fontSize={[4, 5]}>
+                      {t(`nav.` + navLink.text)}
+                    </NavLink>
+                  </motion.div>
+                );
+              })}
+              <motion.div
+                key="header-mobile-menu-language"
+                onClick={toggleNavigation}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <SwitchLanguage mt={[3, 4, 5, 6]} />
+              </motion.div>
 
-        <animated.div
-          onClick={toggleNavigation}
-          style={{ ...pointerEvents, ...switchLanguage }}
-        >
-          <SwitchLanguage mt={[3, 4, 5, 6]} />
-        </animated.div>
-
-        <animated.div style={{ ...pointerEvents, ...switchLanguage }}>
-          <SocialLinks mt={[3, 4, 5, 6]} />
-        </animated.div>
-      </Flex>
+              <motion.div
+                key="header-mobile-menu-social"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <SocialLinks mt={[3, 4, 5, 6]} />
+              </motion.div>
+            </Flex>
+          </div>
+        )}
+      </AnimatePresence>
     </Flex>
   );
 };

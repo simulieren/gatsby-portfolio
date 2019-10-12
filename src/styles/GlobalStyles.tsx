@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   html * {
@@ -27,24 +27,6 @@ p a {
   );
 }
 
-p {
-  text-indent: 2em;
-}
-
-p:first-of-type,
-h1 + p,
-h2 + p,
-h3 + p,
-h4 + p,
-h5 + p,
-h6 + p,
-blockquote + p,
-img + p,
-figure + p,
-hr + p {
-  text-indent: 0;
-}
-
 img {
   width: 100%;
   display: block;
@@ -60,6 +42,20 @@ img {
 
 video {
   width: 100%;
+}
+
+code, code[class*="language-"] {
+  font-size: .7rem;
+}
+
+pre[class*="language-"]>code {
+  box-shadow: none;
+  border-left: none;
+  border-radius: 4px;
+}
+
+pre[class*="language-"] {
+  border-radius: 4px;
 }
 
 `;

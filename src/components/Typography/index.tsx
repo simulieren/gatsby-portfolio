@@ -16,6 +16,7 @@ export const Caps = (props: ITextProps) => (
     as="span"
     {...props}
     fontFamily="Apercu"
+    fontWeight="300"
     css={`
       fontsize: 12px;
       texttransform: uppercase;
@@ -25,16 +26,24 @@ export const Caps = (props: ITextProps) => (
 );
 
 export const P = (props: ITextProps) => (
-  <Text as="p" fontSize={[3]} fontFamily="Apercu" mt="0" {...props} />
+  <Text
+    as="p"
+    fontSize={[3]}
+    fontWeight="300"
+    fontFamily="Apercu"
+    mt="0"
+    {...props}
+  />
 );
 
 export const SectionOverline = (props: any) => (
   <Caps
     as="h2"
     fontSize={2}
+    fontWeight="300"
     textAlign={[`left`, `left`, `left`, `right`]}
     mr={4}
-    color={props.color || `rgba(0,0,255,0.5)`}
+    color={props.color || `rgba(0,0,255,1)`}
     {...props}
   />
 );
@@ -89,7 +98,6 @@ export const StyledLinkHeading = styled(Heading)`
 export const RightArrowSVG = () => (
   <svg
     version="1.1"
-    id="Layer_1"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     x="0px"
@@ -130,6 +138,7 @@ export const StyledButton = styled(Button)<{
   size?: string;
 }>`
   font-family: 'Apercu', sans-serif;
+  font-weight: 300;
   color: ${props => (props.inverted ? `#fff` : `#00f`)};
   border: 0.125rem solid ${props => (props.inverted ? `#fff` : `#00f`)};
   height: 3.125rem;
@@ -169,6 +178,7 @@ export const StyledButton = styled(Button)<{
       color: ${props => (props.inverted ? `#00f` : `#fff`)};
       text-align: center;
       font-size: 0.875rem;
+      font-weight: 300;
       line-height: 2.875rem;
       display: block;
       width: ${props => (props.size ? props.size : `16.25rem`)};
@@ -199,6 +209,7 @@ export const StyledButton = styled(Button)<{
 
 export const ListItem = styled(P)`
   font-family: Apercu, sans-serif;
+  font-weight: 300;
   position: relative;
   padding-left: 2em;
   margin-top: 0px;
@@ -246,8 +257,9 @@ export const BodyText = (props: any) => (
   <Text
     as="p"
     fontFamily="Apercu"
-    lineHeight="1.7"
-    fontSize={[3, 4]}
+    fontWeight="300"
+    lineHeight="1.8"
+    fontSize={[1, 2]}
     style={{ wordSpacing: `.1em` }}
     mb="4"
     {...props}
@@ -260,7 +272,7 @@ export const Caption = (props: any) => (
   <Text
     as="span"
     fontFamily="Apercu"
-    fontWeight="bold"
+    fontWeight="300"
     style={{ textTransform: `uppercase`, fontStyle: `normal` }}
     fontSize={[2]}
     letterSpacing="0.1em"

@@ -25,8 +25,8 @@ const NotesPage = (props: any) => {
   return (
     <>
       <div className="notes-container">
-        <Helmet title={`${t(`notes.title`)} | ${config.siteTitle}`} />
-        <Section py={[3, 4, 5]}>
+        <Helmet title={t(`notes.title`)} />
+        <Section py={[4, 5, 6]}>
           <Heading
             color="#00f"
             fontFamily="Cardo"
