@@ -39,10 +39,6 @@ export const TeachingSection = (props: any) => {
         </SectionOverline>
         <SectionHeading>{t(`teaching.headline`)}</SectionHeading>
         <P>{t(`teaching.paragraph`)}</P>
-
-        <StyledButton inverted size="10rem">
-          {t(`button.read`)}
-        </StyledButton>
       </Box>
 
       <Image
