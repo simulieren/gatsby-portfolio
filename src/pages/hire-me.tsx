@@ -44,8 +44,6 @@ const HireMePage = (props: any) => {
             "
         overline={t("hire-me.overline")}
         headline={t("hire-me.headline")}
-        link={"cv"}
-        linkText={t("hire-me.cv")}
       />
 
       <Section py={[3, 4, 5]}>
@@ -58,10 +56,6 @@ const HireMePage = (props: any) => {
           </SectionHeading>
           <P>{t("hire-me.section.1.text.1")}</P>
           <P>{t("hire-me.section.1.text.2")}</P>
-
-          <Link to="/cv">
-            <StyledButton>{t("hire-me.cv")}</StyledButton>
-          </Link>
         </Box>
       </Section>
 
