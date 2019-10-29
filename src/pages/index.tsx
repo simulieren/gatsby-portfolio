@@ -2,8 +2,7 @@ import React, { Fragment, useContext } from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { useTranslation } from 'react-i18next';
-
-import Layout from '../components/Layout';
+import { Helmet } from 'react-helmet';
 
 import { MissionSection } from '../components/sections/MissionSection';
 import { TeachingSection } from '../components/sections/TeachingSection';
@@ -15,7 +14,7 @@ import ProjectSection from '../components/sections/ProjectSection';
 import { changeLanguage } from '../util/changeLanguage';
 import { Box } from 'rebass';
 import { LocaleContext } from '../context/LocaleContext';
-import { Helmet } from 'react-helmet';
+import { ClientLogos } from '../components/ClientLogos/ClientLogos';
 
 const Index = (props: any) => {
   const { t, i18n } = useTranslation();
@@ -40,6 +39,8 @@ const Index = (props: any) => {
       <IntroSection mdxEdges={allMdxEdges} />
 
       <ProjectSection />
+
+      <ClientLogos />
 
       <MissionSection />
 

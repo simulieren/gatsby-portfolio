@@ -23,6 +23,9 @@
 		"headline": "Ich unterrichte beim Digital Career Institute",
 		"paragraph": "Seit dem Dezember 2018 habe ich über 100 Teilnehmer zum Thema Webdevelopment unterrichtet. Ich habe zusammen mit anderen Dozenten am Curriculum gearbeitet und den Schülern das Programmieren beigebracht. \n Von HTML, CSS und JavaScript bis zu React.js, Node.js und MongoDB habe ich die Schüler zum Fullstack JavaScript Developer ausgebildet."
 	},
+	"clients": {
+		"references": "Kundenreferenzen"
+	},
 	"hire": {
 		"overline": "Arbeite mit mir",
 		"headline": "So kann ich helfen",
