@@ -9,6 +9,7 @@ const PostTags = props => {
   let { tags } = props
   const isTagsArray = Array.isArray(tags)
   if (!isTagsArray) tags = [tags]
+  if (tags.length > 3) tags = tags.slice(0, 3)
 
   return (
     <span className="post-tag-container">

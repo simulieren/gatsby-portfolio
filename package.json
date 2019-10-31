@@ -1,7 +1,7 @@
 {
 	"name": "simonhalimonov-portfolio",
 	"description": "Personal GatsbyJs portfolio",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"author": "Simon Halimonov <hello@simonhalimonov.de>",
 	"dependencies": {
 		"@glidejs/glide": "^3.3.0",

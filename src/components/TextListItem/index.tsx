@@ -27,7 +27,12 @@ const TextListItem = (props: TextListItemProps) => {
   const url = () => {
     if (typeof window === `undefined`) return;
     if (!hasLink || props.link === null) return;
-    return new URL(props.link).hostname;
+    if (props.link.length === 0) return;
+    try {
+      return new URL(props.link).hostname;
+    } catch (error) {
+      return ``;
+    }
   };
 
   return (
@@ -43,7 +48,7 @@ const TextListItem = (props: TextListItemProps) => {
         {` `}
         {props.tags ? <PostTags tags={props.tags} /> : ``}
         {` `}
-        {hasLink ? ` · ` + url() : ``}
+        {hasLink && url() !== `` ? ` · ` + url() : ``}
         {props.slug ? (
           <Link to={`/notes/${props.slug}`}>
             {` `}
