@@ -8,6 +8,8 @@ import { SectionOverline } from '../Typography';
 export const ClientLogos = () => {
   const { t, i18n } = useTranslation();
 
+  const LogoWidth = [1 / 2, 1 / 4, 1 / 6];
+
   return (
     <Section py={[3, 4, 5]}>
       <SectionOverline textAlign="center" width={`100%`}>
@@ -21,7 +23,7 @@ export const ClientLogos = () => {
       >
         <Box
           as="img"
-          width={[1 / 6, 1 / 4, 1 / 3]}
+          width={LogoWidth}
           p={[3, 4]}
           my={[3, 4]}
           style={{ maxHeight: 110 }}
@@ -30,7 +32,7 @@ export const ClientLogos = () => {
         />
         <Box
           as="img"
-          width={[1 / 6, 1 / 4, 1 / 3]}
+          width={LogoWidth}
           p={[3, 4]}
           my={[3, 4]}
           style={{ maxHeight: 110 }}
@@ -39,7 +41,7 @@ export const ClientLogos = () => {
         />
         <Box
           as="img"
-          width={[1 / 6, 1 / 4, 1 / 3]}
+          width={LogoWidth}
           p={[3, 4]}
           my={[3, 4]}
           style={{ maxHeight: 110 }}
@@ -48,7 +50,7 @@ export const ClientLogos = () => {
         />
         <Box
           as="img"
-          width={[1 / 6, 1 / 4, 1 / 3]}
+          width={LogoWidth}
           p={[3, 4]}
           my={[3, 4]}
           style={{ maxHeight: 110 }}
@@ -57,7 +59,7 @@ export const ClientLogos = () => {
         />
         <Box
           as="img"
-          width={[1 / 6, 1 / 4, 1 / 3]}
+          width={LogoWidth}
           p={[3, 4]}
           my={[3, 4]}
           style={{ maxHeight: 110 }}
@@ -66,7 +68,7 @@ export const ClientLogos = () => {
         />
         <Box
           as="img"
-          width={[1 / 6, 1 / 4, 1 / 3]}
+          width={LogoWidth}
           p={[3, 4]}
           my={[3, 4]}
           style={{ maxHeight: 110 }}
