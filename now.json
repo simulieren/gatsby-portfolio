@@ -1,26 +1,17 @@
 {
-  "version": 2,
-  "alias": [
-    "www.simon-halimonov.de",
-    "simon-halimonov.de",
-    "simonhalimonov.de",
-    "www.simonhalimonov.de"
-  ],
-  "name": "gatsby",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build",
-      "config": {
-        "distDir": "public"
-      }
-    }
-  ],
-  "github": {
-    "autoAlias": false
-  },
-  "regions": ["bru1", "sin1"],
-  "env": {
-    "GOOGLE_ANALYTICS_TRACKING_ID": "@p-ga-id"
-  }
+	"version": 2,
+	"name": "gatsby",
+	"builds": [
+		{
+			"src": "package.json",
+			"use": "@now/static-build",
+			"config": {
+				"distDir": "public"
+			}
+		}
+	],
+	"regions": ["bru1", "sin1"],
+	"env": {
+		"GOOGLE_ANALYTICS_TRACKING_ID": "@p-ga-id"
+	}
 }
