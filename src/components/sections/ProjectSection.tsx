@@ -18,6 +18,36 @@ const ProjectSection = (props: any) => {
       `}
     >
       <PortfolioCarousel
+        images={["sn_01", "sn_02", "sn_03", "sn_04"]}
+        overline="Design + Development"
+        tags={["UX", "UI", "Development"]}
+        title="Snaatch App"
+        background="rgba(233, 208, 143, 0.5)"
+        link="https://snaatch.it/"
+        linkText={visit}
+      />
+
+      <PortfolioCarousel
+        images={["ph_01", "ph_02", "ph_03", "ph_04", "ph_05", "ph_06"]}
+        overline="Design + Development"
+        tags={["UX", "UI", "Development"]}
+        title="Philonomist Landingpage"
+        background="rgba(235, 229, 241, 0.3)"
+        link="https://www.philonomist.com/en/enterprise-subscription"
+        linkText={visit}
+      />
+
+      <PortfolioCarousel
+        images={["ms_01", "ms_02", "ms_03", "ms_04", "ms_05"]}
+        overline="Design + Development"
+        tags={["UX", "UI", "Development"]}
+        title="MyStudiolo Landingpage and App"
+        background="rgba(251, 226, 219, 0.5)"
+        link="https://mystudiolo.com/"
+        linkText={visit}
+      />
+
+      <PortfolioCarousel
         images={["mk_01", "mk_02", "mk_03", "mk_04"]}
         overline="Design + Development"
         tags={["UX", "UI", "Development"]}

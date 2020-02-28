@@ -33,6 +33,7 @@ const WorkPage = (props: any) => {
           <SectionHeading>{t("work.headline")}</SectionHeading>
         </Box>
       </Section>
+
       <ProjectSection />
     </>
   );

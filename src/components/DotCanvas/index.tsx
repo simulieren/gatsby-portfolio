@@ -172,7 +172,7 @@ class DotCanvas extends React.Component {
         style={{ ...this.props.style, pointerEvents: `none` }}
         ref="mainContainer"
       >
-        <canvas ref="cv" id="canvas" />
+        <canvas ref="cv" id="canvas" style={{ width: "100%" }} />
       </div>
     );
   }

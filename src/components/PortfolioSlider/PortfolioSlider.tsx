@@ -28,7 +28,7 @@ interface CarouselSectionProps {
   background: string;
 }
 
-const CarouselSection = styled(Flex)<CarouselSectionProps>`
+const CarouselSection = styled(Flex) <CarouselSectionProps>`
   position: relative;
   border-radius: 5px;
 
@@ -62,7 +62,9 @@ interface CarouselItemProps {
 
 const CarouselItem = styled.li<CarouselItemProps>`
   cursor: grab;
-  box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.2); */
+  max-height: 50vh;
+  max-width: auto;
 
   transition: all 0.5s ease;
   transform: scale(0.95);
@@ -108,7 +110,17 @@ export function PortfolioCarousel(props: PortfolioCarouselProps) {
     gap: 32,
     peek: { before: 0, after: 32 },
     breakpoints: {
-      660: {
+      2560: {
+        perView: 3,
+        gap: 8,
+        peek: { before: 0, after: 32 },
+      },
+      1920: {
+        perView: 2,
+        gap: 8,
+        peek: { before: 0, after: 8 },
+      },
+      900: {
         gap: 8,
         peek: { before: 0, after: 8 },
       },
