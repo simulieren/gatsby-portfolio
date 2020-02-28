@@ -1,6 +1,5 @@
 {
 	"version": 2,
-	"name": "gatsby",
 	"builds": [
 		{
 			"src": "package.json",
@@ -10,7 +9,6 @@
 			}
 		}
 	],
-	"regions": ["bru1", "sin1"],
 	"env": {
 		"GOOGLE_ANALYTICS_TRACKING_ID": "@p-ga-id"
 	}
