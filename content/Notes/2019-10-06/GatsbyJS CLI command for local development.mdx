@@ -1,0 +1,21 @@
+---
+title: 'GatsbyJS CLI command for local development'
+date: '2019-10-06'
+category: 'Link'
+tags:
+  - Other
+type: 'note'
+link: ''
+---
+
+Start development server locally and serve it on the local network with `-H 0.0.0.0`. Open the default browser with `-o`.
+
+In your package.json:
+
+```json
+{
+  "scripts": {
+    "d": "gatsby develop -H 0.0.0.0 -o",
+  }
+}
+```

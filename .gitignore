@@ -62,5 +62,5 @@ bundle-stats.json
 .env
 
 # Remove content from the main repository
-content
+# content
 .now

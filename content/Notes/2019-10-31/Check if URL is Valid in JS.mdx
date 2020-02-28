@@ -1,0 +1,21 @@
+---
+title: 'Check if URL is Valid in JS'
+date: '2019-10-31'
+category: 'Link'
+tags:
+  - JavaScript
+
+type: 'note'
+link: ' '
+---
+
+```javascript
+function isValidUrl (string) {
+  try {
+    new URL(string);
+    return true;
+  } catch (_) {
+    return false;  
+  }
+}
+```
