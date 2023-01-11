@@ -35,7 +35,7 @@
 		"gatsby-remark-prismjs": "3.0.3",
 		"gatsby-remark-responsive-iframe": "2.0.6",
 		"gatsby-source-filesystem": "^2.1.28",
-		"gatsby-transformer-remark": "2.1.11",
+		"gatsby-transformer-remark": "5.25.1",
 		"gatsby-transformer-sharp": "^2.1.8",
 		"i18next": "^15.0.9",
 		"i18next-browser-languagedetector": "^3.0.1",
